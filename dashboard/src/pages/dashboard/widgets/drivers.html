@@ -1,0 +1,134 @@
+<link rel="import" href="../../../../bower_components/bwt-datatable/bwt-datatable-card.html">
+<link rel="import" href="../../../../bower_components/bwt-datatable/bwt-datatable.html">
+<link rel="import" href="../../../../bower_components/bwt-datatable/bwt-datatable-column.html">
+<link rel="import" href="../../../elements/base-class.html">
+<dom-module id="widget-drivers">
+    <template>
+        <style>
+        :host {
+            display: block;
+            width: 100%;
+            padding-bottom: 10px;
+        }
+
+        .toolbar {
+            height: 90px;
+            background-color: var(--primary-color);
+        }
+
+        .header {
+            color: white;
+            margin-top: 0;
+            margin-bottom: 5px;
+            padding-top: 12px;
+            padding-left: 20px;
+            display: inline-flex;
+        }
+
+        .subheader {
+            color: white;
+            margin-top: 0;
+            padding-left: 20px;
+        }
+
+        .check-all {
+
+        }
+
+        .icons-bar {
+            color: white;
+            float: right;
+            margin-top: 25px;
+            margin-right: 15px;
+        }
+
+        .check {
+        }
+
+        .strike {
+            text-decoration: line-through;
+        }
+
+        paper-button.button-save {
+            background: var(--accent-color);
+            color: white;
+            flex-grow: 1;
+            align-self: flex-end;
+        }
+
+        .input-todo {
+            flex-grow: 4;
+        }
+
+        .bottom-bar {
+            display: flex;
+            padding: 10px;
+        }
+    </style>
+    
+    <div class="toolbar">
+        <h2 class="header">Drivers awaiting approval</h2>
+        <p class="subheader">[[data.length]] in total</p>
+    </div>
+    <paper-datatable-card id="dataTableCard" header="{{localize('drivers')}}" data-source="{{data}}" page-size="10" id-property="id" selected-ids="{{selectedIds}}">
+        <div slot="toolbar-main">
+            
+        </div>
+        <div slot="toolbar-select">
+                <paper-icon-button id="btnApprove" icon="my-icons:delete" on-tap="onApprove"></paper-icon-button>
+                <paper-tooltip for="btnApprove">Approve</paper-tooltip>
+        </div>
+        <paper-datatable id="datatable" selectable multi-selection selected-items="{{selectedItems}}" on-row-tap="rowTapped">
+            <div no-results>
+                [[localize('table-loading')]]
+            </div>
+            <paper-datatable-column header="[[localize('column-mobile-number')]]" property="mobile_number"></paper-datatable-column>
+        </paper-datatable>
+    </paper-datatable-card>
+</div>
+</template>
+<script>
+    let widgetDrivers;
+    class WidgetDrivers extends BaseClass {
+        static get is() {
+            return 'widget-drivers'
+        }
+
+        static get properties() {
+            return {
+                data: {
+                    type: Object,
+                    value: {
+                        get: function (sort, page, pageSize) {
+                            return app.getRows(widgetDrivers,'driver',{status:'disabled'},sort,page,pageSize,[],'');
+                        },
+                        set: function (item, property, value) {
+                            return app.setColumnValue('driver', item.id, column, value);
+                        },
+                        length: 0
+                    }
+                }
+            }
+        }
+
+        attached () {
+            super.attached();
+            widgetDrivers = this;
+        }
+        onDeleteAllClicked () {
+            socket.emit('deleteTodos', this.$.lstTodos.selectedValues, function () {
+                elementTodo.$.lstTodos.selectedValues = [];
+                getTodos();
+            });
+        }
+
+        onAddTodo () {
+            socket.emit('addTodo', this.$.inputTodo.value, function () {
+                elementTodo.$.inputTodo.value = null;
+                getTodos();
+            });
+        }
+    }
+    customElements.define(WidgetDrivers.is,WidgetDrivers);
+</script>
+</dom-module>

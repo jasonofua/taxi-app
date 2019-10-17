@@ -1,0 +1,67 @@
+<link rel="import" href="library.html">
+<link rel="import" href="../../bower_components/paper-dialog/paper-dialog.html">
+
+<dom-module id="dialog-media">
+	<template>
+		<style include="iron-flex iron-flex-alignment">
+		:host {
+			display: block;
+			@apply --paper-font-common-base;
+		}
+		widget-library {
+			margin-top: 20px;
+			padding: 0;
+			width: 1000px;
+			height: 570px;
+		}
+	</style>
+	<paper-dialog id="theDialog">
+		<h2>Select media</h2>
+		<widget-library selected-media="{{selectedMedia}}" selected-id="{{selectedId}}" selected-category="[[selectedCategory]]" force-category="{{forceCategory}}" on-selected="onMedisSelected"></widget-library>
+		<div class="buttons">
+			<paper-button dialog-dismiss>Cancel</paper-button>
+			<paper-button dialog-confirm autofocus>Select</paper-button>
+		</div>
+	</paper-dialog>
+
+
+</template>
+</dom-module>
+
+<script>
+	class DialogMedia extends BaseClass {
+		static get is(){
+			return 'dialog-media';
+		}
+
+		static get properties(){
+			return {
+				selectedMedia:{
+					type:Object,
+					notify:true
+				},
+				selectedId:Number,
+				selectedCategory:String,
+				forceCategory:{
+					type:Boolean,
+					value:false
+				}
+			}
+		}
+
+		static get observers(){
+			return [
+			]
+		}
+
+		show(category){
+			this.$.theDialog.open();
+		}
+		
+		onMedisSelected(event){
+			this.dispatchEvent(new CustomEvent('selected', {bubbles: true, composed: true,detail: {selectedId: event.detail.selectedId}}));
+			this.selectedId = event.detail.selectedId;
+		}
+	}
+	customElements.define(DialogMedia.is, DialogMedia);
+</script>

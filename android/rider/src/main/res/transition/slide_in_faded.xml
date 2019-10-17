@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transitionSet xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:transitionOrdering="together"
+    app:duration="400">
+    <fade
+        app:fadingMode="fade_out"
+        app:startDelay="0">
+        <targets>
+            <target app:targetId="@id/button_confirm_pickup"/>
+        </targets>
+    </fade>
+    <fade
+        app:fadingMode="fade_in"
+        app:startDelay="200">
+        <targets>
+            <target app:targetId="@id/button_confirm_destination"/>
+        </targets>
+    </fade>
+</transitionSet>

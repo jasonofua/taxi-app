@@ -1,0 +1,146 @@
+<link rel="import" href="../../../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../../../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../../../../bower_components/paper-listbox/paper-listbox.html">
+<link rel="import" href="../../../../bower_components/paper-icon-button/paper-icon-button.html">
+<dom-module id="widget-todo">
+    <template>
+        <style>
+        :host {
+            display: block;
+            width: 100%;
+            padding-bottom: 10px;
+        }
+
+        .toolbar {
+            height: 90px;
+            background-color: #03a9f4;
+        }
+
+        .header {
+            color: white;
+            margin-top: 0;
+            margin-bottom: 5px;
+            padding-top: 12px;
+            padding-left: 20px;
+            display: inline-flex;
+        }
+
+        .subheader {
+            color: white;
+            margin-top: 0;
+            padding-left: 20px;
+        }
+
+        .check-all {
+
+        }
+
+        .icons-bar {
+            color: white;
+            float: right;
+            margin-top: 25px;
+            margin-right: 15px;
+        }
+
+        .check {
+        }
+
+        .strike {
+            text-decoration: line-through;
+        }
+
+        paper-button.button-save {
+            background: var(--accent-color);
+            color: white;
+            flex-grow: 1;
+            align-self: flex-end;
+        }
+
+        .input-todo {
+            flex-grow: 4;
+        }
+
+        .bottom-bar {
+            display: flex;
+            padding: 10px;
+        }
+    </style>
+    <div class="toolbar">
+        <div class="icons-bar horizontal">
+            <paper-icon-button on-click="onCheckAllClicked" icon="my-icons:check"></paper-icon-button>
+            <paper-icon-button on-click="onDeleteAllClicked" icon="my-icons:delete-sweep"></paper-icon-button>
+        </div>
+        <h2 class="header">Todo app</h2>
+        <p class="subheader">0 Todo open</p>
+    </div>
+    <div class="content">
+        <paper-listbox id="lstTodos" attr-for-selected="item-id" multi>
+            <template is="dom-repeat" items="{{todos}}">
+                <paper-item item-id$="[[item.id]]">
+                    <paper-icon-button on-click="onCheckClicked" class="check"
+                    icon="my-icons:check"></paper-icon-button>
+                    <span class$="{{computeClass(item.is_done)}}">[[item.title]]</span></paper-item>
+                </template>
+            </paper-listbox>
+            <div class="bottom-bar">
+                <paper-input id="inputTodo" class="input-todo" label="Enter todo text"></paper-input>
+                <paper-button class="button-save" raised on-click="onAddTodo">Add</paper-button>
+            </div>
+        </div>
+    </template>
+    <script>
+
+        class WidgetTodo extends BaseClass {
+            static get is() {
+                return 'widget-todo'
+            }
+
+            static get properties() {
+                return {
+                    todos: {
+                        type: Array
+                    }
+                }
+            }
+
+            ready () {
+                super.ready();
+                let elementTodo = this;
+                socket.emit('getTodos', function (result) {
+                    elementTodo.todos = result;
+                });
+            }
+
+            computeClass (isDone) {
+                return isDone ? "strike" : "";
+            }
+
+            onCheckClicked (event) {
+
+            }
+
+            onCheckAllClicked () {
+                socket.emit('markTodosDone', this.$.lstTodos.selectedValues, function () {
+                    elementTodo.$.lstTodos.selectedValues = [];
+                    getTodos();
+                });
+            }
+
+            onDeleteAllClicked () {
+                socket.emit('deleteTodos', this.$.lstTodos.selectedValues, function () {
+                    elementTodo.$.lstTodos.selectedValues = [];
+                    getTodos();
+                });
+            }
+
+            onAddTodo () {
+                socket.emit('addTodo', this.$.inputTodo.value, function () {
+                    elementTodo.$.inputTodo.value = null;
+                    getTodos();
+                });
+            }
+        }
+        customElements.define(WidgetTodo.is,WidgetTodo);
+</script>
+</dom-module>

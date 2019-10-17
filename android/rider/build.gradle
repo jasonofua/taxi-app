@@ -1,0 +1,50 @@
+apply plugin: 'com.android.application'
+//apply plugin: 'io.fabric'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.innomalist.taxi.rider"
+        minSdkVersion 16
+        targetSdkVersion 27
+        multiDexEnabled true
+        versionCode 1
+        versionName "1.0.0"
+        vectorDrawables.useSupportLibrary = true
+        dexOptions {
+            jumboMode true
+        }
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [eventBusIndex: 'com.innomalist.taxi.rider.RiderEventBusIndex']
+            }
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.android.support:support-v4:27.0.2'
+    annotationProcessor 'org.greenrobot:eventbus-annotation-processor:3.0.1'
+    implementation "com.andkulikov:transitionseverywhere:1.7.8"
+    api project(':common')
+    implementation 'link.fls:swipestack:0.3.0'
+    compile 'com.github.arimorty:floatingsearchview:2.1.1'
+    implementation 'com.airbnb.android:lottie:2.2.5'
+    implementation "at.wirecube:additive_animations:1.3.1"
+    implementation "com.google.android.gms:play-services-places:$googleVersion"
+}
+apply plugin: 'com.google.gms.google-services'

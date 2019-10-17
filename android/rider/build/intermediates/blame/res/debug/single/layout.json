@@ -1,0 +1,54 @@
+[
+    {
+        "merged": "/home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/rider/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_edit_address.xml",
+        "source": "/home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/rider/src/main/res/layout/fragment_edit_address.xml"
+    },
+    {
+        "merged": "/home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/rider/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_travel.xml",
+        "source": "/home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/rider/src/main/res/layout/activity_travel.xml"
+    },
+    {
+        "merged": "/home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/rider/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_service.xml",
+        "source": "/home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/rider/src/main/res/layout/item_service.xml"
+    },
+    {
+        "merged": "/home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/rider/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_review.xml",
+        "source": "/home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/rider/src/main/res/layout/fragment_review.xml"
+    },
+    {
+        "merged": "/home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/rider/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_addresses.xml",
+        "source": "/home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/rider/src/main/res/layout/activity_addresses.xml"
+    },
+    {
+        "merged": "/home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/rider/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_address.xml",
+        "source": "/home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/rider/src/main/res/layout/item_address.xml"
+    },
+    {
+        "merged": "/home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/rider/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_edit_profile.xml",
+        "source": "/home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/rider/src/main/res/layout/activity_edit_profile.xml"
+    },
+    {
+        "merged": "/home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/rider/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/dialog_request_service.xml",
+        "source": "/home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/rider/src/main/res/layout/dialog_request_service.xml"
+    },
+    {
+        "merged": "/home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/rider/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_splash.xml",
+        "source": "/home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/rider/src/main/res/layout/activity_splash.xml"
+    },
+    {
+        "merged": "/home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/rider/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_main.xml",
+        "source": "/home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/rider/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/rider/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/card_driver_type.xml",
+        "source": "/home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/rider/src/main/res/layout/card_driver_type.xml"
+    },
+    {
+        "merged": "/home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/rider/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/card_driver_accepted.xml",
+        "source": "/home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/rider/src/main/res/layout/card_driver_accepted.xml"
+    },
+    {
+        "merged": "/home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/rider/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/card_driver_info.xml",
+        "source": "/home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/rider/src/main/res/layout/card_driver_info.xml"
+    }
+]

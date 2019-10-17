@@ -1,0 +1,33 @@
+{
+  "name": "paper-weather",
+  "main": "paper-weather.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#1.9 - 2",
+    "iron-ajax": "PolymerElements/iron-ajax#1 - 2",
+    "iron-flex-layout": "PolymerElements/iron-flex-layout#1 - 2",
+    "paper-styles": "PolymerElements/paper-styles#1 - 2",
+    "paper-spinner": "PolymerElements/paper-spinner#1 - 2",
+    "moment": "^2.18.1"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#1 - 2",
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#1 - 2",
+    "paper-button": "PolymerElements/paper-button#1 - 2",
+    "iron-selector": "PolymerElements/iron-selector#1 - 2",
+    "paper-checkbox": "PolymerElements/paper-checkbox#1 - 2",
+    "web-component-tester": "^6.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0"
+  },
+  "homepage": "https://github.com/ryanburns23/paper-weather",
+  "version": "2.1.2",
+  "_release": "2.1.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.1.2",
+    "commit": "1f709c16f4019788aef77453c6a03471707c9082"
+  },
+  "_source": "https://github.com/ryanburns23/paper-weather.git",
+  "_target": "^2.1.2",
+  "_originalSource": "ryanburns23/paper-weather",
+  "_direct": true
+}

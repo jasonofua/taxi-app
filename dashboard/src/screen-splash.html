@@ -1,0 +1,34 @@
+<link rel="import" href="elements/base-class.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+
+<dom-module id="screen-splash">
+	<template>
+		<style include="iron-flex iron-flex-alignment">
+			:host {
+				height: 100vh;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			.container{
+align-items: center;
+			}
+			.spinner{
+				width: 100px;
+				height: 100px;
+			}
+		</style>
+		<div class="container layout vertical">
+			<paper-spinner active class="spinner"></paper-spinner>
+			<h4>{{localize('connecting')}}</h4>
+		</div>
+	</template>
+	<script>
+		class ScreenSplash extends BaseClass{
+			static get is(){
+				return 'screen-splash'
+			}
+		}
+		customElements.define(ScreenSplash.is, ScreenSplash);
+	</script>
+</dom-module>

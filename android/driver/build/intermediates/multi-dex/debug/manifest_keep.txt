@@ -1,0 +1,3 @@
+# Referenced at /home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/driver/build/intermediates/manifests/full/debug/AndroidManifest.xml:37
+-keep class com.innomalist.taxi.common.MyTaxiApplication { <init>(...); }
+

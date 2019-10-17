@@ -1,0 +1,274 @@
+<link rel="import" href="../../../bower_components/salte-rating/salte-rating.html">
+<link rel="import" href="../../../bower_components/paper-toolbar/paper-toolbar.html">
+<link rel="import" href="../../../bower_components/paper-tooltip/paper-tooltip.html">
+<link rel="import" href="../../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../../bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="../../../bower_components/paper-dialog-scrollable/paper-dialog-scrollable.html">
+<link rel="import" href="../../../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../../../bower_components/paper-listbox/paper-listbox.html">
+<link rel="import" href="../../../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../../../bower_components/neon-animation/web-animations.html">
+<link rel="import" href="../../../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="../../../bower_components/paper-money-input-ench/paper-money-input-ench.html">
+<link rel="import" href="../../../bower_components/bwt-datatable/bwt-datatable-card.html">
+<link rel="import" href="../../../bower_components/bwt-datatable/bwt-datatable.html">
+<link rel="import" href="../../../bower_components/bwt-datatable/bwt-datatable-column.html">
+<dom-module id="page-riders">
+    <template>
+        <style include="iron-flex iron-flex-alignment">
+        :host {
+            display: block;
+        }
+
+        #dataTableCard {
+            padding: 10px;
+        }
+
+        .review-card {
+            margin: 10px;
+        }
+
+        .review-text {
+            line-height: 50px;
+        }
+        paper-item {
+            --paper-item: {
+                cursor: pointer;
+            };
+        }
+        paper-button.green {
+            background: #8BC34A;
+            color: white;
+            height: 30px;
+            top: 24px;
+        }
+    </style>
+    <paper-dialog id="dlgTransactions" style="min-width:200px;min-height:100px;" entry-animation="scale-up-animation" exit-animation="fade-out-animation">
+        <h2>Rider's financial log</h2>
+        <paper-dialog-scrollable>
+            <div class="vertical layout">
+                <paper-datatable data="{{transactions}}">
+                    <paper-datatable-column header="{{localize('column-id')}}" property="id" sortable></paper-datatable-column>
+                    <paper-datatable-column header="{{localize('column-operator')}}" property="operator_id" sortable></paper-datatable-column>
+                    <paper-datatable-column header="{{localize('column-datetime')}}" property="transaction_time" sortable format-value="{{timestampFormatter}}"></paper-datatable-column>
+                    <paper-datatable-column header="{{localize('column-transaction-type')}}" property="transaction_type" sortable></paper-datatable-column>
+                    <paper-datatable-column header="{{localize('column-amount')}}" property="amount" sortable></paper-datatable-column>
+                    <paper-datatable-column header="{{localize('column-document-number')}}" property="document_number" sortable></paper-datatable-column>
+                    <paper-datatable-column header="{{localize('column-details')}}" property="details" sortable></paper-datatable-column>
+                </paper-datatable>
+                <iron-form id="formTransaction" on-iron-form-submit="onSubmitTransaction">
+                    <form>
+                        <div class="horizontal layout">
+                            <input id="inputOperatorId" type="hidden" name="operator_id" value="[[operatorId]]">
+                            <input id="inputRiderId" type="hidden" name="rider_id" value="[[item.id]]">
+                            <paper-dropdown-menu label="{{localize('column-transaction-type')}}" required>
+                                <paper-listbox slot="dropdown-content" attr-for-selected="name" selected={{selectedTransactionType}}>
+                                    <paper-item name="in-app">[[localize('transaction-in-app')]]</paper-item>
+                                    <paper-item name="cash">[[localize('transaction-cash')]]</paper-item>
+                                    <paper-item name="bank">[[localize('transaction-bank')]]</paper-item>
+                                    <paper-item name="gift">[[localize('transaction-gift')]]</paper-item>
+                                </paper-listbox>
+                            </paper-dropdown-menu>
+                            <input type="hidden" name="transaction_type" value="{{selectedTransactionType}}">
+                            <paper-money-input-ench name="amount" label="{{localize('column-amount')}}" value="" type="number" required></paper-money-input-ench>
+                            <paper-input type="text" name="document_number" label="{{localize('column-document-number')}}"></paper-input>
+                            <paper-input type="text" name="details" id="inputDetails" label="{{localize('column-details')}}" style="width: 30%;"></paper-input>
+                            <paper-button on-click="onAddTransaction" raised class="green">{{localize('add')}}</paper-button>
+                        </div>
+                    </form>
+                </iron-form>
+            </div>
+        </paper-dialog-scrollable>
+        <div class="buttons">
+            <paper-button dialog-dismiss>{{localize('dismiss')}}</paper-button>
+        </div>
+    </paper-dialog>
+    <paper-dialog id="dlgEditItem" style="max-width:500px;min-height:300px;" entry-animation="scale-up-animation" exit-animation="fade-out-animation">
+        <h2>{{localize('edit-dialog-item-number')}}<span>{{item.id}}</span></h2>
+        <iron-form id="formEdit" on-iron-form-submit="onSubmitDriver">
+            <form>
+                <div class="vertical layout">
+                    <paper-input type="number" name="id" value="[[item.id]]" label="[[localize('column-id')]]" readonly></paper-input>
+                    <div class="horizontal layout">
+                        <paper-input type="text" name="first_name" value="[[item.first_name]]" label="{{localize('column-first-name')}}" class="flex"></paper-input>
+                        <paper-input type="text" name="last_name" value="[[item.last_name]]" label="{{localize('column-last-name')}}" class="flex"></paper-input>
+                    </div>
+                    <div class="horizontal layout">
+                        <paper-input type="number" name="mobile_number" value="[[item.mobile_number]]" label="{{localize('column-mobile-number')}}" class="flex"></paper-input>
+                    </div>
+                    <div class="horizontal layout">
+                        <paper-input name="address" value="{{item.address}}" label="{{localize('column-address')}}" class="flex"></paper-input>
+                    </div>
+                </div>
+            </form>
+        </iron-form>
+        <div class="buttons">
+            <template is="dom-if" if="[[!_isEqualTo(item.status,'blocked')]]">
+                <paper-button on-click="onBlockDriverClicked">{{localize('block-driver')}}</paper-button>
+            </template>
+            <template is="dom-if" if="[[_isEqualTo(item.status,'blocked')]]">
+                <paper-button on-click="onUnBlockDriverClicked">{{localize('unblock-driver')}}</paper-button>
+            </template>
+            <paper-button dialog-dismiss>{{localize('dismiss')}}</paper-button>
+            <paper-button dialog-confirm autofocus on-click="onConfirmEditClicked">{{localize('confirm')}}</paper-button>
+        </div>
+    </paper-dialog>
+    <paper-datatable-card id="dataTableCard" header="{{localize('riders')}}" data-source="{{data}}" page-size="10" id-property="id" selected-ids="{{selectedIds}}">
+        <div slot="toolbar-main">
+            <paper-dropdown-menu label="{{localize('column-status')}}">
+                <paper-listbox slot="dropdown-content" selected="{{selectedStatus}}" attr-for-selected="status">
+                    <paper-item status="">Show All</paper-item>
+                    <paper-item status="enabled">Enabled</paper-item>
+                    <paper-item status="blocked">Blocked</paper-item>
+                </paper-listbox>
+            </paper-dropdown-menu>
+            <paper-input value="{{searchTerm}}" on-input="refreshList" label="{{localize('table-search')}}" style="display:inline-block" no-label-float>
+                <div slot="prefix">
+                    <iron-icon icon="search"></iron-icon>
+                </div>
+            </paper-input>
+            <paper-icon-button icon="cached" on-tap="refreshList"></paper-icon-button>
+        </div>
+        <div slot="toolbar-select">
+            <paper-icon-button id="btnDeleteItems" icon="delete" on-tap="onDeleteItems"></paper-icon-button>
+            <paper-tooltip for="btnDeleteItems">{{localize('delete-items')}}</paper-tooltip>
+        </div>
+        <div slot="toolbar-select-single">
+            <paper-icon-button id="btnTransactions" icon="my-icons:money" on-tap="onShowTransactions"></paper-icon-button>
+            <paper-tooltip for="btnTransactions">{{localize('show-transactions')}}</paper-tooltip>
+            <paper-icon-button id="btnEditItem" icon="my-icons:edit" on-tap="onEditItem"></paper-icon-button>
+            <paper-tooltip for="btnEditItem">{{localize('edit-item')}}</paper-tooltip>
+        </div>
+        <paper-datatable id="datatable" selectable selected-item="{{item}}" on-row-tap="rowTapped">
+            <div no-results>
+                {{localize('table-loading')}}
+            </div>
+            <paper-datatable-column header="{{localize('column-id')}}" property="id" sortable></paper-datatable-column>
+            <paper-datatable-column header="{{localize('column-first-name')}}" property="first_name"></paper-datatable-column>
+            <paper-datatable-column header="{{localize('column-last-name')}}" property="last_name"></paper-datatable-column>
+            <paper-datatable-column header="{{localize('column-mobile-number')}}" property="mobile_number"></paper-datatable-column>
+            <paper-datatable-column header="{{localize('column-balance')}}" property="balance"></paper-datatable-column>
+            <paper-datatable-column header="{{localize('column-address')}}" property="address"></paper-datatable-column>
+        </paper-datatable>
+    </paper-datatable-card>
+</template>
+<script>
+    let ridersPage;
+    class PageRiders extends BaseClass {
+
+        static get is() {
+            return 'page-riders'
+        }
+
+        static get properties() {
+            return {
+                data: {
+                    type: Object,
+                    value: {
+                        get: function (sort, page, pageSize) {
+                            return app.getRows(ridersPage,'rider',{status:ridersPage.selectedStatus},sort,page,pageSize,[],'');
+                        },
+                        set: function (item, property, value) {
+                            return app.setColumnValue('rider', item.id, property, value);
+                        },
+                        length: 0
+                    }
+                },
+                selectedStatus: {
+                    type: String,
+                    value: "",
+                    observer:"_selectedStatusChanged"
+                },
+                transactions: Array
+            }
+        }
+        onAddItem () {
+            this.$.dlgEditItem.open();
+        }
+        _isEqualTo (title, string) {
+            return title == string;
+        }
+        onEditItem () {
+            this.$.dlgEditItem.open();
+        }
+        onBlockDriverClicked () {
+            setColumnValue('rider', ridersPage.selectedIds[0], 'status', 'blocked').then(function () {
+                refreshList();
+                ridersPage.$.dlgEditItem.close();
+            });
+        }
+        onUnBlockDriverClicked () {
+            setColumnValue('rider', ridersPage.selectedIds[0], 'status', 'enabled').then(function () {
+                ridersPage.onConfirmEditClicked();
+                ridersPage.$.dlgEditItem.close();
+            });
+        }
+        onEnableDriverClicked () {
+            if(ridersPage.enabledDriverTypes.length < 1) {
+                alert('To enable a driver\'s access, you should at least select one driver type so it\'s default travel type could be used for travel cost estimation.');
+                return;
+            }
+            if(ridersPage.enabledTravelTypes.length < 1) {
+                alert('To enable a driver\'s access, you should at least select one Travel type to be enabled for driver.');
+                return;
+            }
+            setColumnValue('rider', ridersPage.selectedIds[0], 'status', 'enabled').then(function () {
+                ridersPage.onConfirmEditClicked();
+                ridersPage.$.dlgEditItem.close();
+            });
+        }
+        onConfirmEditClicked () {
+            this.$.formEdit.submit();
+        }
+        onSubmitDriver (event) {
+            this.saveRow('rider',event.detail).then(function(result){
+                this.$.dataTableCard.retrieveVisibleData();
+            }.bind(this));
+        }
+        onShowTransactions () {
+            this.getRows(this,'rider_transaction',{rider_id:this.item.id},{property:'id',direction:'asc'},1,100,[],'').then(function(result){
+                this.transactions = result;
+                this.operatorId = app.userStorage.user.id;
+                this.$.dlgTransactions.open();
+            }.bind(this));
+        }
+        rowTapped (ev) {
+            if (this.isDebouncerActive('dblclick' + ev.detail.item.id)) {
+                ev.preventDefault();
+                this.$.dataTableCard.deselectAll();
+                this.$.dataTableCard.select(ev.detail.item.id);
+                this.onEditItem();
+                this.cancelDebouncer('dblclick');
+            } else {
+                this.debounce('dblclick' + ev.detail.item.id, function () {
+                }, 300);
+            }
+        }
+        refreshList (ev) {
+            this.$.dataTableCard.retrieveVisibleData();
+        }
+        attached () {
+            super.attached();
+            ridersPage = this;
+        }
+        _selectedStatusChanged () {
+            this.$.dataTableCard.retrieveVisibleData();
+        }
+        onAddTransaction(){
+            this.$.formTransaction.submit();
+        }
+        onSubmitTransaction (event) {
+            this.saveRow('rider_transaction',event.detail).then(function(code) {
+                this.$.formTransaction.reset();
+                this.selectedTransactionType = null;
+                this.$.inputOperatorId.value = app.userStorage.user.id;
+                this.$.inputRiderId.value = this.item.id;
+                this.onShowTransactions();
+            }.bind(this));
+        }
+    }
+    customElements.define(PageRiders.is,PageRiders);
+</script>
+</dom-module>

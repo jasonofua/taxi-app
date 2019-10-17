@@ -1,0 +1,31 @@
+{
+  "name": "chart-elements",
+  "version": "4.0.0",
+  "authors": [
+    "Rob Dodson",
+    "Diogo Moura",
+    "Peter Kaske"
+  ],
+  "description": "A custom element implementation of the Chart.js library",
+  "keywords": [
+    "web-component",
+    "polymer",
+    "seed"
+  ],
+  "main": "chart-elements.html",
+  "license": "MIT",
+  "homepage": "https://robdodson.github.io/chart-elements",
+  "ignore": [
+    "/.*",
+    "/test/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^2.0.0",
+    "iron-resizable-behavior": "PolymerElements/iron-resizable-behavior#~2.0.0",
+    "Chart.js": "^2.0.0"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^2.0.0",
+    "web-component-tester": "Polymer/web-component-tester#^6.0.0"
+  }
+}

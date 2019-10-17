@@ -1,0 +1,398 @@
+<link rel="import" href="../../../bower_components/salte-rating/salte-rating.html">
+<link rel="import" href="../../../bower_components/paper-toolbar/paper-toolbar.html">
+<link rel="import" href="../../../bower_components/paper-tooltip/paper-tooltip.html">
+<link rel="import" href="../../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../../bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="../../../bower_components/paper-dialog-scrollable/paper-dialog-scrollable.html">
+<link rel="import" href="../../../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../../../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="../../../bower_components/paper-listbox/paper-listbox.html">
+<link rel="import" href="../../../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../../../bower_components/neon-animation/web-animations.html">
+<link rel="import" href="../../../bower_components/bwt-datatable/bwt-datatable-card.html">
+<link rel="import" href="../../../bower_components/bwt-datatable/bwt-datatable.html">
+<link rel="import" href="../../../bower_components/bwt-datatable/bwt-datatable-column.html">
+<link rel="import" href="../../../bower_components/paper-money-input-ench/paper-money-input-ench.html">
+<link rel="import" href="../../../bower_components/neon-animation/web-animations.html">
+<link rel="import" href="../../elements/my-icons.html">
+<dom-module id="page-drivers">
+    <template>
+        <style include="iron-flex iron-flex-alignment">
+        :host {
+            display: block;
+        }
+        #dataTableCard {
+            padding: 10px;
+        }
+
+        .review-card {
+            margin: 10px;
+        }
+
+        .review-text {
+            line-height: 50px;
+        }
+        paper-item {
+            --paper-item: {
+                cursor: pointer;
+            };
+        }
+        paper-button.green {
+            background: #8BC34A;
+            color: white;
+            height: 30px;
+            top: 24px;
+        }
+    </style>
+    <paper-dialog id="dlgTransactions" style="min-width:200px;min-height:100px;" entry-animation="scale-up-animation" exit-animation="fade-out-animation">
+        <h2>Driver's financial log</h2>
+        <paper-dialog-scrollable>
+            <div class="vertical layout">
+                <paper-datatable data="{{transactions}}">
+                    <paper-datatable-column header="{{localize('column-id')}}" property="id" sortable></paper-datatable-column>
+                    <paper-datatable-column header="{{localize('column-operator')}}" property="operator_id" sortable></paper-datatable-column>
+                    <paper-datatable-column header="{{localize('column-datetime')}}" property="transaction_time" sortable format-value="{{timestampFormatter}}"></paper-datatable-column>
+                    <paper-datatable-column header="{{localize('column-transaction-type')}}" property="transaction_type" sortable></paper-datatable-column>
+                    <paper-datatable-column header="{{localize('column-amount')}}" property="amount" sortable></paper-datatable-column>
+                    <paper-datatable-column header="{{localize('column-document-number')}}" property="document_number" sortable></paper-datatable-column>
+                    <paper-datatable-column header="{{localize('column-details')}}" property="details" sortable></paper-datatable-column>
+                </paper-datatable>
+                <iron-form id="formTransaction" on-iron-form-submit="onSubmitTransaction">
+                    <form>
+                        <div class="horizontal layout">
+                            <input id="inputOperatorId" type="hidden" name="operator_id" value="[[operatorId]]">
+                            <input id="inputDriverId" type="hidden" name="driver_id" value="[[item.id]]">
+                            <paper-dropdown-menu label="{{localize('column-transaction-type')}}" required>
+                                <paper-listbox slot="dropdown-content" attr-for-selected="name" selected={{selectedTransactionType}}>
+                                    <paper-item name="in-app">[[localize('transaction-in-app')]]</paper-item>
+                                    <paper-item name="cash">[[localize('transaction-cash')]]</paper-item>
+                                    <paper-item name="bank">[[localize('transaction-bank')]]</paper-item>
+                                    <paper-item name="gift">[[localize('transaction-gift')]]</paper-item>
+                                </paper-listbox>
+                            </paper-dropdown-menu>
+                            <input type="hidden" name="transaction_type" value="{{selectedTransactionType}}">
+
+                            <paper-money-input-ench name="amount" label="{{localize('column-amount')}}" value="" type="number" required></paper-money-input-ench>
+                            <paper-input type="text" name="document_number" label="{{localize('column-document-number')}}"></paper-input>
+                            <paper-input type="text" name="details" id="inputDetails" label="{{localize('column-details')}}" style="width: 30%;"></paper-input>
+                            <paper-button on-click="onAddTransaction" raised class="green">{{localize('add')}}</paper-button>
+                        </div>
+                    </form>
+                </iron-form>
+            </div>
+        </paper-dialog-scrollable>
+        <div class="buttons">
+            <paper-button dialog-dismiss>{{localize('dismiss')}}</paper-button>
+        </div>
+    </paper-dialog>
+    <paper-dialog id="dlgReviews" style="min-width:500px;min-height:300px;" entry-animation="scale-up-animation" exit-animation="fade-out-animation">
+        <paper-dialog-scrollable>
+            <div class="vertical layout">
+                <template is="dom-repeat" items="{{reviews}}">
+                    <paper-card class="review-card" heading="[[item.last_name]]">
+                        <div class="card-content">
+                            <salte-rating class="review-rating" value="[[item.score]]" icon="star" disabled></salte-rating>
+                            <span class="review-text">[[item.review]]</span>
+                        </div>
+
+                    </paper-card>
+                </template>
+            </div>
+        </paper-dialog-scrollable>
+        <div class="buttons">
+            <paper-button dialog-dismiss>{{localize('dismiss')}}</paper-button>
+            <paper-button dialog-confirm autofocus>{{localize('confirm')}}</paper-button>
+        </div>
+    </paper-dialog>
+    <paper-dialog id="dlgEditItem" style="max-width:500px;min-height:300px;" entry-animation="scale-up-animation" exit-animation="fade-out-animation">
+        <h2>{{localize('edit-dialog-item-number')}}<span>{{item.id}}</span></h2>
+        <iron-form id="formEdit" on-iron-form-submit="onSubmitDriver">
+            <form>
+                <div class="vertical layout">
+                    <paper-input type="number" name="id" value="[[item.id]]" label="[[localize('column-id')]]" readonly></paper-input>
+                    <div class="horizontal layout">
+                        <paper-input type="text" name="first_name" value="[[item.first_name]]" label="{{localize('column-first-name')}}" class="flex"></paper-input>
+                        <paper-input type="text" name="last_name" value="[[item.last_name]]" label="{{localize('column-last-name')}}" class="flex"></paper-input>
+                    </div>
+                    <div class="horizontal layout">
+                        <paper-input type="number" name="mobile_number" value="[[item.mobile_number]]" label="{{localize('column-mobile-number')}}" class="flex"></paper-input>
+                        <paper-input type="text" name="certificate_number" value="[[item.certificate_number]]" label="{{localize('column-certificate-number')}}" class="flex"></paper-input>
+                    </div>
+                    <div class="horizontal layout">
+                        <div class="vertical layout" style="width: 100%; height: 230px;">
+                            <h5>Select driver's Service Types</h5>
+                            <paper-listbox selected-values="{{enabledServices}}" attr-for-selected="name" style="overflow-y: scroll;" multi>
+                                <template is="dom-repeat" items="{{services}}">
+                                    <paper-item name="[[item.id]]">[[item.title]]</paper-item>
+                                </template>
+                            </paper-listbox>
+                        </div>
+                    </div>
+                    <div class="horizontal layout">
+                        <paper-dropdown-menu label="{{localize('column-car-name')}}" class="flex">
+                            <paper-listbox slot="dropdown-content" selected="{{selectedCar}}" attr-for-selected="name">
+                                <template is="dom-repeat" items="[[cars]]" as="car">
+                                    <paper-item name="[[car.id]]">[[car.title]]</paper-item>
+                                </template>
+                            </paper-listbox>
+                        </paper-dropdown-menu>
+                        <input name="car_id" type="hidden" value="{{selectedCar}}">
+                        <paper-input name="car_color" value="[[item.car_color]]" label="{{localize('column-car-color')}}" class="flex"></paper-input>
+                        <paper-input type="number" name="car_production_year" value="[[item.car_production_year]]" label="{{localize('column-car-prod-year')}}" class="flex"></paper-input>
+                    </div>
+                    <div class="horizontal layout">
+                        <paper-input name="car_plate" value="{{item.car_plate}}" label="{{localize('column-car-plate')}}" class="flex"></paper-input>
+                        <paper-input name="account_number" value="{{item.account_number}}" label="{{localize('column-account-number')}}" class="flex"></paper-input>
+                    </div>
+                    <div class="horizontal layout">
+                        <paper-input name="address" value="{{item.address}}" label="{{localize('column-address')}}" class="flex"></paper-input>
+                    </div>
+                </div>
+            </form>
+        </iron-form>
+        <div class="buttons">
+            <template is="dom-if" if="[[!_isEqualTo(item.status,'blocked')]]">
+                <paper-button on-click="onBlockDriverClicked">{{localize('block-driver')}}</paper-button>
+            </template>
+            <template is="dom-if" if="[[_isEqualTo(item.status,'blocked')]]">
+                <paper-button on-click="onUnBlockDriverClicked">{{localize('unblock-driver')}}</paper-button>
+            </template>
+            <template is="dom-if" if="[[_isEqualTo(item.status,'disabled')]]">
+                <paper-button on-click="onEnableDriverClicked">{{localize('enable-driver')}}</paper-button>
+            </template>
+            <paper-button dialog-dismiss>{{localize('dismiss')}}</paper-button>
+            <paper-button dialog-confirm autofocus on-click="onConfirmEditClicked">{{localize('confirm')}}</paper-button>
+        </div>
+    </paper-dialog>
+    <paper-datatable-card id="dataTableCard" header="{{localize('drivers')}}" data-source="{{data}}" page-size="10" id-property="id">
+        <div slot="toolbar-main">
+            <paper-dropdown-menu label="{{localize('column-status')}}">
+                <paper-listbox slot="dropdown-content" selected="{{selectedStatus}}" attr-for-selected="status">
+                    <paper-item status="">Show All</paper-item>
+                    <paper-item status="enabled">Enabled</paper-item>
+                    <paper-item status="disabled">Pending Review</paper-item>
+                    <paper-item status="blocked">Blocked</paper-item>
+                    <paper-item status="online">Online</paper-item>
+                    <paper-item status="offline">Offline</paper-item>
+                    <paper-item status="in service">In service</paper-item>
+                </paper-listbox>
+            </paper-dropdown-menu>
+            <paper-input value="{{searchTerm}}" on-input="refreshList" label="{{localize('table-search')}}" style="display:inline-block" no-label-float>
+                <div slot="prefix">
+                    <iron-icon icon="my-icons:search"></iron-icon>
+                </div>
+            </paper-input>
+            <paper-icon-button icon="cached" on-tap="refreshList"></paper-icon-button>
+            <paper-icon-button id="btnAddItem" icon="my-icons:add" on-click="onAddItem">+</paper-icon-button>
+            <paper-tooltip for="btnAddItem">{{localize('add-item')}}</paper-tooltip>
+        </div>
+        <div slot="toolbar-select">
+            <paper-icon-button id="btnDeleteItems" icon="my-icons:delete" on-tap="onDeleteItems"></paper-icon-button>
+            <paper-tooltip for="btnDeleteItems">{{localize('delete-items')}}</paper-tooltip>
+        </div>
+        <div slot="toolbar-select-single">
+            <paper-icon-button id="btnShowReviews" icon="my-icons:comment" on-tap="onShowReviews"></paper-icon-button>
+            <paper-tooltip for="btnShowReviews">{{localize('show-reviews')}}</paper-tooltip>
+            <paper-icon-button id="btnTransactions" icon="my-icons:money" on-tap="onShowTransactions"></paper-icon-button>
+            <paper-tooltip for="btnTransactions">{{localize('show-transactions')}}</paper-tooltip>
+            <paper-icon-button id="btnEdit" icon="my-icons:edit" on-tap="onEditItem"></paper-icon-button>
+            <paper-tooltip for="btnEdit">{{localize('edit-item')}}</paper-tooltip>
+        </div>
+        <paper-datatable id="datatable" selectable selected-item="{{item}}" on-row-tap="rowTapped">
+            <div no-results>
+                {{localize('table-loading')}}
+            </div>
+            <paper-datatable-column header="{{localize('column-id')}}" property="id" sortable align="center" style="width: 2%" sorted></paper-datatable-column>
+            <paper-datatable-column header="{{localize('column-status')}}" property="status" sortable style="width: 2%">
+                <template>
+                    <iron-icon icon="{{getStatusIcon(value)}}"></iron-icon>
+                </template>
+            </paper-datatable-column>
+            <paper-datatable-column header="{{localize('column-first-name')}}" property="first_name" style="width: 8%"></paper-datatable-column>
+            <paper-datatable-column header="{{localize('column-last-name')}}" property="last_name" style="width: 8%"></paper-datatable-column>
+            <paper-datatable-column header="{{localize('column-certificate-number')}}" property="certificate_number" style="width: 9%"></paper-datatable-column>
+            <paper-datatable-column header="{{localize('column-mobile-number')}}" property="mobile_number" style="width: 10%"></paper-datatable-column>
+            <paper-datatable-column header="{{localize('column-rating')}}" property="rating" sortable style="width: 14%">
+                <template>
+                    <salte-rating value="[[value]]" icon="star" disabled></salte-rating>
+                </template>
+            </paper-datatable-column>
+            <paper-datatable-column header="{{localize('column-car-plate')}}" property="car_plate" style="width: 7%"></paper-datatable-column>
+            <paper-datatable-column header="{{localize('column-car-name')}}" property="car_title" style="width: 11%"></paper-datatable-column>
+            <paper-datatable-column header="{{localize('column-account-number')}}" property="account_number" style="width: 10%"></paper-datatable-column>
+            <paper-datatable-column header="{{localize('column-address')}}" property="address" style="width: 15%"></paper-datatable-column>
+        </paper-datatable>
+    </paper-datatable-card>
+</template>
+<script>
+    let driversPage;
+    class PageDrivers extends BaseClass {
+
+        static get is() {
+            return 'page-drivers'
+        }
+
+        static get properties() {
+            return {
+                data: {
+                    type: Object,
+                    value: {
+                        get: function (sort, page, pageSize) {
+                            return app.getRows(driversPage,'driver',{status:driversPage.selectedStatus},sort,page,pageSize,[],'');
+                        },
+                        set: function (item, property, value) {
+                            return app.setColumnValue('driver', item.id, property, value);
+                        },
+                        length: 0
+                    }
+                },
+                cars: Array,
+                services:Array,
+                enabledService:Array,
+                formatLatLng: {
+                    type: Function,
+                    value: function () {
+                        return function (value) {
+                            let lat = value.lat.toFixed(6);
+                            let lng = value.lng.toFixed(6);
+                            return lat + ' | ' + lng;
+                        };
+                    }
+                },
+                selectedStatus: {
+                    type: String,
+                    value: "",
+                    observer:"_selectedStatusChanged"
+                },
+                item:Object,
+                transactions: Array,
+                operatorId:Number
+            }
+        }
+
+        getStatusIcon (value) {
+            switch(value) {
+                case('enabled'):
+                return 'icons:check';
+                break;
+                case('blocked'):
+                return 'icons:block';
+                break;
+                case('disabled'):
+                return 'icons:query-builder';
+                break;
+                case('offline'):
+                return 'icons:cloud-off';
+                break;
+                case('online'):
+                return 'icons:cloud-off';
+                break;
+                case('in service'):
+                return 'icons:rowing';
+                break;
+            }
+        }
+        onAddItem () {
+            this.$.dlgEditItem.open();
+        }
+        _isEqualTo (title, string) {
+            return title == string;
+        }
+        onEditItem () {
+            this.selectedCar = this.item.car_id;
+            this.getRows(this,'driver_service',{driver_id:this.item.id},{property:'id',direction:'asc'},1,100,[],'').then(function (result){
+                let mapped = result.map(x=>x.service_id);
+                this.set('enabledServices',mapped);
+            }.bind(this));
+            this.$.dlgEditItem.open();
+        }
+        onBlockDriverClicked () {
+            setColumnValue('driver', driversPage.selectedIds[0], 'status', 'blocked').then(function () {
+                driversPage.onConfirmEditClicked();
+                driversPage.$.dlgEditItem.close();
+            });
+        }
+        onUnBlockDriverClicked () {
+            setColumnValue('driver', driversPage.selectedIds[0], 'status', 'enabled').then(function () {
+                driversPage.onConfirmEditClicked();
+                driversPage.$.dlgEditItem.close();
+            });
+        }
+        onEnableDriverClicked () {
+            setColumnValue('driver', driversPage.selectedIds[0], 'status', 'enabled').then(function () {
+                driversPage.onConfirmEditClicked();
+                driversPage.$.dlgEditItem.close();
+            });
+        }
+        onShowReviews () {
+            socket.emit('getReviews', driversPage.selectedIds[0], function (result) {
+                driversPage.reviews = result;
+                driversPage.$.dlgReviews.open();
+            });
+        }
+        onConfirmEditClicked () {
+            this.$.formEdit.submit();
+        }
+        onSubmitDriver (event) {
+            this.saveRow('driver',event.detail).then(function(result){
+                this.$.dataTableCard.retrieveVisibleData();
+                this.deleteRowsCustom('driver_service',{ driver_id : this.item!=null ? this.item.id : "" }).then(function(result){
+                    for(let enabledService of this.enabledServices)
+                        this.saveRow('driver_service',{ driver_id : this.item!=null ? this.item.id : result,service_id:enabledService });
+                }.bind(this));
+            }.bind(this));
+        }
+        onShowTransactions () {
+            this.getRows(this,'driver_transaction',{driver_id:this.item.id},{property:'id',direction:'asc'},1,100,[],'').then(function(result){
+                this.transactions = result;
+                this.operatorId = app.userStorage.user.id;
+                this.$.dlgTransactions.open();
+            }.bind(this));
+        }
+        rowTapped (ev) {
+            if (this.isDebouncerActive('dblclick' + ev.detail.item.id)) {
+                ev.preventDefault();
+                this.$.dataTableCard.deselectAll();
+                this.$.dataTableCard.select(ev.detail.item.id);
+                this.onEditItem();
+                this.cancelDebouncer('dblclick');
+            } else {
+                this.debounce('dblclick' + ev.detail.item.id, function () {
+                }, 300);
+            }
+        }
+        refreshList (ev) {
+            this.$.dataTableCard.retrieveVisibleData();
+        }
+        attached () {
+            super.attached();
+            driversPage = this;
+            this.getRows(this,'car',{},{property:'id',direction:'asc'},1,100,[],'').then(function (result){
+                this.set('cars',result);
+            }.bind(this));
+            this.getRows(this,'service',{},{property:'id',direction:'asc'},1,100,[],'').then(function (result){
+                this.set('services',result);
+            }.bind(this));
+
+        }
+        _selectedStatusChanged () {
+            this.$.dataTableCard.retrieveVisibleData();
+        }
+        onAddTransaction(){
+            this.$.formTransaction.submit();
+        }
+        onSubmitTransaction (event) {
+            this.saveRow('driver_transaction',event.detail).then(function(code) {
+                this.$.formTransaction.reset();
+                this.selectedTransactionType = null;
+                this.$.inputOperatorId.value = app.userStorage.user.id;
+                this.$.inputDriverId.value = this.item.id;
+                this.onShowTransactions();
+            }.bind(this));
+        }
+    }
+    customElements.define(PageDrivers.is,PageDrivers);
+</script>
+</dom-module>

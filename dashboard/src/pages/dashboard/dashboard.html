@@ -1,0 +1,282 @@
+<link rel="import" href="widgets/stat.html">
+<link rel="import" href="widgets/map.html">
+<link rel="import" href="widgets/drivers.html">
+<link rel="import" href="widgets/today.html">
+<link rel="import" href="widgets/onlines.html">
+<link rel="import" href="../../../bower_components/paper-weather/paper-weather.html">
+<link rel="import" href="../../elements/base-class.html">
+<link rel="import" href="../../../bower_components/neon-animation/animations/cascaded-animation.html">
+<link rel="import" href="../../../bower_components/neon-animation/animations/fade-in-animation.html">
+<link rel="import" href="../../../bower_components/neon-animation/neon-animation-runner-behavior.html">
+<link rel="import" href="../../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../../bower_components/chart-elements/chart-bar.html">
+<link rel="import" href="../../../bower_components/chart-elements/chart-line.html">
+<link rel="import" href="../../../bower_components/paper-listbox/paper-listbox.html">
+<link rel="import" href="../../../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../../../bower_components/vaadin-context-menu/vaadin-context-menu.html">
+<link rel="import" href="../../../bower_components/app-layout/app-layout.html">
+
+<dom-module id="page-dashboard">
+	<template>
+		<style include="app-grid-style">
+		:host {
+			--app-grid-columns: 4;
+			--app-grid-item-height: 50%;
+			--app-grid-gutter: 10px;
+			--app-grid-expandible-item-columns: 2;
+		}
+
+		.card-1, .card-2, .card-3 {
+			//padding: 20px;
+		}
+
+		/*.card .chart {
+			flex-grow: 1;
+			margin-top: 70px;
+			margin-bottom: 20px;
+		}*/
+		.card-header{
+			position: absolute;
+			margin: 0;
+			color: white;
+			margin-top: 20px;
+			margin-left: 20px;
+		}
+		.card-subheader{
+			position: absolute;
+			margin: 45px 0 0 20px;
+			font-weight: 200;
+			color: white;
+		}
+		.options-icon{
+			position: absolute;
+			right: 0;
+			margin: 20px 20px 0 0;
+			color: white;
+		}
+
+		.container {
+			justify-content: center;
+			align-content: flex-start;
+		}
+		.card-map{
+			@apply --app-grid-expandible-item;
+			height: 430px;
+		}
+		.card-onlines{
+			@apply --app-grid-expandible-item;
+			width: 100% !important;
+		}
+		.stat{
+			display: flex;
+			margin-bottom: 10px;
+			height: 100px;
+		}
+		paper-weather{
+			max-width: initial;
+		}
+	}
+
+</style>
+<div class="app-grid">
+	<div class="vertical">
+		<widget-stat class="card stat" style="background: linear-gradient(45deg, #0288d1 0%, #26c6da 100%); box-shadow: 0 6px 20px 0 rgba(38, 198, 218, 0.5);" title="Complaints" page="complaints" content="[[stats.complaints_waiting]] Waiting" icon="my-icons:drawer-complaints" on-click="onStatComplaintsClicked"></widget-stat>
+		<widget-stat class="card stat" style="background: linear-gradient(45deg, #FF5252 0%, #f48fb1 100%); box-shadow: 0 6px 20px 0 rgba(244, 143, 177, 0.5);" title="Drivers" page="drivers" content="[[stats.drivers]]" icon="my-icons:drawer-drivers" on-click="onStatComplaintsClicked"></widget-stat>
+		<widget-stat class="card stat" style="background: linear-gradient(45deg, #ff6f00 0%, #ffca28 100%); box-shadow: 0 6px 20px 0 rgba(255, 111, 0, 0.3);" title="Services" page="travels" content="[[stats.travels]]" icon="my-icons:drawer-travels" on-click="onStatComplaintsClicked"></widget-stat>
+		<widget-stat class="card stat" style="background: linear-gradient(45deg, #43A047 0%, #1de9b6 100%); box-shadow: 0 6px 20px 0 rgba(77, 182, 172, 0.5); margin-bottom: 0px;" page="riders" title="Riders" content="[[stats.travels]]" icon="my-icons:drawer-riders" on-click="onStatComplaintsClicked"></widget-stat>
+	</div>
+	<widget-map class="card card-map"></widget-map>
+	<widget-today class="card" style="height:430px;"></widget-today>
+	<widget-drivers class="card"></widget-drivers>
+	<widget-onlines class="card card-onlines"></widget-onlines>
+	<div class="card">
+		<paper-weather list show-extra-data unit="c" location="Santa Barbara, CA"></paper-weather>
+	</div>
+</div>
+</template>
+<script>
+	class PageDashboard extends Polymer.mixinBehaviors([Polymer.NeonAnimationRunnerBehavior], BaseClass) {
+		static get is() {
+			return 'page-dashboard'
+		}
+		static get properties() {
+			return {
+				stats:{
+					type:Object
+				},
+				optionIncome: {
+					type: Object,
+					value: function () {
+						return {
+							layout: {
+								padding: {
+									left: 15,
+									right: 15
+								}
+							},
+							scales: {
+								xAxes: [{
+									display: false
+								}],
+								yAxes: [{
+									display: false
+								}]
+							},
+							legend: {
+								display: false
+							}
+						}
+					}
+				},
+				optionServices: {
+					type: Object,
+					value: function () {
+						return {
+							layout: {
+								padding: {
+									left: 15,
+									right: 15
+								}
+							},
+							scales: {
+								xAxes: [{
+									display: false
+								}],
+								yAxes: [{
+									display: false
+								}]
+							},
+							legend: {
+								display: false
+							},
+						}
+					}
+				},
+				optionUsers: {
+					type: Object,
+					value: function () {
+						return {
+							layout: {
+								padding: {
+									left: 15,
+									right: 15
+								}
+							},
+							scales: {
+								xAxes: [{
+									display: false
+								}],
+								yAxes: [{
+									display: false
+								}]
+							},
+							legend: {
+								display: false
+							}
+						}
+					}
+				},
+				dataIncome: {
+					type: Object,
+					value: function () {
+						return {
+							labels: ["January", "February", "March", "April", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec","January", "February", "March", "April", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec","January", "February", "March", "April", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec", "Sep", "Oct", "Nov", "Dec"],
+							datasets: [
+							{
+								label: "Income",
+								backgroundColor: "white",
+								borderWidth:6,
+								borderColor:"transparent",
+
+								data: [65, 59, 80, 81, 56, 55, 40, 30, 32, 13, 54, 45,65, 59, 80, 81, 56, 55, 40, 30, 32, 13, 54, 45,65, 59, 80, 81, 56, 55, 40, 30, 32, 13, 54, 45, 32, 13, 54, 45]
+							}]
+						}
+					}
+				},
+				dataServices: {
+					type: Object,
+					value: function () {
+						return {
+							labels: ["January", "February", "March", "April", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"],
+							datasets: [
+							{
+								label: "Services",
+								borderColor: "white",
+								backgroundColor: "transparent",
+								borderWidth: 2,
+								pointBorderColor: "#f06292",
+								pointBackgroundColor: "white",
+								pointBorderWidth: 3,
+								pointHoverBorderWidth: 2,
+								pointHoverBackgroundColor: "white",
+								pointHoverBorderColor: "#f06292",
+								pointHoverRadius:5,
+								pointRadius: 4,
+								data: [65, 59, 80, 81, 56, 55, 40, 30, 32, 13, 54, 45]
+							}]
+						}
+					}
+				},
+				dataUsers: {
+					type: Object,
+					value: function () {
+						return {
+							labels: ["January", "February", "March", "April", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"],
+							datasets: [
+							{
+								label: "New Users",
+								borderColor: "white",
+								backgroundColor: "transparent",
+								borderWidth: 2,
+								pointBorderColor: "#ffc107",
+								pointBackgroundColor: "white",
+								pointBorderWidth: 3,
+								pointHoverBorderWidth: 2,
+								pointHoverBackgroundColor: "white",
+								pointHoverBorderColor: "#ffc107",
+								pointHoverRadius:5,
+								pointRadius: 4,
+								data: [65, 59, 80, 81, 56, 55, 40, 30, 32, 13, 54, 45]
+							}]
+						}
+					}
+				},
+				animationConfig: {
+					type: Object,
+					value: function () {
+						return {
+							'entry': [{
+								name: 'cascaded-animation',
+								animation: 'fade-in-animation',
+								transformFrom: '0',
+								transformTo: '1',
+								nodeDelay: 100,
+								timing: {
+									delay: 50
+								}
+							}]
+						}
+					}
+				},
+				stats:Object
+			}
+		}
+
+		attached () {
+			super.attached();
+			socket.emit('getStats',function(result){
+				this.stats = result;
+			}.bind(this));
+			this.async(function () {
+				var nodeList = Polymer.dom(this.root).querySelectorAll('.card');
+				this.animationConfig['entry'][0].nodes = Array.prototype.slice.call(nodeList);
+				this.playAnimation('entry');
+			});
+		}
+		onStatComplaintsClicked(event){
+			mainScreen.set('pageData.page',event.target.attributes["page"].nodeValue);
+		}
+	}
+	customElements.define(PageDashboard.is, PageDashboard);
+</script>
+</dom-module>

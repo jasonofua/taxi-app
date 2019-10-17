@@ -1,0 +1,239 @@
+<link rel="import" href="../../../bower_components/paper-tooltip/paper-tooltip.html">
+<link rel="import" href="../../../bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="../../../bower_components/iron-image/iron-image.html">
+<link rel="import" href="../../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../../bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="../../../bower_components/paper-listbox/paper-listbox.html">
+<link rel="import" href="../../../bower_components/paper-money-input-ench/paper-money-input-ench.html">
+<link rel="import" href="../../../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="../../../bower_components/paper-tabs/paper-tab.html">
+<link rel="import" href="../../../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../../bower_components/bwt-datatable/bwt-datatable-card.html">
+<link rel="import" href="../../../bower_components/bwt-datatable/bwt-datatable.html">
+<link rel="import" href="../../../bower_components/bwt-datatable/bwt-datatable-column.html">
+<link rel="import" href="../../../bower_components/neon-animation/web-animations.html">
+<link rel="import" href="../../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../../elements/dialog-media.html">
+<link rel="import" href="../../elements/base-class.html">
+<dom-module id="page-base-services">
+    <template>
+        <style include="iron-flex iron-flex-alignment">
+        :host {
+            display: block;
+            padding: 10px;
+        }
+        paper-tabs {
+            background-color: var(--primary-color);
+            color: white;
+            --paper-tabs-selection-bar-color:var(--accent-color);
+            padding-left: 0;
+        }
+        .input-service {
+            width: 100%;
+        }
+    </style>
+    <paper-dialog id="dlgCategory" entry-animation="scale-up-animation" exit-animation="fade-out-animation">
+        <h2>Add a new category</h2>
+        <iron-form id="formCategory" on-iron-form-submit="onSubmitCategory">
+          <form>
+            <paper-input type="text" label="[[localize('column-id')]]" name="id" value="[[selectedCategory]]" readonly></paper-input>
+            <paper-input type="text" label="[[localize('column-title')]]" name="title" value="" required></paper-input>
+        </form>
+    </iron-form>
+    <div class="buttons">
+        <paper-button dialog-dismiss>{{localize('dismiss')}}</paper-button>
+        <paper-button autofocus on-click="onSaveCategoryClicked">{{localize('save')}}</paper-button>
+    </div>
+</paper-dialog>
+<paper-dialog id="dlgService" entry-animation="scale-up-animation" exit-animation="fade-out-animation">
+    <h2 id="headerServiceDialog">Edit Service</h2>
+    <iron-form id="formService" on-iron-form-submit="onSubmitService">
+      <form class="layout vertical">
+        <div class="layout horizontal">
+            <paper-input type="text" class="input-service" label="[[localize('column-id')]]" name="id" value="[[selectedService.id]]" readonly></paper-input>
+            <paper-input type="text" class="input-service" label="[[localize('column-title')]]" name="title" value="[[selectedService.title]]" required></paper-input>
+        </div>
+        <div class="layout horizontal">
+            <paper-money-input-ench type="number" label="[[localize('column-base-fare')]]" name="base_fare" value="[[selectedService.base_fare]]"></paper-money-input-ench>
+            <paper-money-input-ench type="number" label="[[localize('column-per-hundred-meters')]]" name="per_hundred_meters" value="[[selectedService.per_hundred_meters]]"></paper-money-input-ench>
+        </div>
+        <div class="layout horizontal">
+            <paper-money-input-ench type="number" label="[[localize('column-per-minute-wait')]]" name="per_minute_wait" value="[[selectedService.per_minute_wait]]"></paper-money-input-ench>
+            <paper-money-input-ench type="number" label="[[localize('column-per-minute-passed')]]" name="per_minute_passed" value="[[selectedService.per_minute_passed]]"></paper-money-input-ench>
+        </div>
+        <div class="layout horizontal">
+            <paper-input type="time" class="input-service" label="[[localize('column-available-time-from')]]" name="available_time_from" value="[[selectedService.available_time_from]]" required></paper-input>
+            <paper-input type="time" class="input-service" label="[[localize('column-available-time-to')]]" name="available_time_to" value="[[selectedService.available_time_to]]" required></paper-input>
+        </div>
+        <div class="layout">
+            <iron-image id="imagePreview" style="width:100%; height:200px;" placeholder="selectedService.media.base64" sizing="cover" preload src="[[getImageAddressFromMedia(selectedService.media)]]"></iron-image>
+            <paper-button style="width: 100%; color:var(--primary-color);" on-click="onSelectImageClicked">Select Media...</paper-button>
+            <dialog-media id="dlgMedia" selected-id="{{selectedMedia}}" selected-category="service" force-category on-selected="onSelectedMedia"></dialog-media>
+            <input type="hidden" name="media_id" value="{{selectedMedia}}">
+        </div>
+        <!--<paper-dropdown-menu label="Service Category" required>
+            <paper-listbox slot="dropdown-content" attr-for-selected="name" selected="{{selectedCategory}}">
+                <template is="dom-repeat" items="{{categories}}">
+                    <paper-item name="[[item.id]]">[[item.title]]</paper-item>
+                </template>
+            </paper-listbox>
+        </paper-dropdown-menu>-->
+        <input type="hidden" name="service_category_id" value="[[selectedCategory]]">
+
+    </form>
+</iron-form>
+<div class="buttons">
+    <paper-button dialog-dismiss>{{localize('dismiss')}}</paper-button>
+    <paper-button autofocus on-click="onSaveServiceClicked">{{localize('save')}}</paper-button>
+</div>
+</paper-dialog>
+<paper-tabs scrollable attr-for-selected="name" selected="{{selectedCategory}}">
+    <template is="dom-repeat" items="{{categories}}">
+        <paper-tab name="[[item.id]]">[[item.title]]</paper-tab>
+    </template>
+    <paper-button on-click="onAddCategoryClicked">+ Add new category</paper-button>
+    <paper-button on-click="onEditCategoryClicked">Edit category</paper-button>
+    <paper-button on-click="onDeleteCategoryClicked">Delete category</paper-button>
+</paper-tabs>
+<paper-datatable-card id="dataTableCard" header="{{localize('services')}}" data-source="{{data}}" page-size="10" id-property="id" selected-ids="{{selectedIds}}">
+    <div slot="toolbar-main">
+        <paper-input id="searchInput" value="{{searchTerm}}" label="{{localize('table-search')}}" on-input="refreshTable" style="display:inline-block">
+            <div slot="prefix">
+                <iron-icon icon="search"></iron-icon>
+            </div>
+        </paper-input>
+        <paper-icon-button icon="cached" on-tap="refreshTable"></paper-icon-button>
+        <paper-icon-button icon="add" on-click="onAddServiceClicked"></paper-icon-button>
+    </div>
+    <div slot="toolbar-select">
+        <paper-icon-button icon="delete" on-click="onDeleteServiceClicked"></paper-icon-button>
+    </div>
+    <div slot="toolbar-select-single">
+        <paper-icon-button icon="my-icons:edit" on-tap="onEditItemClicked"></paper-icon-button>
+    </div>
+    <paper-datatable id="datatable" selectable selected-item="{{selectedService}}">
+        <div no-results>
+            {{localize('table-loading')}}
+        </div>
+        <paper-datatable-column header="{{localize('column-id')}}" property="id" type="String" sorted></paper-datatable-column>
+        <paper-datatable-column header="[[localize('column-image')]]" property="media">
+            <template>
+                <paper-avatar src="[[getImageAddressFromMedia(value)]]"></paper-avatar>
+            </template>
+        </paper-datatable-column>
+        <paper-datatable-column header="{{localize('column-title')}}" property="title" type="String"></paper-datatable-column>
+        <paper-datatable-column header="{{localize('column-base-fare')}}" property="base_fare" type="Number"></paper-datatable-column>
+        <paper-datatable-column header="{{localize('column-per-hundred-meters')}}" property="per_hundred_meters" type="String"></paper-datatable-column>
+        <paper-datatable-column header="{{localize('column-per-minute-wait')}}" property="per_minute_wait" type="String"></paper-datatable-column>
+        <paper-datatable-column header="{{localize('column-per-minute-passed')}}" property="per_minute_passed" type="String"></paper-datatable-column>
+        <paper-datatable-column header="{{localize('column-available-time-from')}}" property="available_time_from" type="String"></paper-datatable-column>
+        <paper-datatable-column header="{{localize('column-available-time-to')}}" property="available_time_to" type="String"></paper-datatable-column>
+    </paper-datatable>
+</paper-datatable-card>
+</template>
+<script>
+    let baseServicesPage;
+    class PageBaseServices extends BaseClass {
+        static get is() {
+            return 'page-base-services';
+        }
+
+        static get properties() {
+            return {
+                data: {
+                    type: Object,
+                    value: {
+                        get: function (sort, page, pageSize) {
+                            return app.getRows(baseServicesPage,'service',{service_category_id:baseServicesPage.selectedCategory},sort,page,pageSize,['title'],baseServicesPage.searchTerm);
+                        },
+                        set: function (item, property, value) {
+                            return null;
+                        },
+                        length: 0
+                    },
+                },
+                searchTerm : String,
+                categories: Array,
+                selectedId:Number,
+                selectedCategory: {
+                    type:Number,
+                    observer:'onCategoryCanged'
+                },
+                selectedService:Object,
+                selectedMedia:Number
+            }
+        }
+
+        attached () {
+            super.attached();
+            baseServicesPage = this;
+            this.reloadCategories();
+        }
+        onCategoryCanged(){
+            this.$.dataTableCard.retrieveVisibleData();
+        }
+        reloadCategories(){
+            let result = baseServicesPage.getRows(baseServicesPage,'service_category',{},{property:'id',direction:'asc'},1,100,[],'').then(function (result){
+                baseServicesPage.categories =result;
+                baseServicesPage.selectedCategory = result[0].id;
+            });
+        }
+        onDeleteCategoryClicked(){
+            this.deleteRows('service_category',[this.selectedCategory]).then(function(rowsAffected){
+                baseServicesPage.reloadCategories();
+            }.bind(this));
+        }
+        onDeleteServiceClicked(){
+            this.deleteRows('service',this.selectedIds).then(function(rowsAffected){
+                this.$.dataTableCard.retrieveVisibleData();
+            }.bind(this));
+        }
+        onAddServiceClicked(){
+            this.set('selectedService.*',null);
+            this.$.imagePreview.src="";
+            this.$.dlgService.open();
+        }
+        onAddCategoryClicked(){
+            this.$.formCategory.reset();
+            this.$.dlgCategory.open();
+        }
+        onSaveCategoryClicked(){
+            this.$.formCategory.submit();
+        }
+        onSubmitCategory(ev){
+            baseServicesPage.saveRow('service_category',event.detail).then(function(result){
+                baseServicesPage.reloadCategories();
+                baseServicesPage.$.dlgCategory.close();
+            });
+        }
+        onSaveServiceClicked(){
+            this.$.formService.submit();
+        }
+        onSubmitService(){
+            baseServicesPage.saveRow('service',event.detail).then(function(result){
+                baseServicesPage.$.dlgService.close();
+                baseServicesPage.$.dataTableCard.retrieveVisibleData();
+
+            });
+        }
+        onEditCategoryClicked(){
+            this.$.dlgCategory.open();
+        }
+        onEditItemClicked(){
+            this.$.dlgService.open();
+            this.selectedMedia = this.selectedService.media_id;
+            this.setImageFromMedia(this.$.imagePreview,this.selectedService.media_id);
+        }
+        onSelectImageClicked(){
+            this.$.dlgMedia.show();
+            this.$.dlgMedia.selectedId = this.selectedService.media_id;
+        }
+        onSelectedMedia(event){
+            this.set('selectedMedia',event.detail.selectedId);
+            this.setImageFromMedia(this.$.imagePreview,event.detail.selectedId);
+        }
+    }
+    customElements.define(PageBaseServices.is, PageBaseServices);
+</script>
+</dom-module>

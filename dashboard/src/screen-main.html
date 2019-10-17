@@ -1,0 +1,184 @@
+<link rel="import" href="elements/base-class.html">
+<link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html">
+<link rel="import" href="../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
+<link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="../bower_components/app-layout/app-header-layout/app-header-layout.html">
+<link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
+<link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="../bower_components/app-route/app-location.html">
+<link rel="import" href="../bower_components/app-route/app-route.html">
+<link rel="import" href="../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../bower_components/iron-selector/iron-selector.html">
+<link rel="import" href="../bower_components/iron-localstorage/iron-localstorage.html">
+<link rel="import" href="../bower_components/paper-listbox/paper-listbox.html">
+<link rel="import" href="../bower_components/paper-item/paper-icon-item.html">
+<link rel="import" href="../bower_components/paper-badge/paper-badge.html">
+<link rel="import" href="../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../bower_components/paper-avatar/paper-avatar.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../bower_components/neon-animation/neon-animated-pages.html">
+<link rel="import" href="../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../bower_components/neon-animation/animations/fade-out-animation.html">
+<link rel="import" href="../bower_components/neon-animation/animations/scale-up-animation.html">
+<link rel="import" href="../bower_components/app-menu/app-menu.html">
+<link rel="import" href="../bower_components/app-menu/app-submenu.html">
+<link rel="import" href="../bower_components/app-menu/app-menu-icon-item.html">
+<link rel="import" href="elements/my-icons.html">
+<link rel="import" href="elements/dialog-media.html">
+
+
+<dom-module id="screen-main">
+	<template>
+		<style>
+		:host {
+			--app-primary-color: #4285f4;
+			--app-secondary-color: black;
+			display: block;
+		}
+		paper-avatar {
+			--paper-avatar-width: 55px;
+			box-shadow: 0px 0px 0px 2px #ffffff7a;
+		}
+		.header{
+			height: 100px;
+			background: url(../images/header.jpg);
+			box-shadow: 0 6px 6px rgba(0,0,0,0.23);
+
+		}
+		.header-subtitle{
+			font-size:13px;
+			font-weight: 100;
+			margin-left: 8px;
+			color:white;
+		}
+		.header-title{
+			margin-left: 8px;
+			color: white;
+		}
+		app-submenu app-menu {
+                margin-left: 40px;
+            }
+	</style>
+	<iron-localstorage name="user" value="{{localStorage}}"></iron-localstorage>
+	<app-location route="{{route}}"></app-location>
+	<app-route route="{{route}}" pattern="/:page" data="{{pageData}}" tail="{{subRoute}}"></app-route>
+	<app-drawer-layout fullbleed>
+		<app-drawer slot="drawer">
+			<app-toolbar class="header">
+				<paper-avatar label="[[localStorage.user.last_name]]" src="[[getAbsoluteAddress(localStorage.user.image)]]"></paper-avatar>
+				<div class="middle">
+					<div class="header-title">[[localStorage.user.first_name]] [[localStorage.user.last_name]]</div>
+					<div class="header-subtitle">[[localStorage.user.user_name]]</div>
+				</div>
+			</app-toolbar>
+			<app-menu selected="{{pageData.page}}" attr-for-selected="name" role="navigation">
+				<a name="dashboard" class="app-menu-item">
+					<app-menu-icon-item icon="my-icons:drawer-dashboard">[[localize('dashboard')]]</app-menu-icon-item>
+				</a>
+				<a name="call-requests" class="app-menu-item">
+					<app-menu-icon-item icon="my-icons:drawer-call-requests">[[localize('call-requests')]]</app-menu-icon-item>
+				</a>
+				<a name="complaints" class="app-menu-item">
+					<app-menu-icon-item icon="my-icons:drawer-complaints">[[localize('complaints')]]</app-menu-icon-item>
+				</a>
+				<a name="payment-requests" class="app-menu-item">
+					<app-menu-icon-item icon="my-icons:drawer-payment-requests">[[localize('payment-requests')]]</app-menu-icon-item>
+				</a>
+				<a name="drivers" class="app-menu-item">
+					<app-menu-icon-item icon="my-icons:drawer-drivers">[[localize('drivers')]]</app-menu-icon-item>
+				</a>
+				<a name="riders" class="app-menu-item">
+					<app-menu-icon-item icon="my-icons:drawer-riders">Riders</app-menu-icon-item>
+				</a>
+				<a name="travels" class="app-menu-item">
+					<app-menu-icon-item icon="my-icons:drawer-travels">[[localize('travels')]]</app-menu-icon-item>
+				</a>
+				<a name="library" class="app-menu-item">
+					<app-menu-icon-item icon="my-icons:drawer-library">Library</app-menu-icon-item>
+				</a>
+				<app-submenu name="basic-types">
+					<div class="app-menu-item" slot="submenu-trigger">
+						<app-menu-icon-item icon="my-icons:drawer-base-definations">Base Definations</app-menu-icon-item>
+						<iron-icon icon="my-icons:expand-more" class="expand-icon"></iron-icon>
+					</div>
+					<app-menu selected="{{pageData.page}}" attr-for-selected="name" slot="submenu-content">
+						<a name="base-services" class="app-menu-item">Services</a>
+						<a name="base-cars" class="app-menu-item">Cars</a>
+						<a name="base-complaint-types" class="app-menu-item">Complaint types</a>
+					</app-menu>
+				</app-submenu>
+				<app-submenu name="settings">
+					<div class="app-menu-item" slot="submenu-trigger">
+						<app-menu-icon-item icon="my-icons:drawer-settings">[[localize('settings')]]</app-menu-icon-item>
+						<iron-icon icon="my-icons:expand-more" class="expand-icon"></iron-icon>
+					</div>
+					<app-menu selected="{{pageData.page}}" attr-for-selected="name" slot="submenu-content">
+						<a name="settings-general" class="app-menu-item">General Settings</a>
+						<a name="settings-users" class="app-menu-item">User Settings</a>
+					</app-menu>
+				</app-submenu>
+				
+				<a name="logout" class="app-menu-item">
+					<app-menu-icon-item icon="my-icons:drawer-logout" on-click="onLogoutClicked">Log out</app-menu-icon-item>
+				</a>
+			</app-menu>
+		</app-drawer>
+		<div>
+			<iron-pages selected="{{pageData.page}}" attr-for-selected="name" fallback-selection="dashboard" has-scrolling-region slot="main" role="main" class="layout vertical">
+				<page-dashboard name="dashboard"></page-dashboard>
+				<page-call-requests name="call-requests"></page-call-requests>
+				<page-complaints name="complaints"></page-complaints>
+				<page-payment-requests name="payment-requests"></page-payment-requests>
+				<page-drivers name="drivers"></page-drivers>
+				<page-riders name="riders"></page-riders>
+				<page-travels name="travels"></page-travels>
+				<page-library name="library"></page-library>
+				<page-base-services name="base-services"></page-base-services>
+				<page-base-cars name="base-cars"></page-base-cars>
+				<page-base-complaint-types name="base-complaint-types"></page-base-complaint-types>
+				<page-settings-general name="settings-general"></page-settings-general>
+				<page-settings-users name="settings-users"></page-settings-users>
+				<my-view404 name="view404"></my-view404>
+			</iron-pages>
+		</div>
+	</app-drawer-layout>
+</template>
+<script>
+	let mainScreen;
+	class ScreenMain extends BaseClass {
+		static get is() {
+			return 'screen-main'
+		}
+		static get properties() {
+			return {
+				loginResponse: {
+					type: Object,
+					observer: 'tokenReceived'
+				},
+				pageData:Object,
+			}
+		}
+		static get observers() {
+			return [
+			'_routePageChanged(pageData.page)'
+			]
+		}
+		attached () {
+			super.attached();
+			mainScreen = this;
+		}
+		_routePageChanged (page) {
+			page = page || 'dashboard';
+			var resolvedPageUrl = this.resolveUrl('pages/' + page + '/'+ page +'.html');
+			this.importHref(resolvedPageUrl, null, null, true);
+		}
+		onLogoutClicked (event) {
+			this.set('localStorage.token',null);
+			var resolvedPageUrl = this.resolveUrl('screen-login.html');
+			this.importHref(resolvedPageUrl, null, null, true);
+			app.selectedScreen = "login";
+		}
+	}
+	customElements.define(ScreenMain.is, ScreenMain);
+</script>
+</dom-module>

@@ -1,0 +1,59 @@
+<link rel="import" href="../../../../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../../../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<dom-module id="widget-stat">
+	<template>
+		<style include="iron-flex iron-flex-alignment">
+		:host {
+			position: relative;
+		}
+		/**/
+		.icon{
+			border-radius: 50%;
+			height: 35px;
+			width: 35px;
+			padding: 20px;
+			margin: 10px;
+			background-color: var(--my-icon-color);
+			color: white;
+		}
+		h3,p{
+			margin: 0;
+		}
+		.details{
+
+		}
+		.base{
+			align-items: center;
+		}
+
+	</style>
+	<div class="layout horizontal base">
+		<iron-icon class="icon" icon="{{icon}}"></iron-icon>
+		<div class="details">
+			<h3>[[number]]</h3>
+			<p>[[title]]</p>
+		</div>
+	</div>
+</template>
+<script>
+	class WidgetStat extends BaseClass {
+		static get is() {
+			return 'widget-stat'
+		}
+		static get properties(){
+			return {
+				title:{
+					type: String
+				},
+				number:{
+					type:Number
+				},
+				icon:{
+					type:String
+				}
+			}
+		}
+	}
+	customElements.define(WidgetStat.is, WidgetStat);
+</script>
+</dom-module>

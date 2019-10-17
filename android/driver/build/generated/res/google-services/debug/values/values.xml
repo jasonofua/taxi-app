@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">565806856911-d99do3u0f0ra2e6sf7652tbptcbv9bht.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://attendancesystem-af953.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">565806856911</string>
+    <string name="google_api_key" translatable="false">AIzaSyClyNSd8t_EspqKMniLvuyFjHyv6xaJUS8</string>
+    <string name="google_app_id" translatable="false">1:565806856911:android:05740815cc6abbb9fe55ba</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyClyNSd8t_EspqKMniLvuyFjHyv6xaJUS8</string>
+    <string name="google_storage_bucket" translatable="false">attendancesystem-af953.appspot.com</string>
+    <string name="project_id" translatable="false">attendancesystem-af953</string>
+</resources>

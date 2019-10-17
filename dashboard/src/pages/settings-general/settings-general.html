@@ -1,0 +1,169 @@
+<link rel="import" href="../../../bower_components/iron-localstorage/iron-localstorage.html">
+<link rel="import" href="../../../bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="../../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../../bower_components/neon-animation/web-animations.html">
+<link rel="import" href="../../../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="../../../bower_components/paper-listbox/paper-listbox.html">
+<link rel="import" href="../../../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../../bower_components/vaadin-upload/vaadin-upload.html">
+<link rel="import" href="../../../bower_components/paper-toast/paper-toast.html">
+<link rel="import" href="../../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../../elements/base-class.html">
+<script type="text/javascript" src="../../../data/requestAdapter.js"></script>
+<dom-module id="page-settings-general">
+	<template>
+		<style include="shared-styles">
+		:host {
+			display: block;
+			padding: 10px;
+		}
+		.setting-card,.config-card{
+			width: 100%;
+			margin-top: 10px;
+		}
+		paper-button.change-password {
+			background: var(--accent-color);
+			color: white;
+			margin-top: 16px;
+			margin-bottom: 8px;
+		}
+	</style>
+	<iron-localstorage name="language" value="{{langSetting}}"></iron-localstorage>
+	<paper-dialog id="dlgPassword" style="min-width:500px; min-height:300px;" entry-animation="scale-up-animation" exit-animation="fade-out-animation">
+		<h2>{{localize('change-password')}}</h2>
+		<paper-input id="inputOldPass" label="{{localize('old-password')}}" type="password"></paper-input>
+		<paper-input id="inputNewPass" label="{{localize('new-password')}}" type="password"></paper-input>
+		<paper-input id="inputConfirmPass" label="{{localize('confirm-password')}}" type="password"></paper-input>
+		<div class="buttons">
+			<paper-button dialog-dismiss>{{localize('dismiss')}}</paper-button>
+			<paper-button autofocus on-click="onChangePasswordConfirmed">{{localize('confirm')}}</paper-button>
+		</div>
+	</paper-dialog>
+	<paper-card class="setting-card" heading="{{localize('general-settings')}}">
+		<div class="card-content">
+			<paper-dropdown-menu label="Language" style="width:100%" horizontal-align="left">
+				<paper-listbox slot="dropdown-content" attr-for-selected="language-name" selected="{{langSetting}}">
+					<paper-item language-name="en">English</paper-item>
+					<paper-item language-name="ar">العَرَبِيَّة</paper-item>
+					<paper-item language-name="fr">Français</paper-item>
+				</paper-listbox>
+			</paper-dropdown-menu>
+		</div>
+	</paper-card>
+	<paper-card class="setting-card" heading="{{localize('profile-settings')}}">
+		<div class="card-content">
+			<div class="field-title">{{localize('column-profile-image')}}</div>
+			<vaadin-upload id="uploadProfile" on-upload-before="beforeUpload" accept="image/jpeg" max-files="1" max-file-size="5000000"></vaadin-upload>
+			<paper-button class="change-password" raised on-click="onChangePasswordClicked">{{localize('change-password')}}</paper-button>
+		</div>
+	</paper-card>
+	<paper-card class="config-card" heading="Configuration variables">
+		<div class="card-content layout vertical">
+			<paper-input label="Max drivers to receive service request" value="[[config.max_drivers]]" readonly></paper-input>
+			<paper-input label="Max distance from rider to receive request (in meters)" value="[[config.max_distance]]" readonly></paper-input>
+			<paper-input label="Minimum balance for driver to request payment" value="[[config.minimum_payment_request]]" readonly></paper-input>
+			<paper-input label="Commission of each service" value="[[config.percent_company]]" readonly></paper-input>
+			<paper-input label="Cash payment reduces commision from driver credit?" value="[[config.cash_payment_commission]]" readonly></paper-input>
+			<paper-input label="Minimum version of iOS version (rider)" value="[[config.rider_min_ver_ios]]" readonly></paper-input>
+			<paper-input label="Minimum version of iOS version (driver)" value="[[config.driver_min_ver_ios]]" readonly></paper-input>
+			<paper-input label="Minimum version of android version (rider)" value="[[config.rider_min_ver_android]]" readonly></paper-input>
+			<paper-input label="Minimum version of android version (driver)" value="[[config.driver_min_ver_android]]" readonly></paper-input>
+			<h5>This values are constants saved in .env file. to change any of these you have to make the change on the file directly. The process is a pre-measurment to prevent mischanging these values as they are mostly constant for long periods of app's life.</h5>
+		</div>
+	</paper-card>
+	<paper-toast id="toastSave" duration="3000" text="{{localize('prompt-saved')}}" horizontal-align="right">
+		<paper-button onclick="generalSettingsPage.$.toastSave.toggle()">{{localize('dismiss')}}</paper-button>
+	</paper-toast>
+</template>
+<script>
+	let generalSettingsPage;
+	class PageGeneralSettings extends BaseClass {
+		static get is(){
+			return 'page-settings-general';
+		}
+
+		static get properties(){
+			return {
+				themeSetting:{
+					type:String,
+					observer:'themeChanged'
+				},
+				langSetting:{
+					type:String,
+					observer:'languageChanged'
+				},
+				config:Object
+			}
+		}
+
+		attached(){
+			super.attached();
+			generalSettingsPage = this;
+			socket.emit('getConfigs',function(result){
+				this.config = result;
+			}.bind(this));
+		}
+		themeChanged(value){
+			if(value == null)
+				return;
+			var resolvedPageUrl = this.resolveUrl('../../../themes/' + value + '.html');
+			this.importHref(resolvedPageUrl, null, null, true);
+		}
+		languageChanged(value){
+			app.set('language',value);
+		}
+		onChangePasswordClicked(){
+			this.$.dlgPassword.open();
+		}
+		onChangePasswordConfirmed(event){
+			if(this.$.inputNewPass.value != this.$.inputConfirmPass.value){
+				this.$.inputConfirmPass.invalid = true;
+				this.$.inputConfirmPass.errorMessage = app.localize('error-pass-dont-match');
+				return;
+			}
+			else
+				this.$.inputConfirmPass.invalid = false;
+			socket.emit('updateOperatorPassword',this.$.inputOldPass.value,this.$.inputNewPass.value,function(result){
+				if(result == 200){
+					generalSettingsPage.$.inputOldPass.value = '';
+					generalSettingsPage.$.inputNewPass.value = '';
+					generalSettingsPage.$.inputConfirmPass.value = '';
+					generalSettingsPage.$.dlgPassword.close();
+					generalSettingsPage.$.toastSave.toggle();
+					generalSettingsPage.$.inputConfirmPass.invalid = false;
+					generalSettingsPage.$.inputOldPass.invalid = false;
+
+				}
+				else{
+					generalSettingsPage.$.inputOldPass.invalid = true;
+					generalSettingsPage.$.inputOldPass.errorMessage = app.localize('error-pass-not-correct');
+				}
+			});
+		}
+		beforeUpload(event) {
+			event.preventDefault();
+			let file = event.detail.file;
+			let fileIndex = this.$.uploadProfile.files.indexOf(file);
+			var reader = new FileReader();
+			reader.onload = function(e) {
+				let arrayBuffer = reader.result;
+				socket.emit('updateOperatorProfile',arrayBuffer,function(resultCode,filePath) {
+					if(resultCode == 200) {
+						generalSettingsPage.$.uploadProfile.set(['files', fileIndex, 'progress'], 100);
+						generalSettingsPage.$.uploadProfile.set(['files', fileIndex, 'complete'], true);
+						generalSettingsPage.fire('file-received', file);
+						generalSettingsPage.$.toastSave.toggle();
+						app.set('userStorage.image',filePath);
+					}
+					else
+						generalSettingsPage.$.uploadProfile.set(['files', fileIndex, 'error'], resultCode);
+				});
+			}
+			reader.readAsArrayBuffer(file);
+		}
+	}
+	customElements.define(PageGeneralSettings.is,PageGeneralSettings);
+</script>
+</dom-module>

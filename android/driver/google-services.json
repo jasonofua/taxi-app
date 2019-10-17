@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "565806856911",
+    "firebase_url": "https://attendancesystem-af953.firebaseio.com",
+    "project_id": "attendancesystem-af953",
+    "storage_bucket": "attendancesystem-af953.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:565806856911:android:05740815cc6abbb9fe55ba",
+        "android_client_info": {
+          "package_name": "com.innomalist.taxi.driver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "565806856911-76l38no9k5t927gov7hednbrmk6scbei.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.innomalist.taxi.driver",
+            "certificate_hash": "966ecd0d5fee29384fb48aab821d6b3779752f21"
+          }
+        },
+        {
+          "client_id": "565806856911-d99do3u0f0ra2e6sf7652tbptcbv9bht.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClyNSd8t_EspqKMniLvuyFjHyv6xaJUS8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "565806856911-d99do3u0f0ra2e6sf7652tbptcbv9bht.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

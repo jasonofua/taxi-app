@@ -1,0 +1,231 @@
+<link rel="import" href="../../../bower_components/paper-tooltip/paper-tooltip.html">
+<link rel="import" href="../../../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../../../bower_components/paper-toolbar/paper-toolbar.html">
+<link rel="import" href="../../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../../bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="../../../bower_components/paper-dialog-scrollable/paper-dialog-scrollable.html">
+<link rel="import" href="../../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../../bower_components/bwt-datatable/bwt-datatable-card.html">
+<link rel="import" href="../../../bower_components/bwt-datatable/bwt-datatable.html">
+<link rel="import" href="../../../bower_components/bwt-datatable/bwt-datatable-column.html">
+<link rel="import" href="../../elements/base-class.html">
+<dom-module id="page-settings-users">
+    <template>
+        <style include="iron-flex iron-flex-alignment">
+        :host {
+            display: block;
+        }
+
+        #dataTableCard {
+            padding: 10px;
+        }
+
+        .slider-subtitle {
+            margin: -5px 0 5px;
+        }
+
+        .slider-title {
+            margin-top: 10px;
+        }
+        #formItem{
+            padding-bottom: 16px;
+        }
+
+    </style>
+
+    <paper-dialog id="dlgEditItem" style="max-width:500px;min-height:300px;" entry-animation="scale-up-animation" exit-animation="fade-out-animation">
+        <h2 class="dialog-header">{{localize('edit-dialog-item-number')}}<span>{{item.id}}</span></h2>
+        <paper-dialog-scrollable>
+            <iron-form id="formItem">
+                <form>
+                    <div class="layout vertical">
+                        <div class="horizontal layout">
+                            <paper-input value="[[item.first_name]]" label="{{localize('column-first-name')}}" class="flex"></paper-input>
+                            <paper-input value="[[item.last_name]]" label="{{localize('column-last-name')}}" class="flex"></paper-input>
+                        </div>
+                        <div class="horizontal layout">
+                            <paper-input value="[[item.mobile_number]]" label="{{localize('column-mobile-number')}}" class="flex"></paper-input>
+                            <paper-input value="[[item.phone_number]]" label="{{localize('column-phone-number')}}" class="flex"></paper-input>
+                        </div>
+                        <div class="horizontal layout">
+                            <paper-input value="[[item.user_name]]" label="{{localize('column-user-name')}}" class="flex"></paper-input>
+                            <paper-input value="[[item.password]]" label="{{localize('column-password')}}" class="flex"></paper-input>
+                        </div>
+                        <div class="horizontal layout">
+                            <paper-input value="[[item.address]]" label="{{localize('column-address')}}" class="flex"></paper-input>
+                        </div>
+                        <p>Permissions Base definations</p>
+                        <div class="horizontal layout">
+                            <paper-checkbox name="permission_base_definations" value="view" class="flex" checked>{{localize('permission-view')}}</paper-checkbox>
+                            <paper-checkbox name="permission_base_definations" value="update" class="flex" required>{{localize('permission-update')}}</paper-checkbox>
+                            <paper-checkbox name="permission_base_definations" value="delete" class="flex" checked>{{localize('permission-delete')}}</paper-checkbox>
+                        </div>
+                        <p>Permissions Users</p>
+                        <div class="horizontal layout">
+                            <paper-checkbox name="permission_users" value="view" class="flex" checked>{{localize('permission-view')}}</paper-checkbox>
+                            <paper-checkbox name="permission_users" value="update" class="flex" required>{{localize('permission-update')}}</paper-checkbox>
+                            <paper-checkbox name="permission_users" value="delete" class="flex" checked>{{localize('permission-delete')}}</paper-checkbox>
+                        </div>
+                        <p>Permissions Drivers</p>
+                        <div class="horizontal layout">
+                            <paper-checkbox name="permission_drivers" value="view" class="flex" checked>{{localize('permission-view')}}</paper-checkbox>
+                            <paper-checkbox name="permission_drivers" value="update" class="flex" required>{{localize('permission-update')}}</paper-checkbox>
+                            <paper-checkbox name="permission_drivers" value="delete" class="flex" checked>{{localize('permission-delete')}}</paper-checkbox>
+                        </div>
+                        <p>Permissions Riders</p>
+                        <div class="horizontal layout">
+                            <paper-checkbox name="permission_riders" value="view" class="flex" checked>{{localize('permission-view')}}</paper-checkbox>
+                            <paper-checkbox name="permission_riders" value="update" class="flex" required>{{localize('permission-update')}}</paper-checkbox>
+                            <paper-checkbox name="permission_riders" value="delete" class="flex" checked>{{localize('permission-delete')}}</paper-checkbox>
+                        </div>
+                        <p>Permissions Travels</p>
+                        <div class="horizontal layout">
+                            <paper-checkbox name="permission_travels" value="view" class="flex" checked>{{localize('permission-view')}}</paper-checkbox>
+                            <paper-checkbox name="permission_travels" value="update" class="flex" required>{{localize('permission-update')}}</paper-checkbox>
+                            <paper-checkbox name="permission_travels" value="delete" class="flex" checked>{{localize('permission-delete')}}</paper-checkbox>
+                        </div>
+                        <p>Permissions Complaints</p>
+                        <div class="horizontal layout">
+                            <paper-checkbox name="permission_complaints" value="view" class="flex" checked>{{localize('permission-view')}}</paper-checkbox>
+                            <paper-checkbox name="permission_complaints" value="update" class="flex" required>{{localize('permission-update')}}</paper-checkbox>
+                            <paper-checkbox name="permission_complaints" value="delete" class="flex" checked>{{localize('permission-delete')}}</paper-checkbox>
+                        </div>
+                        <p>Permissions Call Requests</p>
+                        <div class="horizontal layout">
+                            <paper-checkbox name="permission_call_requests" value="view" class="flex" checked>{{localize('permission-view')}}</paper-checkbox>
+                            <paper-checkbox name="permission_call_requests" value="update" class="flex" required>{{localize('permission-update')}}</paper-checkbox>
+                            <paper-checkbox name="permission_call_requests" value="delete" class="flex" checked>{{localize('permission-delete')}}</paper-checkbox>
+                        </div>
+                        <p>Permissions Payment Requests</p>
+                        <div class="horizontal layout">
+                            <paper-checkbox name="permission_payment_requests" value="view" class="flex" checked>{{localize('permission-view')}}</paper-checkbox>
+                            <paper-checkbox name="permission_payment_requests" value="update" class="flex" required>{{localize('permission-update')}}</paper-checkbox>
+                            <paper-checkbox name="permission_payment_requests" value="delete" class="flex" checked>{{localize('permission-delete')}}</paper-checkbox>
+                        </div>
+                        <p>Permissions Library</p>
+                        <div class="horizontal layout">
+                            <paper-checkbox name="permission_library" value="view" class="flex" checked>{{localize('permission-view')}}</paper-checkbox>
+                            <paper-checkbox name="permission_library" value="update" class="flex" required>{{localize('permission-update')}}</paper-checkbox>
+                            <paper-checkbox name="permission_library" value="delete" class="flex" checked>{{localize('permission-delete')}}</paper-checkbox>
+                        </div>
+                    </div>
+                </form>
+            </iron-form>
+        </paper-dialog-scrollable>
+        <div class="buttons">
+            <paper-button dialog-dismiss>{{localize('dismiss')}}</paper-button>
+            <paper-button dialog-confirm autofocus on-click="refreshTable">{{localize('confirm')}}</paper-button>
+        </div>
+    </paper-dialog>
+    <paper-datatable-card id="dataTableCard" header="{{localize('users')}}" data-source="{{data}}" page-size="10"
+    id-property="id"
+    selected-ids="{{selectedIds}}">
+    <div slot="toolbar-main">
+        <paper-icon-button id="btnAddItem" icon="add" on-click="onAddItem">+</paper-icon-button>
+        <paper-tooltip for="btnAddItem">{{localize('add-item')}}</paper-tooltip>
+        <paper-icon-button icon="cached" on-tap="refreshTable"></paper-icon-button>
+    </div>
+    <div slot="toolbar-select">
+        <paper-icon-button id="btnDeleteItems" icon="delete" on-tap="onDeleteItems"></paper-icon-button>
+        <paper-tooltip for="btnDeleteItems">{{localize('delete-items')}}</paper-tooltip>
+    </div>
+    <div slot="toolbar-select-single">
+        <paper-icon-button id="btnEdit" icon="my-icons:edit" on-tap="onEditItem"></paper-icon-button>
+        <paper-tooltip for="btnEdit">{{localize('edit-item')}}</paper-tooltip>
+    </div>
+    <paper-datatable id="datatable" selectable selected-item="{{item}}" on-row-tap="rowTapped">
+    <div no-results>
+        {{localize('table-loading')}}
+    </div>
+    <paper-datatable-column header="{{localize('column-id')}}" property="id" sortable></paper-datatable-column>
+    <paper-datatable-column header="{{localize('column-first-name')}}" property="first_name"></paper-datatable-column>
+    <paper-datatable-column header="{{localize('column-last-name')}}" property="last_name"></paper-datatable-column>
+    <paper-datatable-column header="{{localize('column-phone-number')}}" property="phone_number"></paper-datatable-column>
+    <paper-datatable-column header="{{localize('column-mobile-number')}}" property="mobile_number"></paper-datatable-column>
+    <paper-datatable-column header="{{localize('column-user-name')}}" property="user_name"></paper-datatable-column>
+    <paper-datatable-column header="{{localize('column-address')}}" property="address"></paper-datatable-column>
+</paper-datatable>
+</paper-datatable-card>
+</template>
+
+<script>
+    let usersSettingsPage;
+    class PageUserSettings extends BaseClass {
+        static get is(){
+            return 'page-settings-users';
+        }
+
+        static get properties(){
+            return {
+                data: {
+                    type: Object,
+                    value: {
+                        get: function (sort, page, pageSize) {
+                            return app.getRows(usersSettingsPage,'operator',{},sort,page,pageSize,[],'');
+                        },
+                        set: function (item, property, value) {
+                            return app.setColumnValue('operator', item.id, property, value);
+                        },
+                        length: 0
+                    }
+                },
+                item:Object
+            }
+        }
+
+        attached () {
+            super.attached();
+            usersSettingsPage = this;
+        }
+
+        rowTapped (ev) {
+            if (this.isDebouncerActive('dblclick' + ev.detail.item.id)) {
+                ev.preventDefault();
+                this.$.dataTableCard.deselectAll();
+                this.$.dataTableCard.select(ev.detail.item.id);
+                this.onEditItem();
+                this.cancelDebouncer('dblclick');
+            } else {
+                this.debounce('dblclick' + ev.detail.item.id, function () {
+                }, 300);
+            }
+        }
+
+        onDeleteItems () {
+            socket.emit('deleteOperators', usersSettingsPage.selectedIds, function () {
+                usersSettingsPage.$.dataTableCard.retrieveVisibleData();
+                usersSettingsPage.$.dataTableCard.deselectAll();
+            });
+        }
+
+        onAddItem () {
+            socket.emit('addOperator', function (driverId) {
+                usersSettingsPage.selectedIds = [driverId];
+                usersSettingsPage.$.dataTableCard.retrieveVisibleData();
+                usersSettingsPage.$.dlgEditItem.open();
+            });
+        }
+
+        onEditItem () {
+            this.$.dlgEditItem.open();
+        }
+
+        computeStatsAccessLevel(value){
+            const str = 'stats-access-' + value;
+            return this.localize(str);
+        }
+
+        computeTableAccessLevel(value){
+            const str = 'table-access-' + value;
+            return this.localize(str);
+        }
+        getCurrentValue(event){
+            if(this.item[event.target.attributes["name"].nodeValue].contains(event.target.attributes["value"].nodeValue))
+                return true;
+            else
+                return false;
+        }
+    }
+    customElements.define(PageUserSettings.is,PageUserSettings);
+</script>
+</dom-module>

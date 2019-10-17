@@ -1,0 +1,159 @@
+<link rel="import" href="../../../bower_components/paper-tooltip/paper-tooltip.html">
+<link rel="import" href="../../../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../../bower_components/iron-image/iron-image.html">
+<link rel="import" href="../../../bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="../../../bower_components/bwt-datatable/bwt-datatable-card.html">
+<link rel="import" href="../../../bower_components/bwt-datatable/bwt-datatable.html">
+<link rel="import" href="../../../bower_components/bwt-datatable/bwt-datatable-column.html">
+<link rel="import" href="../../../bower_components/neon-animation/web-animations.html">
+<link rel="import" href="../../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../../elements/dialog-media.html">
+<link rel="import" href="../../elements/base-class.html">
+<dom-module id="page-base-complaint-types">
+    <template>
+        <style include="iron-flex iron-flex-alignment">
+        :host {
+            display: block;
+            padding: 10px;
+        }
+        paper-tabs {
+            background-color: var(--primary-color);
+            color: white;
+            --paper-tabs-selection-bar-color:var(--accent-color);
+            padding-left: 0;
+        }
+    </style>
+    <paper-dialog id="dlgEdit" entry-animation="scale-up-animation" exit-animation="fade-out-animation">
+        <h2 id="headerDialog">Edit Complaint Type</h2>
+        <iron-form id="formItem" on-iron-form-submit="onSubmit">
+            <form class="layout vertical">
+                <div class="layout horizontal">
+                    <paper-input type="text" class="input-service" label="[[localize('column-id')]]" name="id" value="[[selected.id]]" readonly></paper-input>
+                    <paper-input type="text" class="input-service" label="[[localize('column-title')]]" name="title" value="[[selected.title]]" required></paper-input>
+                </div>
+                <paper-dropdown-menu label="Importance">
+                    <paper-listbox slot="dropdown-content" attr-for-selected="name" selected="{{selectedImportance}}">
+                        <paper-item name="low">Low</paper-item>
+                        <paper-item name="medium">Medium</paper-item>
+                        <paper-item name="high">High</paper-item>
+                    </paper-listbox>
+                </paper-dropdown-menu>
+                <input type="hidden" name="importance" value="{{selectedImportance}}">
+                <paper-dropdown-menu label="Sender Type" required>
+                    <paper-listbox slot="dropdown-content" attr-for-selected="name" selected="{{selectedSender}}">
+                        <paper-item name="rider">Rider</paper-item>
+                        <paper-item name="driver">Driver</paper-item>
+                    </paper-listbox>
+                </paper-dropdown-menu>
+                <input type="hidden" name="sender_type" value="{{selectedSender}}">
+            </form>
+        </iron-form>
+        <div class="buttons">
+            <paper-button dialog-dismiss>{{localize('dismiss')}}</paper-button>
+            <paper-button autofocus on-click="onSaveClicked">{{localize('save')}}</paper-button>
+        </div>
+    </paper-dialog>
+    <paper-tabs scrollable attr-for-selected="name" selected="{{selectedCategory}}">
+        <paper-tab name="rider">Rider</paper-tab>
+        <paper-tab name="driver">Driver</paper-tab>
+</paper-tabs>
+    <paper-datatable-card id="dataTableCard" header="{{localize('cars')}}" data-source="{{data}}" page-size="10" id-property="id" selected-ids="{{selectedIds}}">
+        <div slot="toolbar-main">
+            <paper-input id="searchInput" value="{{searchTerm}}" label="{{localize('table-search')}}" on-input="refreshTable" style="display:inline-block">
+                <div slot="prefix">
+                    <iron-icon icon="search"></iron-icon>
+                </div>
+            </paper-input>
+            <paper-icon-button icon="cached" on-tap="refreshTable"></paper-icon-button>
+            <paper-icon-button icon="add" on-click="openDialog"></paper-icon-button>
+        </div>
+        <div slot="toolbar-select">
+            <paper-icon-button icon="delete" on-click="onDeleteClicked"></paper-icon-button>
+        </div>
+        <div slot="toolbar-select-single">
+            <paper-icon-button icon="my-icons:edit" on-tap="openDialog"></paper-icon-button>
+        </div>
+        <paper-datatable id="datatable" selectable selected-item="{{selected}}">
+            <div no-results>
+                {{localize('table-loading')}}
+            </div>
+            <paper-datatable-column header="{{localize('column-id')}}" property="id" type="String"></paper-datatable-column>
+            <paper-datatable-column header="{{localize('column-title')}}" property="title" type="String"></paper-datatable-column>
+            <paper-datatable-column header="{{localize('column-importance')}}" property="importance">
+                <template>
+                    <span>[[value]]</span>
+                </template>
+            </paper-datatable-column>
+        </paper-datatable>
+    </paper-datatable-card>
+</template>
+<script>
+    let baseComplaintTypesPage;
+    class PageBaseComplaintTypes extends BaseClass {
+        static get is() {
+            return 'page-base-complaint-types';
+        }
+
+        static get properties() {
+            return {
+                data: {
+                    type: Object,
+                    value: {
+                        get: function (sort, page, pageSize) {
+                            return app.getRows(baseComplaintTypesPage,'complaint_type',{sender_type:baseComplaintTypesPage.selectedCategory},sort,page,pageSize,[],'');
+                        },
+                        set: function (item, property, value) {
+                            return null;
+                        },
+                        length: 0
+                    },
+                },
+                searchTerm : String,
+                selectedImportance:String,
+                selectedSender:String,
+                selectedCategory:{
+                    type:String,
+                    value:'rider',
+                    observer:'onCategoryChanged'
+                },
+                selected:Object
+            }
+        }
+
+        attached () {
+            super.attached();
+            baseComplaintTypesPage = this;
+        }
+        openDialog(){
+            if(this.selected){
+                this.selectedSender = this.selected.sender_type;
+                this.selectedImportance = this.selected.importance;
+            }
+            this.$.dlgEdit.open();
+        }
+        onCategoryChanged(){
+            this.$.dataTableCard.retrieveVisibleData();
+        }
+        onDeleteClicked(){
+            this.deleteRows('complaint_type',this.selectedIds).then(function(result){
+                this.$.dataTableCard.retrieveVisibleData();
+            }.bind(this));
+        }
+        onEditClicked(){
+            this.$.dlgEdit.open();
+        }
+        onSaveClicked(){
+            this.$.formItem.submit();
+        }
+        onSubmit(){
+            this.saveRow('complaint_type',event.detail).then(function(result){
+                this.$.dlgEdit.close();
+                this.$.dataTableCard.retrieveVisibleData();
+            }.bind(this));
+        }
+    }
+    customElements.define(PageBaseComplaintTypes.is, PageBaseComplaintTypes);
+</script>
+</dom-module>

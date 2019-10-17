@@ -1,0 +1,62 @@
+<link rel="import" href="stat.html">
+<link rel="import" href="../../../elements/my-icons.html">
+<dom-module id="widget-stats">
+	<template>
+		<style include="app-grid-style">
+			:host {
+				--app-grid-columns: 5;
+				//--app-grid-item-height: 40px;
+				--app-grid-gutter: 10px;
+				display: flex;
+				width: 100%;
+			}
+			.stat{
+				//display: flex;
+			}
+			.orange {
+				--my-icon-color: var(--paper-orange-300);
+			}
+			.teal {
+				--my-icon-color: var(--paper-teal-300);
+			}
+			.purple {
+				--my-icon-color: var(--paper-purple-300);
+			}
+			.light-green {
+				--my-icon-color: var(--paper-light-green-300);
+			}
+			.indigo {
+				--my-icon-color: var(--paper-indigo-300);
+			}
+		</style>
+		<div class="app-grid">
+			<widget-stat class="stat orange" icon="my-icons:driver" number="[[statistics.driver_count]]" title="Drivers"></widget-stat>
+			<widget-stat class="stat teal" icon="my-icons:people" number="[[statistics.rider_count]]" title="Riders"></widget-stat>
+			<widget-stat class="stat purple" icon="my-icons:card-travel" number="[[statistics.travel_count]]" title="Travels"></widget-stat>
+			<widget-stat class="stat light-green" icon="my-icons:attach-money" number="[[statistics.unpaid_count]]" title="Payments waiting"></widget-stat>
+			<widget-stat class="stat indigo" icon="my-icons:info-outline" number="[[statistics.waiting_complaints]]" title="Complaints waiting"></widget-stat>
+		</div>
+	</template>
+	<script>
+		class WidgetStats extends BaseClass {
+			static get is(){
+				return 'widget-stats'
+			}
+			static get properties(){
+				return {
+					statistics : {
+						type:Object
+					}
+				}
+			}
+			attached(){
+				let widgetStats = this;
+				socket.emit('getBaseData',function(result){
+					widgetStats.statistics = result;
+				});
+			}
+		}
+		customElements.define(WidgetStats.is, WidgetStats);
+
+	</script>
+</dom-module>

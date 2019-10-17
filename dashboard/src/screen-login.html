@@ -1,0 +1,90 @@
+<link rel="import" href="elements/base-class.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../bower_components/iron-localstorage/iron-localstorage.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-dialog/paper-dialog.html">
+<dom-module id="screen-login">
+	<template>
+		<style>
+		:host {
+			height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.container{
+
+		}
+		.toolbar{
+			background-color: var(--paper-blue-300);
+		}
+		.button-login{
+			width: 100%;
+			margin: 25px 0 0;
+			--paper-button-ink-color:#7e57c2;
+		}
+		paper-card {
+			--paper-card-header-color: white;
+		}
+	</style>
+	<paper-dialog id="dialogError" modal>
+		<h2>Error</h2>
+		<p>[[errorMessage]]</p>
+		<div class="buttons">
+			<paper-button dialog-confirm autofocus>OK</paper-button>
+		</div>
+	</paper-dialog>
+	<iron-localstorage name="user" value="{{userStorage}}"></iron-localstorage>
+	<iron-ajax id="ajaxLogin" method="POST" handleAs="json" last-response="{{loginResponse}}" on-response="onLoginResponse" on-error="onLoginError"></iron-ajax>
+	<paper-card heading="{{localize('login')}}" image="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAV4AAACWCAYAAACW5+B3AAABlklEQVR42u3UMQEAMAgAoJlybQxnMU3g6wUhiPzVD4AzIV4A8QKIFwDxAogXAPECiBcA8QKIF0C8AIgXQLwAiBdAvACIF0C8AOIFQLwA4gVAvADiBUC8AOIFEC8A4gUQLwDiBRAvAOIFEC+AeAEQL4B4ARAvgHgBEC+AeAHEC4B4AcQLgHgBxAuAeAHECyBeAMQLIF4AxAsgXgDECyBeAPECIF4A8QIgXgDxAiBeAPECiBcA8QKIFwDxAogXAPECiBdAvACIF0C8AIgXQLwAiBdAvADiBUC8AOIFQLwA4gVAvADiBRCveAHECyBeAMQLIF4AxAsgXgDxihdAvADiBUC8AOIFQLwA4gVAvADiBRAvAOIFEC8A4gUQLwDiBRAvgHgBEC+AeAEQL4B4ARAvgHgBxAuAeAHEC4B4AcQLgHgBxAsgXgDECyBeAMQLIF4AxAsgXgDxAiBeAPECIF4A8QIgXgDxAogXAPECiBcA8QKIFwDxAogXQLwAiBdAvACIF0C8AIgXQLwA4gVAvADiBUC8AOIFYDeAMYSKYf1vnwAAAABJRU5ErkJggg==">
+		<div class="card-content">
+			<paper-input id="txtEmail" label="{{localize('user-name')}}" value="admin"></paper-input>
+			<paper-input id="txtPassword" label="{{localize('password')}}" type="password" value="admin"></paper-input>
+		</div>
+		<paper-button class="button-login" on-click="onLoginClicked">{{localize('login')}}</paper-button>
+	</paper-card>
+</template>
+<script>
+	class ScreenLogin extends BaseClass {
+		static get is() { return 'screen-login'}
+		static get properties() {
+			return {
+				userStorage:Object,
+				errorMessage:String
+			}
+		}
+		onLoginClicked () {
+			this.$.ajaxLogin.url = document.createElement('iron-meta').byKey('server') + 'operator_login';
+			this.$.ajaxLogin.params = {'user_name': this.$.txtEmail.value, 'password': this.$.txtPassword.value};
+			this.$.ajaxLogin.generateRequest();
+		}
+		onTokenReceived (result) {
+			if (result && result.token) {
+				this.userStorage = result;
+			}
+		}
+		onLoginResponse (event) {
+			let status = event.detail.response.status;
+			if(status == 200) {
+				this.set('userStorage',event.detail.response);
+				this.fire('logged-in',event.detail.response.token);
+				return;
+			}
+			if (this.localize('error-'+status) != "")
+				this.set('errorMessage',this.localize('error-'+status));
+			if(status == 666)
+				this.set('errorMessage',event.detail.response.error);
+			if(this.errorMessage == "")
+				this.set('errorMessage',status);
+			this.$.dialogError.open();
+		}
+		onLoginError (event,error) {
+			this.set('errorMessage',this.localize('error-500'));
+			this.$.dialogError.open();
+		}
+	}
+customElements.define(ScreenLogin.is, ScreenLogin);
+</script>
+</dom-module>

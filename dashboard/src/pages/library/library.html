@@ -1,0 +1,37 @@
+<link rel="import" href="../../elements/library.html">
+
+<dom-module id="page-library">
+    <template>
+        <style>
+        :host {
+            display: block;
+            height: 100%;
+        }
+        widget-library{
+                max-width: 3000px;
+                height: 100%;
+                min-height: 500px;
+
+        }
+    </style>
+    <widget-library></widget-library>
+</template>
+<script>
+    let libraryPage;
+    class PageLibrary extends BaseClass {
+        static get is() {
+            return 'page-library';
+        }
+
+        static get properties() {
+            return {}
+        }
+
+        attached () {
+            super.attached();
+            libraryPage = this;
+        }
+    }
+    customElements.define(PageLibrary.is, PageLibrary);
+</script>
+</dom-module>

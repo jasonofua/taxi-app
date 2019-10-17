@@ -1,0 +1,326 @@
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../../bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="../../bower_components/app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="../../bower_components/app-layout/app-scroll-effects/effects/waterfall.html">
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../../bower_components/paper-fab/paper-fab.html">
+<link rel="import" href="../../bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="../../bower_components/paper-tabs/paper-tab.html">
+<link rel="import" href="../../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../../bower_components/paper-listbox/paper-listbox.html">
+<link rel="import" href="../../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="../../bower_components/neon-animation/web-animations.html">
+<link rel="import" href="../../bower_components/vaadin-upload/vaadin-upload.html">
+<link rel="import" href="../../bower_components/iron-list/iron-list.html">
+<link rel="import" href="../../bower_components/iron-image/iron-image.html">
+<link rel="import" href="../../bower_components/iron-form/iron-form.html">
+<link rel="import" href="../../bower_components/iron-scroll-threshold/iron-scroll-threshold.html">
+<link rel="import" href="../../bower_components/paper-spinner/paper-spinner.html">
+<dom-module id="widget-library">
+	<template>
+		<style include="iron-flex iron-flex-alignment">
+		:host {
+			display: block;
+			@apply --paper-font-common-base;
+			height: 100%;
+		}
+		paper-tabs {
+			background-color: var(--primary-color);
+			color: white;
+			--paper-tabs-selection-bar-color:var(--accent-color);
+			padding-left: 0;
+		}
+		iron-list {
+			padding-bottom: 16px;
+			
+		}
+		
+		.photoContent {
+			@apply --layout;
+			background-color: #fff;
+			position: relative;
+			width: 150px;
+			height: 150px;
+			margin: 8px;
+		}
+		.photoContent:hover {
+			background-color: #e8e8e8;
+		}
+		.photoContent:hover .detail{
+			opacity: 1;
+
+		}
+		.photoContent > iron-image {
+			@apply --layout-flex;
+		}
+		.photoContent > .detail {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+			color: white;
+			font-size: 20px;
+			font-weight: 100;
+			padding: 20px;
+			opacity: 0;
+			transition: opacity 0.1s;
+		}
+		.loadingIndicator {
+			font-size: 16px;
+			text-align: center;
+			height: 60px;
+		}
+		.loadingIndicator paper-spinner {
+			margin-right: 20px;
+			vertical-align: middle;
+		}
+		@media (max-width: 800px) {
+			.photoContainer {
+				width: calc(50% - 16px);
+			}
+			.photoContent {
+				width: auto;
+			}
+		}
+		@media (max-width: 400px) {
+			iron-list {
+				margin-top: 72px;
+			}
+			.photoContainer {
+				width: 100%;
+			}
+			.photoContent > .detail {
+				opacity: 1;
+			}
+		}
+		.info-panel{
+			width: 550px;
+			background-color: #f7f7f7;
+		}
+		.info-input{
+			margin-left: 16px;
+			margin-right: 16px;
+		}
+		.upload-panel{
+			margin-left: 16px;
+			margin-right: 16px;
+		}
+		.gallery-panel::-webkit-scrollbar-track
+		{
+			background-color: #e8e8e8;
+		}
+
+		.gallery-panel::-webkit-scrollbar
+		{
+			width: 10px;
+			background-color: #F5F5F5;
+		}
+
+		.gallery-panel::-webkit-scrollbar-thumb
+		{
+			background-color: #26a69a;
+		}
+
+		.gallery-panel{
+			background-color: #fcfcfc;
+			box-shadow: 3px 0 5px -2px #888;
+			overflow-y:scroll;
+			width: 100%;
+		}
+		paper-fab{
+			position: fixed;
+			right: 25px;
+			bottom: 30px;
+		}
+	</style>
+	<div class="vertical layout">
+		<template is="dom-if" if="[[!forceCategory]]">
+			<paper-tabs selected="{{selectedCategory}}" scrollable attr-for-selected="name">
+				<paper-tab name="">All</paper-tab>
+				<paper-tab name="car">Cars</paper-tab>
+				<paper-tab name="service">Services</paper-tab>
+				<paper-tab name="driver image">Driver Profile</paper-tab>
+				<paper-tab name="driver header">Driver Header</paper-tab>
+				<paper-tab name="rider image">Rider Profile</paper-tab>
+				<paper-tab name="operator image">Operator Profile</paper-tab>
+			</paper-tabs>
+		</template>
+		
+		<div class="layout horizontal" style="padding-right: 0; padding-left:0; margin-top: 0;">
+			<div id="dialogScrollable" class="gallery-panel">
+				<iron-list id="list" items="[[photos]]" as="photo" scroll-target="[[scrollTarget]]" selected-item="{{selectedMedia}}" selected="{{selectedId}}" on-tap="_selectItem" grid>
+					<template>
+						<div class="photoContainer">
+							<div class="photoContent" tabindex$="[[tabIndex]]">
+								<iron-image sizing="cover" src="[[getImageAddressFromMedia(photo)]]"></iron-image>
+								<div class="detail">[[photo.title]]</div>
+							</div>
+						</div>
+					</template>
+				</iron-list>
+				<div class="loadingIndicator" hidden$="[[!loadingPhotos]]">
+					<paper-spinner active$="[[loadingPhotos]]"></paper-spinner>Loading images...</b>
+				</div>
+				<iron-scroll-threshold id="scrollTheshold" lower-threshold="500" on-lower-threshold="_onLowerThreshold" scroll-target="[[scrollTarget]]"></iron-scroll-threshold>
+				<paper-fab icon="my-icons:add" on-click="onAddClicked"></paper-fab>
+			</div>
+			<div class="layout vertical info-panel">
+				<iron-form id="formMedia" on-iron-form-submit="onSubmitMedia">
+					<form class="layout vertical">
+						<input type="hidden" name="id" class="info-input" value="[[selectedMedia.id]]">
+						<iron-image class="image-preview" sizing="cover" src="[[getImageAddressFromMedia(selectedMedia)]]" style="width: 400px; height: 250px;"></iron-image>
+						<paper-input name="title" disabled="[[editDisabled]]" class="info-input" label="Title" value="[[selectedMedia.title]]"></paper-input>
+						<paper-dropdown-menu disabled="[[editDisabled]]" class="info-input" label="Path type" required>
+							<paper-listbox slot="dropdown-content" attr-for-selected="name" selected="{{selectedPathType}}">
+								<paper-item name="relative">Relative</paper-item>
+								<paper-item name="absolute">Absolute</paper-item>
+							</paper-listbox>
+						</paper-dropdown-menu>
+						<input type="hidden" name="path_type" class="info-input" value="{{selectedPathType}}">
+						<paper-input type="text" disabled="[[editDisabled]]" class="info-input" label="Base 64 Thumbnail" value="[[selectedMedia.base64]]"></paper-input>
+						<vaadin-upload id="uploadPanel" class="info-input upload-panel" on-upload-before="beforeUpload" accept="image/jpeg|image/png" max-files="1" max-file-size="5000000"></vaadin-upload>
+					</form>
+				</iron-form>
+				<paper-button class="info-input" on-click="onSaveChangesClicked" style="color:var(--primary-color); margin-bottom: 16px; margin-top: 16px;">Save Changes</paper-button>
+			</div>
+		</div>
+	</template>
+</div>
+</dom-module>
+
+<script>
+	let libraryWidget;
+	class WidgetLibrary extends BaseClass {
+		static get is(){
+			return 'widget-library';
+		}
+
+		static get properties(){
+			return {
+				photos: {
+					type: Array,
+					value: function() {
+						return [];
+					}
+				},
+				perPage: {
+					type: Number,
+					value: 100
+				},
+				page: {
+					type: Number,
+					value: 0
+				},
+				selectedMedia:{
+					type:Object,
+					notify:true
+				},
+				loadingPhotos: Boolean,
+				scrollTarget: HTMLElement,
+				selectedId:Number,
+				selectedCategory:{
+					type:String,
+					observer:'selectedCategoryChanged',
+					value:''
+				},
+				forceCategory:{
+					type:Boolean,
+					value:false
+				},
+				editDisabled:{
+					type:Boolean,
+					value:true
+				}
+			}
+		}
+		attached(){
+			super.attached();
+			libraryWidget = this;
+			this.scrollTarget = this.$.dialogScrollable;
+		}
+
+		_onLowerThreshold(){
+			this.debounce('_loadPhotos', this._loadMorePhotos, 60);
+		}
+
+		_loadMorePhotos() {
+			this.page++;
+			this.loadingPhotos = true;
+			this.getRows(libraryWidget,'media',{type:this.selectedCategory},{property:'id',direction:'asc'},this.page,this.perPage,[],'').then(function(result){
+				result.forEach(function(photo) {
+					libraryWidget.push('photos', photo);
+				}, libraryWidget);
+				libraryWidget.$.scrollTheshold.clearTriggers();
+				libraryWidget.loadingPhotos = false;
+			});
+		}
+		_selectItem(e) {
+			var model = this.$.list.modelForElement(e.target);
+			if (model) {
+				this.$.list.selectItem(model[this.$.list.as]);
+				this.set('selectedId',this.selectedMedia.id);
+				this.set('selectedPathType',this.selectedMedia.path_type);
+				this.editDisabled = false;
+				this.dispatchEvent(new CustomEvent('selected', {bubbles: true, composed: true,detail: {selectedId: this.selectedMedia.id}}));
+			}
+		}
+		selectedCategoryChanged(){
+			this.page = 0;
+			this.photos = [];
+			this.selectedId = null;
+			this.selectedMedia = null;
+			this.editDisabled = true;
+			for(let file of this.$.uploadPanel.files) {
+				this.$.uploadPanel._removeFile(file);
+			}
+			this._loadMorePhotos();
+		}
+		beforeUpload(event) {
+			event.preventDefault();
+			if(this.selectedCategory == '' || this.selectedCategory == 'All'){
+				app.showErrorMessage('Select a category from top tab bar first');
+				return;
+			}
+			if(this.selectedId == '' || this.selectedId == null){
+				app.showErrorMessage('Select a media from list first.');
+				return;
+			}
+			let file = event.detail.file;
+			let fileIndex = this.$.uploadPanel.files.indexOf(file);
+			var reader = new FileReader();
+			reader.onload = function(e) {
+				let arrayBuffer = reader.result;
+				socket.emit('uploadMedia',arrayBuffer,this.selectedId,function(resultCode,result) {
+					if(resultCode == 200) {
+						this.$.uploadPanel.set(['files', fileIndex, 'progress'], 100);
+						this.$.uploadPanel.set(['files', fileIndex, 'complete'], true);
+						this.fire('file-received', file);
+						this.selectedCategoryChanged();
+					}
+					else
+						this.$.uploadPanel.set(['files', fileIndex, 'error'], JSON.stringify(result));
+				}.bind(this));
+			}.bind(this);
+			reader.readAsArrayBuffer(file);
+		}
+		onAddClicked(){
+			if(this.selectedCategory === '' || this.selectedCategory === 'All'){
+				app.showErrorMessage('Select a category from top tab bar first');
+				return;
+			}
+			this.saveRow('media',{type:this.selectedCategory}).then(function(result){
+				this.selectedCategoryChanged();
+			}.bind(this));
+		}
+		onSaveChangesClicked(){
+			this.$.formMedia.submit();
+		}
+		onSubmitMedia(event){
+			this.saveRow('media',event.detail).then(function(result){
+                this.selectedCategoryChanged();
+            }.bind(this));
+		}
+	}
+	customElements.define(WidgetLibrary.is, WidgetLibrary);
+</script>

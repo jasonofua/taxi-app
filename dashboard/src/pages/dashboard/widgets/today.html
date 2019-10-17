@@ -1,0 +1,155 @@
+<script type="text/javascript" src="../../../../bower_components/moment/min/moment.min.js"></script>
+<link rel="import" href="../../../../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../../../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../../../bower_components/app-datepicker/app-datepicker.html">
+<link rel="import" href="../../../../bower_components/iron-localstorage/iron-localstorage.html">
+<link rel="import" href="../../../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<dom-module id="widget-today">
+	<template>
+		<style include="iron-flex iron-flex-alignment">
+		:host {
+			display: block;
+			background: linear-gradient(45deg, #8e24aa 0%, #ff6e40 100%);
+			box-shadow: 0 6px 20px 0 rgba(244, 143, 177, 0.5);
+			width: 100%;
+			padding: 30px;
+		}
+		.header,.subheader,p,li{
+			color: white;
+			margin: 0;
+		}
+		.w-100{
+			font-weight: 100;
+		}
+		.reminder-title{
+			border-bottom: 1px rgba(255,255,255,.3) solid;
+			margin-top: 20px;
+		}
+		.list-reminder{
+			list-style: none;
+			padding: 0;
+		}
+		.list-reminder iron-icon{
+			height: 20px;
+		}
+		.button-add{
+			color: white;
+			margin-left: 0;
+			width: 100%;
+			margin-right: 0;
+		}
+		.content-dialog{
+			padding-left: 0;
+			padding-right: 0;
+		}
+		.form-input{
+			margin-left: 8px;
+			margin-right: 8px;
+			min-width: 200px;
+		}
+	</style>
+	<paper-dialog id="dlgEvent">
+		<h2>Add reminder</h2>
+		<div class="layout vertical content-dialog">
+			<iron-form id="formEvent" on-iron-form-submit="onSubmitEvent">
+				<form is="iron-form" id="formEvent">
+					<div class="layout horizontal">
+						<app-datepicker id="datePicker" auto-update-date date="{{selectedDate}}"></app-datepicker>
+						<input type="hidden" name="due" value="{{selectedDate}}">
+						<div class="layout vertical">
+							<paper-input label="Title" name="title" class="form-input"></paper-input>
+							<paper-dropdown-menu label="Service Category" class="form-input">
+								<paper-listbox slot="dropdown-content" attr-for-selected="name" selected="{{selectedImportance}}">
+									<paper-item name="low">Low</paper-item>
+									<paper-item name="medium">Medium</paper-item>
+									<paper-item name="high">High</paper-item>
+								</paper-listbox>
+							</paper-dropdown-menu>
+							<input type="hidden" name="importance" value="{{selectedImportance}}">
+							<input type="hidden" name="operator_id" value="[[operatorId]]">
+						</div>
+					</div>
+				</form>
+			</iron-form>
+			
+		</div>
+		<div class="buttons">
+			<paper-button dialog-dismiss>{{localize('dismiss')}}</paper-button>
+			<paper-button autofocus on-click="onSaveClicked">{{localize('save')}}</paper-button>
+		</div>
+	</paper-dialog>
+	<div class="vertical">
+		<h2 class="header">[[dayOfWeek]]</h2>
+		<h2 class="subheader w-100">[[todayDate]]</h2>
+		<p class="reminder-title w-100">REMINDERS</p>
+		<ul class="list-reminder">
+			<template is="dom-repeat" items="{{reminders}}">
+				<li><iron-icon icon="my-icons:check"></iron-icon><span>[[item.title]]</span></li>
+			</template>
+		</ul>
+		<paper-button class="button-add" on-click="onAddEventClicked">+Add an event</paper-button>
+	</div>
+</template>
+<script>
+	class WidgetToday extends BaseClass{
+		static get is(){
+			return 'widget-today';
+		}
+
+		static get properties(){
+			return {
+				reminders:{
+					type:Array,
+					value:function () {
+
+					}
+				},
+				todayDate:{
+					type:String,
+					value:function () {
+						return moment().format('MMMM Do YYYY');
+					}
+				},
+				dayOfWeek:{
+					type:String,
+					value:function(){
+						return moment().format('dddd')
+					}
+				},
+				selectedImportance:{
+					type:String,
+					value:'medium'
+				},
+				selectedDate:String,
+			}
+		}
+
+		attached (){
+			super.attached();
+			this.refreshEvents();
+		}
+		refreshEvents(){
+			this.getRows(this,'operator_reminder',{due:moment().format('YYYY/MM/DD')},{property:'id',direction:'desc'},1,20,[],'').then(function(result){
+				this.reminders = result;
+			}.bind(this));
+			socket.emit('getReminders', moment().format('YYYY/MM/DD'), function (result) {
+				this.reminders = result;
+			}.bind(this));
+		}
+		onAddEventClicked(){
+			this.$.dlgEvent.open();
+			this.set('operatorId',app.userStorage.user.id);
+		}
+		onSaveClicked(){
+			this.$.formEvent.submit();
+		}
+		onSubmitEvent(event){
+			this.saveRow('operator_reminder',event.detail).then(function(result){
+				this.$.dlgEvent.close();
+				this.refreshEvents();
+			}.bind(this));
+		}
+	}
+	customElements.define(WidgetToday.is,WidgetToday);
+</script>
+</dom-module>
