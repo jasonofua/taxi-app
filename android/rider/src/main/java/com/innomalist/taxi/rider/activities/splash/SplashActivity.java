@@ -3,22 +3,28 @@ package com.innomalist.taxi.rider.activities.splash;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.ActivityManager;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.databinding.DataBindingUtil;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.IBinder;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 import com.crashlytics.android.Crashlytics;
+
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.IdpResponse;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.firebase.auth.PhoneAuthProvider;
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.TedPermission;
 import com.innomalist.taxi.common.activities.login.LoginActivity;
@@ -57,6 +63,9 @@ public class SplashActivity extends BaseActivity implements LocationListener {
     Handler locationTimeoutHandler;
     LocationManager locationManager;
     LatLng currentLocation;
+    boolean mBounded;
+    RiderService riderService;
+
     private PermissionListener permissionlistener = new PermissionListener() {
         @Override
         public void onPermissionGranted() {
@@ -72,6 +81,7 @@ public class SplashActivity extends BaseActivity implements LocationListener {
                 startService(new Intent(SplashActivity.this, RiderService.class));
         }
     };
+
     private View.OnClickListener onLoginButtonClicked = v -> {
         String resourceName = "testMode";
         int testExists = SplashActivity.this.getResources().getIdentifier(resourceName, "string", SplashActivity.this.getPackageName());
@@ -86,7 +96,7 @@ public class SplashActivity extends BaseActivity implements LocationListener {
                     AuthUI.getInstance()
                             .createSignInIntentBuilder()
                             .setAvailableProviders(
-                                    Collections.singletonList(new AuthUI.IdpConfig.Builder(AuthUI.PHONE_VERIFICATION_PROVIDER).build()))
+                                    Collections.singletonList(new AuthUI.IdpConfig.Builder(PhoneAuthProvider.PROVIDER_ID).build()))
                             .setTheme(getCurrentTheme())
                             .build(),
                     RC_SIGN_IN);
@@ -187,16 +197,7 @@ public class SplashActivity extends BaseActivity implements LocationListener {
         }
     }
 
-    /*public void onChoose(View view) {
-        try {
-            Intent intent = new Intent(this, LoginActivity.class);
-            View applicationLogo = findViewById(R.id.splash_activity_logo_image);
-            ActivityOptionsCompat options = ActivityOptionsCompat.
-                    makeSceneTransitionAnimation(this, applicationLogo, "application_logo");
-            startActivity(intent, options.toBundle());
-        } catch (Exception ignored) {
-        }
-    }*/
+
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onConnectedResult(ConnectResultEvent event) {
         if (event.hasError()) {
@@ -238,11 +239,39 @@ public class SplashActivity extends BaseActivity implements LocationListener {
         tryConnect();
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        Intent mIntent = new Intent(this, RiderService.class);
+        bindService(mIntent, mConnection, BIND_AUTO_CREATE);
+    }
+
+
+    ServiceConnection mConnection = new ServiceConnection() {
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+            Toast.makeText(SplashActivity.this, "Service is disconnected", Toast.LENGTH_LONG).show();
+            mBounded = false;
+            riderService = null;
+        }
+
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            Toast.makeText(SplashActivity.this, "Service is connected", Toast.LENGTH_LONG).show();
+            mBounded = true;
+            RiderService.LocalBinder mLocalBinder = (RiderService.LocalBinder)service;
+            riderService = mLocalBinder.getServerInstance();
+        }
+    };
+
+
+
     private void tryLogin(String phone) {
         binding.progressBar.setVisibility(View.VISIBLE);
         if (phone.substring(0, 1).equals("+"))
             phone = phone.substring(1);
-        eventBus.post(new LoginEvent(Long.valueOf(phone), BuildConfig.VERSION_CODE));
+      //  eventBus.post(new LoginEvent(Long.valueOf(phone), BuildConfig.VERSION_CODE));
+        riderService.login(new LoginEvent(Long.valueOf(phone), BuildConfig.VERSION_CODE));
     }
 
     @Override

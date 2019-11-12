@@ -26,7 +26,7 @@ module.exports = {
     markPaymentRequestsPaid: async function (Ids) {
         let [ignored, ignored2, driverIds] = await Promise.all([
             sql.query("UPDATE driver LEFT JOIN payment_request ON driver.id = payment_request.driver_id SET driver.balance = driver.balance - payment_request.amount WHERE payment_request.id IN (?)", [Ids]),
-            sql.query("UPDATE payment_request SET status = 'paid', paid_date = NOW() WHERE id IN (?)", [Ids]),
+            sql.query("UPDATE payment_request SET driver_status = 'paid', paid_date = NOW() WHERE id IN (?)", [Ids]),
             sql.query("SELECT driver_id FROM payment_request WHERE id IN (?)", [Ids])]
         );
         return driverIds[0].map(x => x.driver_id);
@@ -41,7 +41,7 @@ module.exports = {
         if (credit[0].balance < 0) {
             return false;
         }
-        await sql.query("UPDATE driver SET status = ? WHERE id = ?", [state, driverId]);
+        await sql.query("UPDATE driver SET driver_status = ? WHERE id = ?", [state, driverId]);
         return true;
     },
     authenticate: async function (mobileNumber) {

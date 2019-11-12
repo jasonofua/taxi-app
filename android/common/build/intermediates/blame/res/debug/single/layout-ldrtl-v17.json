@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout-ldrtl-v17/md_listitem_singlechoice.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/330ad577017d66390f07dfdc95f86685/res/layout-ldrtl-v17/md_listitem_singlechoice.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout-ldrtl-v17/md_listitem_multichoice.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/330ad577017d66390f07dfdc95f86685/res/layout-ldrtl-v17/md_listitem_multichoice.xml"
+    }
+]

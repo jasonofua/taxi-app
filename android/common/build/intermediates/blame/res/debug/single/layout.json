@@ -1,0 +1,582 @@
+[
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/fui_idp_button_twitter.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/c15aa77a426764418e23b46c80699163/res/layout/fui_idp_button_twitter.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/preference_widget_switch_compat.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/362abc0de0d182ec3f85ff9ae3730c02/res/layout/preference_widget_switch_compat.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/preference_material.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/75b4284f504d5f1197001b783361d0d3/res/layout/preference_material.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/md_stub_actionbuttons.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/330ad577017d66390f07dfdc95f86685/res/layout/md_stub_actionbuttons.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/design_layout_snackbar.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/d6e8ff9e27291ce1046e06125c780358/res/layout/design_layout_snackbar.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/ef_imagepikcer_snackbar.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/261944a1d32b070db0a1be61e33ac68c/res/layout/ef_imagepikcer_snackbar.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/md_dialog_list_check.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/330ad577017d66390f07dfdc95f86685/res/layout/md_dialog_list_check.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/notification_action_tombstone.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/edf7bbe7a76874e6cc6ab58b3fd34e05/res/layout/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/design_navigation_item_header.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/d6e8ff9e27291ce1046e06125c780358/res/layout/design_navigation_item_header.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/notification_template_icon_group.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/edf7bbe7a76874e6cc6ab58b3fd34e05/res/layout/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/abc_alert_dialog_button_bar_material.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/ffed32b878ad4ca3c0017205aad74db3/res/layout/abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/dialog_write_complaint.xml",
+        "source": "/Users/iamdelightaaron/Documents/taxi-app/android/common/src/main/res/layout/dialog_write_complaint.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/fui_phone_progress_dialog.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/c15aa77a426764418e23b46c80699163/res/layout/fui_phone_progress_dialog.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/preference_category_material.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/75b4284f504d5f1197001b783361d0d3/res/layout/preference_category_material.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/md_stub_titleframe_lesspadding.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/330ad577017d66390f07dfdc95f86685/res/layout/md_stub_titleframe_lesspadding.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/wallet_test_layout.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/bb22be87db0f96f6ce524b0f2baa6d64/res/layout/wallet_test_layout.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/amu_info_window.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/53d1b2319273881892eaff14e6767164/res/layout/amu_info_window.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/fui_idp_button_google.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/c15aa77a426764418e23b46c80699163/res/layout/fui_idp_button_google.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/activity_contact_us.xml",
+        "source": "/Users/iamdelightaaron/Documents/taxi-app/android/common/src/main/res/layout/activity_contact_us.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/fui_dgts_country_row.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/c15aa77a426764418e23b46c80699163/res/layout/fui_dgts_country_row.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/fui_register_email_layout.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/c15aa77a426764418e23b46c80699163/res/layout/fui_register_email_layout.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/preference_information_material.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/75b4284f504d5f1197001b783361d0d3/res/layout/preference_information_material.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/activity_charge_account.xml",
+        "source": "/Users/iamdelightaaron/Documents/taxi-app/android/common/src/main/res/layout/activity_charge_account.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/preference_dropdown_material.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/75b4284f504d5f1197001b783361d0d3/res/layout/preference_dropdown_material.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/md_dialog_custom.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/330ad577017d66390f07dfdc95f86685/res/layout/md_dialog_custom.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/fui_provider_button_phone.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/c15aa77a426764418e23b46c80699163/res/layout/fui_provider_button_phone.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/abc_alert_dialog_title_material.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/ffed32b878ad4ca3c0017205aad74db3/res/layout/abc_alert_dialog_title_material.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_charge_account.xml",
+        "source": "/Users/iamdelightaaron/Documents/taxi-app/android/common/src/main/res/layout/activity_charge_account.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_login.xml",
+        "source": "/Users/iamdelightaaron/Documents/taxi-app/android/common/src/main/res/layout/activity_login.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/toolbar_constraint.xml",
+        "source": "/Users/iamdelightaaron/Documents/taxi-app/android/common/src/main/res/layout/toolbar_constraint.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/drawer_header.xml",
+        "source": "/Users/iamdelightaaron/Documents/taxi-app/android/common/src/main/res/layout/drawer_header.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/amu_webview.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/53d1b2319273881892eaff14e6767164/res/layout/amu_webview.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/abc_select_dialog_material.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/ffed32b878ad4ca3c0017205aad74db3/res/layout/abc_select_dialog_material.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/activity_mock.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/e23442a57b57c39f44f9a24dd5779b5b/res/layout/activity_mock.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/notification_template_big_media_narrow_custom.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/95ea47cf845b289a34c7354102fd258f/res/layout/notification_template_big_media_narrow_custom.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/design_navigation_menu.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/d6e8ff9e27291ce1046e06125c780358/res/layout/design_navigation_menu.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/fui_phone_layout.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/c15aa77a426764418e23b46c80699163/res/layout/fui_phone_layout.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/fragment_login_step_first.xml",
+        "source": "/Users/iamdelightaaron/Documents/taxi-app/android/common/src/main/res/layout/fragment_login_step_first.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/fui_confirmation_code_layout.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/c15aa77a426764418e23b46c80699163/res/layout/fui_confirmation_code_layout.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/notification_template_media_custom.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/95ea47cf845b289a34c7354102fd258f/res/layout/notification_template_media_custom.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/md_listitem_singlechoice.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/330ad577017d66390f07dfdc95f86685/res/layout/md_listitem_singlechoice.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/design_bottom_navigation_item.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/d6e8ff9e27291ce1046e06125c780358/res/layout/design_bottom_navigation_item.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/fui_auth_method_picker_layout.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/c15aa77a426764418e23b46c80699163/res/layout/fui_auth_method_picker_layout.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/abc_action_menu_item_layout.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/ffed32b878ad4ca3c0017205aad74db3/res/layout/abc_action_menu_item_layout.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/md_dialog_progress_indeterminate.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/330ad577017d66390f07dfdc95f86685/res/layout/md_dialog_progress_indeterminate.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/design_layout_tab_text.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/d6e8ff9e27291ce1046e06125c780358/res/layout/design_layout_tab_text.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/fui_idp_button_facebook.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/c15aa77a426764418e23b46c80699163/res/layout/fui_idp_button_facebook.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/dialog_colors.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/acd2d0495651ad51090f6d4e2d6f65e8/res/layout/dialog_colors.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/dialog_loading.xml",
+        "source": "/Users/iamdelightaaron/Documents/taxi-app/android/common/src/main/res/layout/dialog_loading.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/preference_widget_switch.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/75b4284f504d5f1197001b783361d0d3/res/layout/preference_widget_switch.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/abc_screen_simple_overlay_action_mode.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/ffed32b878ad4ca3c0017205aad74db3/res/layout/abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/activity_login.xml",
+        "source": "/Users/iamdelightaaron/Documents/taxi-app/android/common/src/main/res/layout/activity_login.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/preference_category.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/362abc0de0d182ec3f85ff9ae3730c02/res/layout/preference_category.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/design_layout_snackbar_include.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/d6e8ff9e27291ce1046e06125c780358/res/layout/design_layout_snackbar_include.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/abc_list_menu_item_icon.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/ffed32b878ad4ca3c0017205aad74db3/res/layout/abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/preference_list_fragment.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/362abc0de0d182ec3f85ff9ae3730c02/res/layout/preference_list_fragment.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/md_dialog_progress_indeterminate_horizontal.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/330ad577017d66390f07dfdc95f86685/res/layout/md_dialog_progress_indeterminate_horizontal.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/abc_expanded_menu_layout.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/ffed32b878ad4ca3c0017205aad74db3/res/layout/abc_expanded_menu_layout.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/abc_screen_toolbar.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/ffed32b878ad4ca3c0017205aad74db3/res/layout/abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/abc_screen_simple.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/ffed32b878ad4ca3c0017205aad74db3/res/layout/abc_screen_simple.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/notification_template_big_media_custom.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/95ea47cf845b289a34c7354102fd258f/res/layout/notification_template_big_media_custom.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/md_dialog_basic.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/330ad577017d66390f07dfdc95f86685/res/layout/md_dialog_basic.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/preference_recyclerview.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/362abc0de0d182ec3f85ff9ae3730c02/res/layout/preference_recyclerview.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/about_page_separator.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/c970cc505a26be698cba8556ce487d29/res/layout/about_page_separator.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/abc_action_menu_layout.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/ffed32b878ad4ca3c0017205aad74db3/res/layout/abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/fui_check_email_layout.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/c15aa77a426764418e23b46c80699163/res/layout/fui_check_email_layout.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/ucrop_controls.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/6aeeb5062369c080696ad0c4d8652ea7/res/layout/ucrop_controls.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/select_dialog_item_material.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/ffed32b878ad4ca3c0017205aad74db3/res/layout/select_dialog_item_material.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/ucrop_aspect_ratio.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/6aeeb5062369c080696ad0c4d8652ea7/res/layout/ucrop_aspect_ratio.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/ucrop_layout_scale_wheel.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/6aeeb5062369c080696ad0c4d8652ea7/res/layout/ucrop_layout_scale_wheel.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/select_dialog_multichoice_material.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/ffed32b878ad4ca3c0017205aad74db3/res/layout/select_dialog_multichoice_material.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/notification_media_action.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/95ea47cf845b289a34c7354102fd258f/res/layout/notification_media_action.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/preference_dialog_edittext.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/362abc0de0d182ec3f85ff9ae3730c02/res/layout/preference_dialog_edittext.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/design_layout_tab_icon.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/d6e8ff9e27291ce1046e06125c780358/res/layout/design_layout_tab_icon.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/abc_action_mode_close_item_material.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/ffed32b878ad4ca3c0017205aad74db3/res/layout/abc_action_mode_close_item_material.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/abc_alert_dialog_material.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/ffed32b878ad4ca3c0017205aad74db3/res/layout/abc_alert_dialog_material.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/abc_list_menu_item_checkbox.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/ffed32b878ad4ca3c0017205aad74db3/res/layout/abc_list_menu_item_checkbox.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/item_travel.xml",
+        "source": "/Users/iamdelightaaron/Documents/taxi-app/android/common/src/main/res/layout/item_travel.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/md_stub_titleframe.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/330ad577017d66390f07dfdc95f86685/res/layout/md_stub_titleframe.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/abc_dialog_title_material.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/ffed32b878ad4ca3c0017205aad74db3/res/layout/abc_dialog_title_material.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/abc_list_menu_item_layout.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/ffed32b878ad4ca3c0017205aad74db3/res/layout/abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/notification_template_part_chronometer.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/edf7bbe7a76874e6cc6ab58b3fd34e05/res/layout/notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/pref_color_layout.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/acd2d0495651ad51090f6d4e2d6f65e8/res/layout/pref_color_layout.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/notification_template_media.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/95ea47cf845b289a34c7354102fd258f/res/layout/notification_template_media.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/support_simple_spinner_dropdown_item.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/ffed32b878ad4ca3c0017205aad74db3/res/layout/support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/design_bottom_sheet_dialog.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/d6e8ff9e27291ce1046e06125c780358/res/layout/design_bottom_sheet_dialog.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/design_menu_item_action_area.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/d6e8ff9e27291ce1046e06125c780358/res/layout/design_menu_item_action_area.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/abc_action_bar_title_item.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/ffed32b878ad4ca3c0017205aad74db3/res/layout/abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/grid_item_color.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/acd2d0495651ad51090f6d4e2d6f65e8/res/layout/grid_item_color.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/abc_search_dropdown_item_icons_2line.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/ffed32b878ad4ca3c0017205aad74db3/res/layout/abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/fui_forgot_password_layout.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/c15aa77a426764418e23b46c80699163/res/layout/fui_forgot_password_layout.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/fui_welcome_back_password_prompt_layout.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/c15aa77a426764418e23b46c80699163/res/layout/fui_welcome_back_password_prompt_layout.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/design_navigation_menu_item.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/d6e8ff9e27291ce1046e06125c780358/res/layout/design_navigation_menu_item.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/ef_imagepicker_item_folder.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/261944a1d32b070db0a1be61e33ac68c/res/layout/ef_imagepicker_item_folder.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/abc_popup_menu_header_item_layout.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/ffed32b878ad4ca3c0017205aad74db3/res/layout/abc_popup_menu_header_item_layout.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/abc_action_bar_up_container.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/ffed32b878ad4ca3c0017205aad74db3/res/layout/abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/fui_welcome_back_idp_prompt_layout.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/c15aa77a426764418e23b46c80699163/res/layout/fui_welcome_back_idp_prompt_layout.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_travel.xml",
+        "source": "/Users/iamdelightaaron/Documents/taxi-app/android/common/src/main/res/layout/item_travel.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/md_dialog_progress.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/330ad577017d66390f07dfdc95f86685/res/layout/md_dialog_progress.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/alerter_alert_view.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/e23442a57b57c39f44f9a24dd5779b5b/res/layout/alerter_alert_view.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/md_dialog_basic_check.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/330ad577017d66390f07dfdc95f86685/res/layout/md_dialog_basic_check.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/notification_action.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/edf7bbe7a76874e6cc6ab58b3fd34e05/res/layout/notification_action.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/design_navigation_item.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/d6e8ff9e27291ce1046e06125c780358/res/layout/design_navigation_item.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/ef_imagepicker_toolbar.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/261944a1d32b070db0a1be61e33ac68c/res/layout/ef_imagepicker_toolbar.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/sv_slide_view.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/eb4de2c960c981bb90f0e350ce16439a/res/layout/sv_slide_view.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/select_dialog_singlechoice_material.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/ffed32b878ad4ca3c0017205aad74db3/res/layout/select_dialog_singlechoice_material.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/ucrop_view.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/6aeeb5062369c080696ad0c4d8652ea7/res/layout/ucrop_view.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/about_page.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/c970cc505a26be698cba8556ce487d29/res/layout/about_page.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/ffed32b878ad4ca3c0017205aad74db3/res/layout/abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/design_text_input_password_icon.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/d6e8ff9e27291ce1046e06125c780358/res/layout/design_text_input_password_icon.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/md_listitem_multichoice.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/330ad577017d66390f07dfdc95f86685/res/layout/md_listitem_multichoice.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/preference_widget_seekbar_material.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/75b4284f504d5f1197001b783361d0d3/res/layout/preference_widget_seekbar_material.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/md_listitem.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/330ad577017d66390f07dfdc95f86685/res/layout/md_listitem.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/amu_text_bubble.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/53d1b2319273881892eaff14e6767164/res/layout/amu_text_bubble.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/md_dialog_list.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/330ad577017d66390f07dfdc95f86685/res/layout/md_dialog_list.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/abc_screen_content_include.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/ffed32b878ad4ca3c0017205aad74db3/res/layout/abc_screen_content_include.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/tooltip.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/ffed32b878ad4ca3c0017205aad74db3/res/layout/tooltip.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/ef_imagepicker_item_image.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/261944a1d32b070db0a1be61e33ac68c/res/layout/ef_imagepicker_item_image.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/preference_information.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/362abc0de0d182ec3f85ff9ae3730c02/res/layout/preference_information.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/notification_media_cancel_action.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/95ea47cf845b289a34c7354102fd258f/res/layout/notification_media_cancel_action.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view_list_item.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/ffed32b878ad4ca3c0017205aad74db3/res/layout/abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/notification_template_big_media.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/95ea47cf845b289a34c7354102fd258f/res/layout/notification_template_big_media.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/fui_provider_button_email.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/c15aa77a426764418e23b46c80699163/res/layout/fui_provider_button_email.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/abc_action_mode_bar.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/ffed32b878ad4ca3c0017205aad74db3/res/layout/abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/fui_activity_register_email.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/c15aa77a426764418e23b46c80699163/res/layout/fui_activity_register_email.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/abc_popup_menu_item_layout.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/ffed32b878ad4ca3c0017205aad74db3/res/layout/abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/ucrop_activity_photobox.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/6aeeb5062369c080696ad0c4d8652ea7/res/layout/ucrop_activity_photobox.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/design_navigation_item_subheader.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/d6e8ff9e27291ce1046e06125c780358/res/layout/design_navigation_item_subheader.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/activity_travels.xml",
+        "source": "/Users/iamdelightaaron/Documents/taxi-app/android/common/src/main/res/layout/activity_travels.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/notification_template_part_time.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/edf7bbe7a76874e6cc6ab58b3fd34e05/res/layout/notification_template_part_time.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/preference_widget_seekbar.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/362abc0de0d182ec3f85ff9ae3730c02/res/layout/preference_widget_seekbar.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/abc_list_menu_item_radio.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/ffed32b878ad4ca3c0017205aad74db3/res/layout/abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/design_navigation_item_separator.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/d6e8ff9e27291ce1046e06125c780358/res/layout/design_navigation_item_separator.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/toolbar.xml",
+        "source": "/Users/iamdelightaaron/Documents/taxi-app/android/common/src/main/res/layout/toolbar.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/abc_search_view.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/ffed32b878ad4ca3c0017205aad74db3/res/layout/abc_search_view.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/preference_widget_checkbox.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/362abc0de0d182ec3f85ff9ae3730c02/res/layout/preference_widget_checkbox.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/md_dialog_input_check.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/330ad577017d66390f07dfdc95f86685/res/layout/md_dialog_input_check.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/notification_template_lines_media.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/95ea47cf845b289a34c7354102fd258f/res/layout/notification_template_lines_media.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/md_dialog_input.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/330ad577017d66390f07dfdc95f86685/res/layout/md_dialog_input.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/fui_activity_register_phone.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/c15aa77a426764418e23b46c80699163/res/layout/fui_activity_register_phone.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/ucrop_layout_rotate_wheel.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/6aeeb5062369c080696ad0c4d8652ea7/res/layout/ucrop_layout_rotate_wheel.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/notification_template_big_media_narrow.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/95ea47cf845b289a34c7354102fd258f/res/layout/notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/fragment_login_step_second.xml",
+        "source": "/Users/iamdelightaaron/Documents/taxi-app/android/common/src/main/res/layout/fragment_login_step_second.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/pref_color_layout_large.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/acd2d0495651ad51090f6d4e2d6f65e8/res/layout/pref_color_layout_large.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout/ef_activity_image_picker.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/261944a1d32b070db0a1be61e33ac68c/res/layout/ef_activity_image_picker.xml"
+    }
+]

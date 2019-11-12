@@ -1,10 +1,21 @@
 {
     "logs": [
         {
-            "outputFile": "/home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/rider/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v17/values-v17.xml",
+            "outputFile": "/Users/iamdelightaaron/Documents/taxi-app/android/rider/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v17/values-v17.xml",
             "map": [
                 {
-                    "source": "/home/jason/.gradle/caches/transforms-2/files-2.1/d134d53146d0363efc2d77f612a9848c/res/values-v17/values-v17.xml",
+                    "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/362abc0de0d182ec3f85ff9ae3730c02/res/values-v17/values-v17.xml",
+                    "from": {
+                        "startLines": "2,7",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,280",
+                        "endLines": "6,10",
+                        "endColumns": "12,12",
+                        "endOffsets": "275,436"
+                    }
+                },
+                {
+                    "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/75b4284f504d5f1197001b783361d0d3/res/values-v17/values-v17.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +34,7 @@
                     }
                 },
                 {
-                    "source": "/home/jason/.gradle/caches/transforms-2/files-2.1/ac2209e1984af4683b21be613bb5a31b/res/values-v17/values-v17.xml",
+                    "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/ffed32b878ad4ca3c0017205aad74db3/res/values-v17/values-v17.xml",
                     "from": {
                         "startLines": "2,5,9,12,15,18,22,26,29,32,35,39,42,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -39,17 +50,6 @@
                         "endLines": "17,21,24,27,30,34,38,41,44,47,51,54,58,62",
                         "endColumns": "12,12,12,12,12,12,12,12,12,12,12,12,12,12",
                         "endOffsets": "777,1005,1163,1313,1485,1713,1955,2126,2300,2469,2742,2942,3146,3475"
-                    }
-                },
-                {
-                    "source": "/home/jason/.gradle/caches/transforms-2/files-2.1/27b11f814dff85c0364f49934dc92b5d/res/values-v17/values-v17.xml",
-                    "from": {
-                        "startLines": "2,7",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,280",
-                        "endLines": "6,10",
-                        "endColumns": "12,12",
-                        "endOffsets": "275,436"
                     }
                 }
             ]

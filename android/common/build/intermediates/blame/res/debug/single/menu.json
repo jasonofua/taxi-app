@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/menu/ucrop_menu_activity.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/6aeeb5062369c080696ad0c4d8652ea7/res/menu/ucrop_menu_activity.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/menu/actionbar_save.xml",
+        "source": "/Users/iamdelightaaron/Documents/taxi-app/android/common/src/main/res/menu/actionbar_save.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/menu/ef_image_picker_menu_main.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/261944a1d32b070db0a1be61e33ac68c/res/menu/ef_image_picker_menu_main.xml"
+    }
+]

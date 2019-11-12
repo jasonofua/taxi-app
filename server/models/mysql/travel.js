@@ -42,19 +42,19 @@ module.exports = {
         return result[0].id;
     },
     setState: async function (travelId, state) {
-        let [result,ignored] = await sql.query("UPDATE travel SET status = ? WHERE id = ?", [state, travelId]);
+        let [result,ignored] = await sql.query("UPDATE travel SET travel_status = ? WHERE id = ?", [state, travelId]);
         return result.affectedRows;
     },
     setDriver: async function (travelId, driverId) {
-        let [result,ignored] = await sql.query("UPDATE travel SET status = 'rider accepted', driver_id = ? WHERE id = ?", [driverId, travelId]);
+        let [result,ignored] = await sql.query("UPDATE travel SET travel_status = 'rider accepted', driver_id = ? WHERE id = ?", [driverId, travelId]);
         return result.affectedRows;
     },
     start: async function (travelId) {
-        let [result,ignored] = await sql.query("UPDATE travel SET status = ? WHERE id = ?", [this.TRAVEL_STATE_STARTED, travelId]);
+        let [result,ignored] = await sql.query("UPDATE travel SET travel_status = ? WHERE id = ?", [this.TRAVEL_STATE_STARTED, travelId]);
         return result.affectedRows;
     },
     finish: async function (travelId, isPaidInCredit, cost, distance, time, log) {
-        let [result,ignored] = await sql.query("UPDATE travel SET status = ?, cost = ?, duration_real = ?,distance_real = ?, log= ? WHERE id = ?", [isPaidInCredit ? this.TRAVEL_STATE_FINISHED_CREDIT : this.TRAVEL_STATE_FINISHED_CASH, cost, time, distance, log, travelId]);
+        let [result,ignored] = await sql.query("UPDATE travel SET travel_status = ?, cost_best = ?, duration_real = ?,distance_real = ?, travel_log= ? WHERE id = ?", [isPaidInCredit ? this.TRAVEL_STATE_FINISHED_CREDIT : this.TRAVEL_STATE_FINISHED_CASH, cost, time, distance, log, travelId]);
         return result.affectedRows;
     },
     hideTravel: async function (travelId) {

@@ -1,0 +1,82 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/values-notnight-v8/values-notnight-v8.xml",
+            "map": [
+                {
+                    "source": "/Users/iamdelightaaron/Documents/taxi-app/android/common/src/main/res/values-notnight/bool.xml",
+                    "from": {
+                        "startLines": "1",
+                        "startColumns": "4",
+                        "startOffsets": "16",
+                        "endColumns": "41",
+                        "endOffsets": "53"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "41",
+                        "endOffsets": "92"
+                    }
+                },
+                {
+                    "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/c970cc505a26be698cba8556ce487d29/res/values-notnight-v8/values-notnight-v8.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,112,175,231,287",
+                        "endColumns": "56,62,55,55,50",
+                        "endOffsets": "107,170,226,282,333"
+                    },
+                    "to": {
+                        "startLines": "3,4,5,6,7",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "97,154,217,273,329",
+                        "endColumns": "56,62,55,55,50",
+                        "endOffsets": "149,212,268,324,375"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/incremental/mergeDebugResources/merged.dir/values-notnight-v8/values-notnight-v8.xml",
+            "map": [
+                {
+                    "source": "/Users/iamdelightaaron/Documents/taxi-app/android/common/src/main/res/values-notnight/bool.xml",
+                    "from": {
+                        "startLines": "1",
+                        "startColumns": "4",
+                        "startOffsets": "16",
+                        "endColumns": "41",
+                        "endOffsets": "53"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "41",
+                        "endOffsets": "92"
+                    }
+                },
+                {
+                    "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/c970cc505a26be698cba8556ce487d29/res/values-notnight-v8/values-notnight-v8.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,112,175,231,287",
+                        "endColumns": "56,62,55,55,50",
+                        "endOffsets": "107,170,226,282,333"
+                    },
+                    "to": {
+                        "startLines": "3,4,5,6,7",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "97,154,217,273,329",
+                        "endColumns": "56,62,55,55,50",
+                        "endOffsets": "149,212,268,324,375"
+                    }
+                }
+            ]
+        }
+    ]
+}

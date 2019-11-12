@@ -1739,7 +1739,7 @@
     <string name="copyright_notice">Copyright© 2018 Innomalist All Rights reserved.</string>
     <string name="cost">Travel Cost</string>
     <string name="current_balance">Current balance</string>
-    <string name="defaultLocation" translatable="false">40.1792,44.4991</string>
+    <string name="defaultLocation" translatable="false">9.0820,8.6753</string>
     <string name="default_web_client_id" translatable="false">565806856911-d99do3u0f0ra2e6sf7652tbptcbv9bht.apps.googleusercontent.com</string>
     <string name="delete_address">Delete</string>
     <string name="description">Description</string>
@@ -1806,7 +1806,7 @@
     <string name="error_point_dropoff_null">No drop Off Point Selected.</string>
     <string name="error_point_pickup_null">No Pickup Point Selected.</string>
     <string name="error_select_trip_mode">You have to select a trip mode to start travel.</string>
-    <string name="fabric_key" templateMergeStrategy="preserve" translatable="false"/>
+    <string name="fabric_key" templateMergeStrategy="preserve" translatable="false">b6238ed212caa1e43049fdcf8c2c303107a794dc</string>
     <string name="facebook" translatable="false"/>
     <string name="facebook_application_id" translatable="false">CHANGE-ME</string>
     <string name="facebook_login_protocol_scheme" translatable="false">fbYOUR_APP_ID</string>
@@ -1903,7 +1903,7 @@
     <string name="google_api_key" translatable="false">AIzaSyClyNSd8t_EspqKMniLvuyFjHyv6xaJUS8</string>
     <string name="google_app_id" translatable="false">1:565806856911:android:053116ba451c1daffe55ba</string>
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyClyNSd8t_EspqKMniLvuyFjHyv6xaJUS8</string>
-    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false"/>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyCzxW7TOXsvJYyWnKHmChNTeraLF1eAk1Q</string>
     <string name="google_storage_bucket" translatable="false">attendancesystem-af953.appspot.com</string>
     <string name="hide_travel">Hide Travel</string>
     <string name="id_header"># %d</string>
@@ -1992,7 +1992,7 @@
     <string name="select_contact_approach">Select Contact Approach</string>
     <string name="select_payment_method">Select payment method:</string>
     <string name="sending_complaint">Sending Complaint…</string>
-    <string name="server_address" translatable="false">http://x.x.x.x:8080/</string>
+    <string name="server_address" translatable="false">http://127.0.0.1:5500/</string>
     <string name="service_canceled">Service Was canceled</string>
     <string name="service_card_cost">Cost: %.2f $</string>
     <string name="service_finished_cash">Service has been finished but there was not sufficient credit. Ask for cash</string>
@@ -2004,7 +2004,7 @@
     <string name="stats_monthly">Monthly</string>
     <string name="stats_weekly">Weekly</string>
     <string name="status_bar_notification_info_overflow">999+</string>
-    <string name="stripe_publishable_key" translatable="false"/>
+    <string name="stripe_publishable_key" translatable="false">pk_test_PwclBVq1et1aioDRHZlYo4Q1006mfYFJ1i</string>
     <string name="subject">Subject</string>
     <string name="tedpermission_close">Close</string>
     <string name="tedpermission_confirm">Confirm</string>

@@ -1,0 +1,4 @@
+#Sat Oct 19 02:30:04 WAT 2019
+base.0=/Users/iamdelightaaron/Documents/taxi-app/android/rider/build/intermediates/transforms/dexMerger/debug/1
+path.0=classes.dex
+renamed.0=classes.dex

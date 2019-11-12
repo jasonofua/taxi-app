@@ -1,10 +1,10 @@
 <resources>
-    <string name="server_address" translatable="false">http://x.x.x.x:8080/</string>
-    <string name="fabric_key" templateMergeStrategy="preserve" translatable="false"></string>
-    <string name="stripe_publishable_key" translatable="false"></string>
+    <string name="server_address" translatable="false">http://127.0.0.1:5500/</string>
+    <string name="fabric_key" templateMergeStrategy="preserve" translatable="false">b6238ed212caa1e43049fdcf8c2c303107a794dc</string>
+    <string name="stripe_publishable_key" translatable="false">pk_test_PwclBVq1et1aioDRHZlYo4Q1006mfYFJ1i</string>
     <string name="payment_currency" translatable="false">usd</string>
-    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false"></string>
-    <string name="defaultLocation" translatable="false">40.1792,44.4991</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyCzxW7TOXsvJYyWnKHmChNTeraLF1eAk1Q</string>
+    <string name="defaultLocation" translatable="false">9.0820,8.6753</string>
     <string name="theme" translatable="false">Amaranth</string>
     <!--string name="testMode" translatable="false"></string-->
     <bool name="is_call_request_enabled_driver">true</bool>

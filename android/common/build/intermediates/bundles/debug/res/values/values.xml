@@ -326,7 +326,7 @@
     <string name="copyright_notice">Copyright© 2018 Innomalist All Rights reserved.</string>
     <string name="cost">Travel Cost</string>
     <string name="current_balance">Current balance</string>
-    <string name="defaultLocation" translatable="false">40.1792,44.4991</string>
+    <string name="defaultLocation" translatable="false">9.0820,8.6753</string>
     <string name="delete_address">Delete</string>
     <string name="description">Description</string>
     <string name="destination">Destination</string>
@@ -373,7 +373,7 @@
     <string name="error_point_dropoff_null">No drop Off Point Selected.</string>
     <string name="error_point_pickup_null">No Pickup Point Selected.</string>
     <string name="error_select_trip_mode">You have to select a trip mode to start travel.</string>
-    <string name="fabric_key" templateMergeStrategy="preserve" translatable="false"/>
+    <string name="fabric_key" templateMergeStrategy="preserve" translatable="false">b6238ed212caa1e43049fdcf8c2c303107a794dc</string>
     <string name="facebook" translatable="false"/>
     <string name="finish_time">Finish Time</string>
     <string name="finish_travel">Finish</string>
@@ -384,7 +384,7 @@
     <string name="gender_female">Female</string>
     <string name="gender_male">Male</string>
     <string name="gender_unknown">Unknown</string>
-    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false"/>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyCzxW7TOXsvJYyWnKHmChNTeraLF1eAk1Q</string>
     <string name="hide_travel">Hide Travel</string>
     <string name="id_header"># %d</string>
     <string name="info">Info</string>
@@ -444,7 +444,7 @@
     <string name="select_contact_approach">Select Contact Approach</string>
     <string name="select_payment_method">Select payment method:</string>
     <string name="sending_complaint">Sending Complaint…</string>
-    <string name="server_address" translatable="false">http://x.x.x.x:8080/</string>
+    <string name="server_address" translatable="false">http://127.0.0.1:5500/</string>
     <string name="service_canceled">Service Was canceled</string>
     <string name="service_card_cost">Cost: %.2f $</string>
     <string name="service_finished_cash">Service has been finished but there was not sufficient credit. Ask for cash</string>
@@ -455,7 +455,7 @@
     <string name="stats_daily">Daily</string>
     <string name="stats_monthly">Monthly</string>
     <string name="stats_weekly">Weekly</string>
-    <string name="stripe_publishable_key" translatable="false"/>
+    <string name="stripe_publishable_key" translatable="false">pk_test_PwclBVq1et1aioDRHZlYo4Q1006mfYFJ1i</string>
     <string name="subject">Subject</string>
     <string name="theme" translatable="false">Amaranth</string>
     <string name="time">Time</string>
@@ -519,7 +519,7 @@
         <item name="colorAccent">#ffac08</item>
         <item name="colorControlHighlight">#ffc148</item>
         <item name="fontFamily">@font/roboto</item>
-        <!--Note:This Line will be needed when we are going to user preference compat library<item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Material</item>-->
+        
     </style>
     <style name="AppTheme.Amber" parent="Theme.AppCompat.DayNight.NoActionBar">
         <item name="colorPrimary">@color/md_amber_500</item>

@@ -1,10 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "/home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/driver/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rIN/values-en-rIN.xml",
+            "outputFile": "/Users/iamdelightaaron/Documents/taxi-app/android/driver/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rIN/values-en-rIN.xml",
             "map": [
                 {
-                    "source": "/home/jason/.gradle/caches/transforms-2/files-2.1/8b06d0bea4c6cba6e1bf64df4e57b8b5/res/values-en-rIN/values-en-rIN.xml",
+                    "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/edf7bbe7a76874e6cc6ab58b3fd34e05/res/values-en-rIN/values-en-rIN.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "89",
+                        "startColumns": "4",
+                        "startOffsets": "12107",
+                        "endColumns": "100",
+                        "endOffsets": "12203"
+                    }
+                },
+                {
+                    "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/c15aa77a426764418e23b46c80699163/res/values-en-rIN/values-en-rIN.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -21,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "/home/jason/.gradle/caches/transforms-2/files-2.1/57209b4e2b52c64309d80aa265a9dc65/res/values-en-rIN/values.xml",
+                    "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/bb22be87db0f96f6ce524b0f2baa6d64/res/values-en-rIN/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -38,7 +55,7 @@
                     }
                 },
                 {
-                    "source": "/home/jason/.gradle/caches/transforms-2/files-2.1/ac2209e1984af4683b21be613bb5a31b/res/values-en-rIN/values-en-rIN.xml",
+                    "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/ffed32b878ad4ca3c0017205aad74db3/res/values-en-rIN/values-en-rIN.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -52,23 +69,6 @@
                         "startOffsets": "455,559,659,767,851,951,1066,1143,1219,1301,1404,1508,1607,1712,1815,1919,2075,12025",
                         "endColumns": "103,99,107,83,99,114,76,75,81,102,103,98,104,102,103,155,99,81",
                         "endOffsets": "554,654,762,846,946,1061,1138,1214,1296,1399,1503,1602,1707,1810,1914,2070,2170,12102"
-                    }
-                },
-                {
-                    "source": "/home/jason/.gradle/caches/transforms-2/files-2.1/81e2d61fd850a4a803ef2fee7bb59f0e/res/values-en-rIN/values-en-rIN.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "89",
-                        "startColumns": "4",
-                        "startOffsets": "12107",
-                        "endColumns": "100",
-                        "endOffsets": "12203"
                     }
                 }
             ]

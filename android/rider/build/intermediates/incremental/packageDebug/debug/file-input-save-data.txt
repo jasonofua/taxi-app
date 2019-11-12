@@ -1,0 +1,35 @@
+#Internal package file, do not edit.
+#Sat Oct 19 02:30:06 WAT 2019
+7.path=classes.dex
+2.base=/Users/iamdelightaaron/Documents/taxi-app/android/rider/build/intermediates/transforms/dexMerger/debug/16
+5.set=DEX
+0.path=classes.dex
+2.baseType=DIRECTORY
+3.base=/Users/iamdelightaaron/Documents/taxi-app/android/rider/build/intermediates/assets/debug
+7.baseType=DIRECTORY
+2.set=DEX
+1.path=crashlytics-build.properties
+4.base=/Users/iamdelightaaron/Documents/taxi-app/android/rider/build/intermediates/transforms/dexMerger/debug/11
+7.set=DEX
+count=8
+5.baseType=DIRECTORY
+2.path=classes.dex
+5.base=/Users/iamdelightaaron/Documents/taxi-app/android/rider/build/intermediates/transforms/dexMerger/debug/13
+4.set=DEX
+3.path=PinJump.json
+6.base=/Users/iamdelightaaron/Documents/taxi-app/android/rider/build/intermediates/transforms/dexMerger/debug/12
+3.baseType=DIRECTORY
+1.set=ASSET
+4.path=classes.dex
+7.base=/Users/iamdelightaaron/Documents/taxi-app/android/rider/build/intermediates/transforms/dexMerger/debug/15
+6.set=DEX
+1.baseType=DIRECTORY
+6.baseType=DIRECTORY
+5.path=classes.dex
+0.base=/Users/iamdelightaaron/Documents/taxi-app/android/rider/build/intermediates/transforms/dexMerger/debug/14
+0.baseType=DIRECTORY
+3.set=ASSET
+6.path=classes.dex
+1.base=/Users/iamdelightaaron/Documents/taxi-app/android/rider/build/intermediates/assets/debug
+4.baseType=DIRECTORY
+0.set=DEX

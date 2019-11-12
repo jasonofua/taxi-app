@@ -1,0 +1,4 @@
+com.innomalist.taxi.common.databinding.ItemTravelBinding
+com.innomalist.taxi.common.databinding.ActivityLoginBinding
+com.innomalist.taxi.common.databinding.ActivityChargeAccountBinding
+android.databinding.DataBindingComponent

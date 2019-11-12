@@ -6,6 +6,7 @@ import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Binder;
 import android.os.IBinder;
 import android.os.Vibrator;
 import android.support.annotation.Nullable;
@@ -90,6 +91,7 @@ public class RiderService extends Service {
     Socket socket;
     Vibrator vibe;
     EventBus eventBus = EventBus.getDefault();
+    IBinder mBinder = new LocalBinder();
 
     @Subscribe
     public void connectSocket(ConnectEvent connectEvent) {
@@ -313,7 +315,13 @@ public class RiderService extends Service {
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-        return null;
+        return mBinder;
+    }
+
+    public class LocalBinder extends Binder {
+        public RiderService getServerInstance() {
+            return RiderService.this;
+        }
     }
 
     @Override

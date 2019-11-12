@@ -7,8 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import com.cooltechworks.creditcarddesign.CardEditActivity;
-import com.cooltechworks.creditcarddesign.CreditCardUtils;
+
 import com.innomalist.taxi.common.R;
 import com.innomalist.taxi.common.components.BaseActivity;
 import com.innomalist.taxi.common.databinding.ActivityChargeAccountBinding;
@@ -74,8 +73,8 @@ public class ChargeAccountActivity extends BaseActivity{
 
     public void onCheckoutClicked(View view) {
         if(paymentMode == PaymentMode.stripe) {
-            Intent intent = new Intent(ChargeAccountActivity.this, CardEditActivity.class);
-            startActivityForResult(intent, GET_NEW_CARD);
+//            Intent intent = new Intent(ChargeAccountActivity.this, CardEditActivity.class);
+//            startActivityForResult(intent, GET_NEW_CARD);
         } else {
             AlerterHelper.showError(ChargeAccountActivity.this,"No provider was provided. Provide one!");
         }
@@ -94,28 +93,28 @@ public class ChargeAccountActivity extends BaseActivity{
     void addCharge(Button button){
         binding.editText.setText(button.getText().toString().replace(",",""));
     }
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == GET_NEW_CARD && resultCode == RESULT_OK) {
-            if(getString(R.string.stripe_publishable_key).equals("")){
-                AlerterHelper.showError(ChargeAccountActivity.this,"Stripe API Key wasn't provided. Implement you own payment method or provide API Key.");
-                return;
-            }
-            Card card = new Card(data.getStringExtra(CreditCardUtils.EXTRA_CARD_NUMBER),
-                    Integer.valueOf(data.getStringExtra(CreditCardUtils.EXTRA_CARD_EXPIRY).split("/")[0]),
-                    Integer.valueOf(data.getStringExtra(CreditCardUtils.EXTRA_CARD_EXPIRY).split("/")[1]),
-                    data.getStringExtra(CreditCardUtils.EXTRA_CARD_CVV));
-            Stripe stripe = new Stripe();
-            stripe.createToken(card, getString(R.string.stripe_publishable_key), new TokenCallback() {
-                public void onSuccess(Token token) {
-                    eventBus.post(new ChargeAccountEvent(token.getId(),Float.parseFloat(binding.editText.getText().toString().substring(1))));
-                }
-
-                public void onError(Exception error) {
-                    Log.d("Stripe", error.getLocalizedMessage());
-                }
-            });
-        }
-    }
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if(requestCode == GET_NEW_CARD && resultCode == RESULT_OK) {
+//            if(getString(R.string.stripe_publishable_key).equals("")){
+//                AlerterHelper.showError(ChargeAccountActivity.this,"Stripe API Key wasn't provided. Implement you own payment method or provide API Key.");
+//                return;
+//            }
+//            Card card = new Card(data.getStringExtra(CreditCardUtils.EXTRA_CARD_NUMBER),
+//                    Integer.valueOf(data.getStringExtra(CreditCardUtils.EXTRA_CARD_EXPIRY).split("/")[0]),
+//                    Integer.valueOf(data.getStringExtra(CreditCardUtils.EXTRA_CARD_EXPIRY).split("/")[1]),
+//                    data.getStringExtra(CreditCardUtils.EXTRA_CARD_CVV));
+//            Stripe stripe = new Stripe();
+//            stripe.createToken(card, getString(R.string.stripe_publishable_key), new TokenCallback() {
+//                public void onSuccess(Token token) {
+//                    eventBus.post(new ChargeAccountEvent(token.getId(),Float.parseFloat(binding.editText.getText().toString().substring(1))));
+//                }
+//
+//                public void onError(Exception error) {
+//                    Log.d("Stripe", error.getLocalizedMessage());
+//                }
+//            });
+//        }
+//    }
 }

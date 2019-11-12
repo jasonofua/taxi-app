@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/rider/build/intermediates/incremental/mergeDebugResources/merged.dir/values-se/values-se.xml",
+            "outputFile": "/Users/iamdelightaaron/Documents/taxi-app/android/rider/build/intermediates/incremental/mergeDebugResources/merged.dir/values-se/values-se.xml",
             "map": [
                 {
-                    "source": "/home/jason/.gradle/caches/transforms-2/files-2.1/4bb6b6dc82efc6e3eeb2ef3788b7936a/res/values-se/values-se.xml",
+                    "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/c970cc505a26be698cba8556ce487d29/res/values-se/values-se.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

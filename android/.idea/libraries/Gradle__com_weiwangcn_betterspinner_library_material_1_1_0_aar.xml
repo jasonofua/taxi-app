@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.weiwangcn.betterspinner:library-material:1.1.0@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/27f66d0f8fc102fd4c19fdd675485f9d/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/27f66d0f8fc102fd4c19fdd675485f9d/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5fb36dcf628185f0ecc8a84be086fcfd/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5fb36dcf628185f0ecc8a84be086fcfd/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

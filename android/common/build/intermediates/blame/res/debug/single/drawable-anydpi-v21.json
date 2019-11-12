@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/drawable-anydpi-v21/md_nav_back.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/330ad577017d66390f07dfdc95f86685/res/drawable-anydpi-v21/md_nav_back.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/drawable-anydpi-v21/design_ic_visibility.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/d6e8ff9e27291ce1046e06125c780358/res/drawable-anydpi-v21/design_ic_visibility.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/drawable-anydpi-v21/design_ic_visibility_off.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/d6e8ff9e27291ce1046e06125c780358/res/drawable-anydpi-v21/design_ic_visibility_off.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/drawable-anydpi-v21/alerter_ic_notifications.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/e23442a57b57c39f44f9a24dd5779b5b/res/drawable-anydpi-v21/alerter_ic_notifications.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/drawable-anydpi-v21/alerter_ic_face.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/e23442a57b57c39f44f9a24dd5779b5b/res/drawable-anydpi-v21/alerter_ic_face.xml"
+    }
+]

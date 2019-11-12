@@ -27,7 +27,7 @@ module.exports = {
         }
     },
     updateDatabase: async function (mediaId,path) {
-        let result = await sql.query("UPDATE media SET address = ?, path_type = 'relative' WHERE id = ?",[path,mediaId]);
+        let result = await sql.query("UPDATE media SET media_address = ?, path_type = 'relative' WHERE id = ?",[path,mediaId]);
         return result.affectedRows === 1;
     },
     doUpload: async function (buffer, mediaId) {

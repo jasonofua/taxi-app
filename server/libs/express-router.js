@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
 });
 router.post("/operator_login", async function (req, res) {
     try {
-        let operator = (await mysql.operator.authenticate(req.query.user_name, req.query.password));
+        let operator = (await mysql.operator.authenticate(req.query.username, req.query.password));
         let token = jwt.sign({id: operator.id}, process.env.JWT_SECRET, {});
         mysql.operator.setStatus(operator.id,'enabled');
         res.json({status: 200, token: token, user: operator});
@@ -28,7 +28,7 @@ router.post('/rider_login', async function (req, res) {
         res.json({status: 410, error: "Upgrade to new version"});
         return;
     }
-    let profile = await mysql.rider.getProfile(parseInt(req.body.user_name));
+    let profile = await mysql.rider.getProfile(parseInt(req.body.username));
     switch (profile.status) {
         case('blocked'):
             res.json({status: 666, error: "Your access has been denied. Please contact app provider."});
@@ -46,7 +46,7 @@ router.post('/driver_login', async function (req, res) {
         res.json({status: 410, error: "Upgrade to new version"});
         return;
     }
-    let profile = await mysql.driver.getProfile(parseInt(req.body.user_name));
+    let profile = await mysql.driver.getProfile(parseInt(req.body.username));
     switch (profile.status) {
         case('disabled'):
             res.json({

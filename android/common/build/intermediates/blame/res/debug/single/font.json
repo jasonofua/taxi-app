@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/font/roboto_regular.ttf",
+        "source": "/Users/iamdelightaaron/Documents/taxi-app/android/common/src/main/res/font/roboto_regular.ttf"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/font/roboto.xml",
+        "source": "/Users/iamdelightaaron/Documents/taxi-app/android/common/src/main/res/font/roboto.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/font/roboto_medium.ttf",
+        "source": "/Users/iamdelightaaron/Documents/taxi-app/android/common/src/main/res/font/roboto_medium.ttf"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/font/roboto_thin.ttf",
+        "source": "/Users/iamdelightaaron/Documents/taxi-app/android/common/src/main/res/font/roboto_thin.ttf"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/font/roboto_bold.ttf",
+        "source": "/Users/iamdelightaaron/Documents/taxi-app/android/common/src/main/res/font/roboto_bold.ttf"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/font/roboto_black.ttf",
+        "source": "/Users/iamdelightaaron/Documents/taxi-app/android/common/src/main/res/font/roboto_black.ttf"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/font/roboto_light.ttf",
+        "source": "/Users/iamdelightaaron/Documents/taxi-app/android/common/src/main/res/font/roboto_light.ttf"
+    }
+]

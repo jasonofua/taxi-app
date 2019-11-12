@@ -1,0 +1,46 @@
+[
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/drawable-ldpi-v4/ucrop_ic_rotate.png",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/6aeeb5062369c080696ad0c4d8652ea7/res/drawable-ldpi-v4/ucrop_ic_rotate.png"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/drawable-ldpi-v4/ucrop_ic_cross.png",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/6aeeb5062369c080696ad0c4d8652ea7/res/drawable-ldpi-v4/ucrop_ic_cross.png"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/drawable-ldpi-v4/ucrop_ic_next.png",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/6aeeb5062369c080696ad0c4d8652ea7/res/drawable-ldpi-v4/ucrop_ic_next.png"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/drawable-ldpi-v4/ucrop_ic_scale.png",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/6aeeb5062369c080696ad0c4d8652ea7/res/drawable-ldpi-v4/ucrop_ic_scale.png"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/drawable-ldpi-v4/ucrop_ic_reset.png",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/6aeeb5062369c080696ad0c4d8652ea7/res/drawable-ldpi-v4/ucrop_ic_reset.png"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/drawable-ldpi-v4/ucrop_ic_crop.png",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/6aeeb5062369c080696ad0c4d8652ea7/res/drawable-ldpi-v4/ucrop_ic_crop.png"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/drawable-ldpi-v4/alerter_ic_face.png",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/e23442a57b57c39f44f9a24dd5779b5b/res/drawable-ldpi-v4/alerter_ic_face.png"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/drawable-ldpi-v4/md_nav_back.png",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/330ad577017d66390f07dfdc95f86685/res/drawable-ldpi-v4/md_nav_back.png"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/drawable-ldpi-v4/ucrop_ic_angle.png",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/6aeeb5062369c080696ad0c4d8652ea7/res/drawable-ldpi-v4/ucrop_ic_angle.png"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/drawable-ldpi-v4/ucrop_ic_done.png",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/6aeeb5062369c080696ad0c4d8652ea7/res/drawable-ldpi-v4/ucrop_ic_done.png"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/drawable-ldpi-v4/alerter_ic_notifications.png",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/e23442a57b57c39f44f9a24dd5779b5b/res/drawable-ldpi-v4/alerter_ic_notifications.png"
+    }
+]

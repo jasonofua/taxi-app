@@ -1,0 +1,222 @@
+[
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/mit_full.txt",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/14b9110a4cc167463ba5285eae23c514/res/raw/mit_full.txt"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/ccbysa_30_full.txt",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/14b9110a4cc167463ba5285eae23c514/res/raw/ccbysa_30_full.txt"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/notices.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/14b9110a4cc167463ba5285eae23c514/res/raw/notices.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/amu_draw_order_ground_overlay.kml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/53d1b2319273881892eaff14e6767164/res/raw/amu_draw_order_ground_overlay.kml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/gpl_20_summary.txt",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/14b9110a4cc167463ba5285eae23c514/res/raw/gpl_20_summary.txt"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/sil_ofl_11_summary.txt",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/14b9110a4cc167463ba5285eae23c514/res/raw/sil_ofl_11_summary.txt"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/map_night.json",
+        "source": "/Users/iamdelightaaron/Documents/taxi-app/android/common/src/main/res/raw/map_night.json"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/amu_poly_style_boolean_numeric.kml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/53d1b2319273881892eaff14e6767164/res/raw/amu_poly_style_boolean_numeric.kml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/amu_ballon_gx_prefix.kml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/53d1b2319273881892eaff14e6767164/res/raw/amu_ballon_gx_prefix.kml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/gpl_30_summary.txt",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/14b9110a4cc167463ba5285eae23c514/res/raw/gpl_30_summary.txt"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/mit_summary.txt",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/14b9110a4cc167463ba5285eae23c514/res/raw/mit_summary.txt"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/amu_unsupported.kml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/53d1b2319273881892eaff14e6767164/res/raw/amu_unsupported.kml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/mpl_20_summary.txt",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/14b9110a4cc167463ba5285eae23c514/res/raw/mpl_20_summary.txt"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/request.mp3",
+        "source": "/Users/iamdelightaaron/Documents/taxi-app/android/common/src/main/res/raw/request.mp3"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/epl_v10_full.txt",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/14b9110a4cc167463ba5285eae23c514/res/raw/epl_v10_full.txt"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/amu_default_balloon.kml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/53d1b2319273881892eaff14e6767164/res/raw/amu_default_balloon.kml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/isc_summary.txt",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/14b9110a4cc167463ba5285eae23c514/res/raw/isc_summary.txt"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/amu_ground_overlay_color.kml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/53d1b2319273881892eaff14e6767164/res/raw/amu_ground_overlay_color.kml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/lgpl_21_full.txt",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/14b9110a4cc167463ba5285eae23c514/res/raw/lgpl_21_full.txt"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/gpl_30_full.txt",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/14b9110a4cc167463ba5285eae23c514/res/raw/gpl_30_full.txt"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/amu_basic_folder.kml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/53d1b2319273881892eaff14e6767164/res/raw/amu_basic_folder.kml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/lgpl_3_summary.txt",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/14b9110a4cc167463ba5285eae23c514/res/raw/lgpl_3_summary.txt"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/lgpl_21_summary.txt",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/14b9110a4cc167463ba5285eae23c514/res/raw/lgpl_21_summary.txt"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/amu_inline_style.kml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/53d1b2319273881892eaff14e6767164/res/raw/amu_inline_style.kml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/isc_full.txt",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/14b9110a4cc167463ba5285eae23c514/res/raw/isc_full.txt"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/bsd2_summary.txt",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/14b9110a4cc167463ba5285eae23c514/res/raw/bsd2_summary.txt"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/bsd3_summary.txt",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/14b9110a4cc167463ba5285eae23c514/res/raw/bsd3_summary.txt"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/bsd2_full.txt",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/14b9110a4cc167463ba5285eae23c514/res/raw/bsd2_full.txt"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/gpl_20_full.txt",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/14b9110a4cc167463ba5285eae23c514/res/raw/gpl_20_full.txt"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/ccand_30_full.txt",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/14b9110a4cc167463ba5285eae23c514/res/raw/ccand_30_full.txt"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/amu_poly_style_boolean_alpha.kml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/53d1b2319273881892eaff14e6767164/res/raw/amu_poly_style_boolean_alpha.kml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/amu_cdata.kml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/53d1b2319273881892eaff14e6767164/res/raw/amu_cdata.kml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/amu_multiple_placemarks.kml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/53d1b2319273881892eaff14e6767164/res/raw/amu_multiple_placemarks.kml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/amu_ground_overlay.kml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/53d1b2319273881892eaff14e6767164/res/raw/amu_ground_overlay.kml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/amu_multigeometry_placemarks.kml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/53d1b2319273881892eaff14e6767164/res/raw/amu_multigeometry_placemarks.kml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/sil_ofl_11_full.txt",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/14b9110a4cc167463ba5285eae23c514/res/raw/sil_ofl_11_full.txt"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/ccby_30_summary.txt",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/14b9110a4cc167463ba5285eae23c514/res/raw/ccby_30_summary.txt"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/amu_document_nest.kml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/53d1b2319273881892eaff14e6767164/res/raw/amu_document_nest.kml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/amu_nested_multigeometry.kml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/53d1b2319273881892eaff14e6767164/res/raw/amu_nested_multigeometry.kml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/ccby_30_full.txt",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/14b9110a4cc167463ba5285eae23c514/res/raw/ccby_30_full.txt"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/mpl_20_full.txt",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/14b9110a4cc167463ba5285eae23c514/res/raw/mpl_20_full.txt"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/asl_20_summary.txt",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/14b9110a4cc167463ba5285eae23c514/res/raw/asl_20_summary.txt"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/ccbysa_30_summary.txt",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/14b9110a4cc167463ba5285eae23c514/res/raw/ccbysa_30_summary.txt"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/bsd3_full.txt",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/14b9110a4cc167463ba5285eae23c514/res/raw/bsd3_full.txt"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/amu_nested_folders.kml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/53d1b2319273881892eaff14e6767164/res/raw/amu_nested_folders.kml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/lgpl_3_full.txt",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/14b9110a4cc167463ba5285eae23c514/res/raw/lgpl_3_full.txt"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/asl_20_full.txt",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/14b9110a4cc167463ba5285eae23c514/res/raw/asl_20_full.txt"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/amu_extended_data.kml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/53d1b2319273881892eaff14e6767164/res/raw/amu_extended_data.kml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/epl_v10_summary.txt",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/14b9110a4cc167463ba5285eae23c514/res/raw/epl_v10_summary.txt"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/ccand_30_summary.txt",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/14b9110a4cc167463ba5285eae23c514/res/raw/ccand_30_summary.txt"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/amu_basic_placemark.kml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/53d1b2319273881892eaff14e6767164/res/raw/amu_basic_placemark.kml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/amu_visibility_ground_overlay.kml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/53d1b2319273881892eaff14e6767164/res/raw/amu_visibility_ground_overlay.kml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/mpl_11_full.txt",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/14b9110a4cc167463ba5285eae23c514/res/raw/mpl_11_full.txt"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/mpl_11_summary.txt",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/14b9110a4cc167463ba5285eae23c514/res/raw/mpl_11_summary.txt"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/raw/amu_unknwown_folder.kml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/53d1b2319273881892eaff14e6767164/res/raw/amu_unknwown_folder.kml"
+    }
+]

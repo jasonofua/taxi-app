@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout-v17/preference_material.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/75b4284f504d5f1197001b783361d0d3/res/layout-v17/preference_material.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout-v17/preference_category_material.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/75b4284f504d5f1197001b783361d0d3/res/layout-v17/preference_category_material.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout-v17/preference_dropdown_material.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/75b4284f504d5f1197001b783361d0d3/res/layout-v17/preference_dropdown_material.xml"
+    },
+    {
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/common/build/intermediates/res/merged/debug/layout-v17/preference_information_material.xml",
+        "source": "/Users/iamdelightaaron/.gradle/caches/transforms-2/files-2.1/75b4284f504d5f1197001b783361d0d3/res/layout-v17/preference_information_material.xml"
+    }
+]

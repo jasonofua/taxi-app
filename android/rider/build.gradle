@@ -41,6 +41,9 @@ dependencies {
     annotationProcessor 'org.greenrobot:eventbus-annotation-processor:3.0.1'
     implementation "com.andkulikov:transitionseverywhere:1.7.8"
     api project(':common')
+    implementation 'com.firebaseui:firebase-ui:3.2.1'
+    implementation 'com.google.firebase:firebase-auth:11.8.0'
+    implementation 'com.firebaseui:firebase-ui-auth:3.2.1'
     implementation 'link.fls:swipestack:0.3.0'
     compile 'com.github.arimorty:floatingsearchview:2.1.1'
     implementation 'com.airbnb.android:lottie:2.2.5'

@@ -5,11 +5,11 @@ module.exports = {
         return result;
     },
     insert: async function (riderId, address) {
-        let [result, ignored] = await sql.query("INSERT INTO rider_address (rider_id, title, address, location) VALUES (?, ?, ?, ST_GeomFromText(?))", [riderId, address.title, address.address, getPointTextFromArray(address.location)]);
+        let [result, ignored] = await sql.query("INSERT INTO rider_address (rider_id, title, rider_address, rider_location) VALUES (?, ?, ?, ST_GeomFromText(?))", [riderId, address.title, address.address, getPointTextFromArray(address.location)]);
         return true;
     },
     update: async function (address) {
-        let [result, ignored] = await sql.query("UPDATE rider_address SET title = ?, address = ?, location = ST_GeomFromText(?) WHERE id = ?", [address.title, address.address, getPointTextFromArray(address.location), address.id]);
+        let [result, ignored] = await sql.query("UPDATE rider_address SET title = ?, rider_address = ?, rider_location = ST_GeomFromText(?) WHERE id = ?", [address.title, address.address, getPointTextFromArray(address.location), address.id]);
         return true;
     },
     delete: async function (address) {

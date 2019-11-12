@@ -10,18 +10,18 @@ module.exports = {
     authenticate: async function (mobileNumber) {
         let result = await mysql.getOneRow('rider',{mobile_number:mobileNumber});
         if(!result) {
-            await sql.GOOGLE_MAPS_API_KEYquery("INSERT INTO rider (mobilGOOGLE_MAPS_API_KEYe_number) VALUES (?)", [mobileNumber]);GOOGLE_MAPS_API_KEYGOOGLE_MAPS_API_KEY
+            await sql.GOOGLE_MAPS_API_KEYquery("INSERT INTO rider (mobile_number) VALUES (?)", [mobileNumber]);
             result = await mysql.getOneRow('rider',{mobile_number:mobileNumber});
         }
         return result;
     },
     setProfileImage: async function (riderId, fileName) {
-        let [insertMediaResult,ignored] = await sql.query("INSERT INTO media (type,privacy_level,address) VALUES ('rider image','medium',?)",[fileName]);
+        let [insertMediaResult,ignored] = await sql.query("INSERT INTO media (type,privacy_level,media_address) VALUES ('rider image','medium',?)",[fileName]);
         let [updateRiderResult,ignored2] = await sql.query("UPDATE rider SET media_id = ? WHERE id = ?",[insertMediaResult.insertId,riderId]);
         return updateRiderResult.affectedRows;
     },
     getProfileImage: async function (riderId) {
-        let [result,ignored] = await sql.query("SELECT media.address FROM rider JOIN media ON rider.media_id = media.id WHERE rider.id = ?", [riderId]);
+        let [result,ignored] = await sql.query("SELECT media.media_address FROM rider JOIN media ON rider.media_id = media.id WHERE rider.id = ?", [riderId]);
         return result[0].address;
     },
     getBalance: async function (riderId) {

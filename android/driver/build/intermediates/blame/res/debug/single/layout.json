@@ -1,26 +1,26 @@
 [
     {
-        "merged": "/home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/driver/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/card_request.xml",
-        "source": "/home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/driver/src/main/res/layout/card_request.xml"
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/driver/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_edit_profile.xml",
+        "source": "/Users/iamdelightaaron/Documents/taxi-app/android/driver/src/main/res/layout/activity_edit_profile.xml"
     },
     {
-        "merged": "/home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/driver/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_travel.xml",
-        "source": "/home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/driver/src/main/res/layout/activity_travel.xml"
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/driver/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_main.xml",
+        "source": "/Users/iamdelightaaron/Documents/taxi-app/android/driver/src/main/res/layout/activity_main.xml"
     },
     {
-        "merged": "/home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/driver/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_statistics.xml",
-        "source": "/home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/driver/src/main/res/layout/activity_statistics.xml"
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/driver/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/card_request.xml",
+        "source": "/Users/iamdelightaaron/Documents/taxi-app/android/driver/src/main/res/layout/card_request.xml"
     },
     {
-        "merged": "/home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/driver/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_main.xml",
-        "source": "/home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/driver/src/main/res/layout/activity_main.xml"
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/driver/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_statistics.xml",
+        "source": "/Users/iamdelightaaron/Documents/taxi-app/android/driver/src/main/res/layout/activity_statistics.xml"
     },
     {
-        "merged": "/home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/driver/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_edit_profile.xml",
-        "source": "/home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/driver/src/main/res/layout/activity_edit_profile.xml"
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/driver/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_splash.xml",
+        "source": "/Users/iamdelightaaron/Documents/taxi-app/android/driver/src/main/res/layout/activity_splash.xml"
     },
     {
-        "merged": "/home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/driver/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_splash.xml",
-        "source": "/home/jason/Documents/codecanyon-21437882-taxi-application-android-solution-dashboard/android/driver/src/main/res/layout/activity_splash.xml"
+        "merged": "/Users/iamdelightaaron/Documents/taxi-app/android/driver/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_travel.xml",
+        "source": "/Users/iamdelightaaron/Documents/taxi-app/android/driver/src/main/res/layout/activity_travel.xml"
     }
 ]

@@ -1,6 +1,6 @@
 module.exports = {
     authenticate: async function (userName, password) {
-        let [result, ignored] = await sql.query("SELECT * FROM operator WHERE user_name = ? And password = ?", [userName, password]);
+        let [result, ignored] = await sql.query("SELECT * FROM operator WHERE username = ? And pwd = ?", [userName, password]);
         if (result.length !== 1) {
             throw new Error(300);
         }
@@ -26,14 +26,14 @@ module.exports = {
         return result.affectedRows === 1;
     },
     updateOperatorPassword: function (operatorId, oldPass, newPass) {
-        return sql.query("UPDATE operator SET password = ? WHERE password = ? AND id = ?", [newPass, oldPass, operatorId]);
+        return sql.query("UPDATE operator SET pwd = ? WHERE pwd = ? AND id = ?", [newPass, oldPass, operatorId]);
     },
     getStatus: async function (operatorId) {
-        let [result, ignored] = await sql.query("SELECT status FROM operator WHERE id = ?", [operatorId]);
+        let [result, ignored] = await sql.query("SELECT oprt_status FROM operator WHERE id = ?", [operatorId]);
         return result[0].status;
     },
     setStatus: async function (operatorId, status) {
-        let [result, ignored] = await sql.query("UPDATE operator SET status = ? WHERE id = ?", [status, operatorId]);
+        let [result, ignored] = await sql.query("UPDATE operator SET oprt_status = ? WHERE id = ?", [status, operatorId]);
         return result.rowsAffected;
     }
 };
