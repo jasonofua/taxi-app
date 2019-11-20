@@ -17,18 +17,18 @@ public class RiderEventBusIndex implements SubscriberInfoIndex {
     static {
         SUBSCRIBER_INDEX = new HashMap<Class<?>, SubscriberInfo>();
 
-        putIndex(new SimpleSubscriberInfo(com.innomalist.taxi.rider.activities.addresses.AddressesActivity.class, true,
+        putIndex(new SimpleSubscriberInfo(com.innomalist.taxi.rider.activities.main.MainActivity.class, true,
                 new SubscriberMethodInfo[] {
-            new SubscriberMethodInfo("onCRUDResultReceived",
+            new SubscriberMethodInfo("onAddressesReceived",
                     com.innomalist.taxi.rider.events.CRUDAddressResultEvent.class, ThreadMode.MAIN),
-        }));
-
-        putIndex(new SimpleSubscriberInfo(com.innomalist.taxi.rider.activities.profile.ProfileActivity.class, true,
-                new SubscriberMethodInfo[] {
-            new SubscriberMethodInfo("onProfileInfoChanged",
-                    com.innomalist.taxi.common.events.EditProfileInfoResultEvent.class, ThreadMode.MAIN),
-            new SubscriberMethodInfo("onProfileImageChanged",
-                    com.innomalist.taxi.common.events.ChangeProfileImageResultEvent.class, ThreadMode.MAIN),
+            new SubscriberMethodInfo("onCalculateFareReceived",
+                    com.innomalist.taxi.rider.events.CalculateFareResultEvent.class, ThreadMode.MAIN),
+            new SubscriberMethodInfo("onDriversLocationResult",
+                    com.innomalist.taxi.rider.events.GetDriversLocationResultEvent.class, ThreadMode.MAIN),
+            new SubscriberMethodInfo("onRequestTaxiError",
+                    com.innomalist.taxi.rider.events.ServiceRequestErrorEvent.class, ThreadMode.MAIN),
+            new SubscriberMethodInfo("onProfileChanged",
+                    com.innomalist.taxi.common.events.ProfileInfoChangedEvent.class, ThreadMode.MAIN, 0, true),
         }));
 
         putIndex(new SimpleSubscriberInfo(com.innomalist.taxi.rider.activities.travel.TravelActivity.class, true,
@@ -47,6 +47,40 @@ public class RiderEventBusIndex implements SubscriberInfoIndex {
                     com.innomalist.taxi.rider.events.GetTravelInfoResultEvent.class, ThreadMode.MAIN),
             new SubscriberMethodInfo("onCallRequested",
                     com.innomalist.taxi.common.events.ServiceCallRequestResultEvent.class, ThreadMode.MAIN),
+        }));
+
+        putIndex(new SimpleSubscriberInfo(com.innomalist.taxi.rider.activities.profile.ProfileActivity.class, true,
+                new SubscriberMethodInfo[] {
+            new SubscriberMethodInfo("onProfileInfoChanged",
+                    com.innomalist.taxi.common.events.EditProfileInfoResultEvent.class, ThreadMode.MAIN),
+            new SubscriberMethodInfo("onProfileImageChanged",
+                    com.innomalist.taxi.common.events.ChangeProfileImageResultEvent.class, ThreadMode.MAIN),
+        }));
+
+        putIndex(new SimpleSubscriberInfo(com.innomalist.taxi.rider.activities.addresses.AddressesActivity.class, true,
+                new SubscriberMethodInfo[] {
+            new SubscriberMethodInfo("onCRUDResultReceived",
+                    com.innomalist.taxi.rider.events.CRUDAddressResultEvent.class, ThreadMode.MAIN),
+        }));
+
+        putIndex(new SimpleSubscriberInfo(com.innomalist.taxi.rider.activities.main.dialogs.DriverAcceptedDialog.class,
+                true, new SubscriberMethodInfo[] {
+            new SubscriberMethodInfo("onServiceRequestResult",
+                    com.innomalist.taxi.rider.events.ServiceRequestResultEvent.class, ThreadMode.MAIN),
+            new SubscriberMethodInfo("onDriverAccepted", com.innomalist.taxi.rider.events.NewDriverAcceptedEvent.class,
+                    ThreadMode.MAIN),
+            new SubscriberMethodInfo("onAcceptDriver", com.innomalist.taxi.rider.events.AcceptDriverUIEvent.class,
+                    ThreadMode.MAIN),
+        }));
+
+        putIndex(new SimpleSubscriberInfo(com.innomalist.taxi.rider.activities.splash.SplashActivity.class, true,
+                new SubscriberMethodInfo[] {
+            new SubscriberMethodInfo("onLoginResultEvent", com.innomalist.taxi.rider.events.LoginResultEvent.class,
+                    ThreadMode.MAIN),
+            new SubscriberMethodInfo("onConnectedResult", com.innomalist.taxi.common.events.ConnectResultEvent.class,
+                    ThreadMode.MAIN),
+            new SubscriberMethodInfo("onServiceStarted",
+                    com.innomalist.taxi.common.events.BackgroundServiceStartedEvent.class),
         }));
 
         putIndex(new SimpleSubscriberInfo(com.innomalist.taxi.rider.services.RiderService.class, true,
@@ -71,40 +105,6 @@ public class RiderEventBusIndex implements SubscriberInfoIndex {
             new SubscriberMethodInfo("onCalculateFareRequested",
                     com.innomalist.taxi.rider.events.CalculateFareRequestEvent.class),
             new SubscriberMethodInfo("crudAddress", com.innomalist.taxi.rider.events.CRUDAddressRequestEvent.class),
-        }));
-
-        putIndex(new SimpleSubscriberInfo(com.innomalist.taxi.rider.activities.splash.SplashActivity.class, true,
-                new SubscriberMethodInfo[] {
-            new SubscriberMethodInfo("onLoginResultEvent", com.innomalist.taxi.rider.events.LoginResultEvent.class,
-                    ThreadMode.MAIN),
-            new SubscriberMethodInfo("onConnectedResult", com.innomalist.taxi.common.events.ConnectResultEvent.class,
-                    ThreadMode.MAIN),
-            new SubscriberMethodInfo("onServiceStarted",
-                    com.innomalist.taxi.common.events.BackgroundServiceStartedEvent.class),
-        }));
-
-        putIndex(new SimpleSubscriberInfo(com.innomalist.taxi.rider.activities.main.dialogs.DriverAcceptedDialog.class,
-                true, new SubscriberMethodInfo[] {
-            new SubscriberMethodInfo("onServiceRequestResult",
-                    com.innomalist.taxi.rider.events.ServiceRequestResultEvent.class, ThreadMode.MAIN),
-            new SubscriberMethodInfo("onDriverAccepted", com.innomalist.taxi.rider.events.NewDriverAcceptedEvent.class,
-                    ThreadMode.MAIN),
-            new SubscriberMethodInfo("onAcceptDriver", com.innomalist.taxi.rider.events.AcceptDriverUIEvent.class,
-                    ThreadMode.MAIN),
-        }));
-
-        putIndex(new SimpleSubscriberInfo(com.innomalist.taxi.rider.activities.main.MainActivity.class, true,
-                new SubscriberMethodInfo[] {
-            new SubscriberMethodInfo("onAddressesReceived",
-                    com.innomalist.taxi.rider.events.CRUDAddressResultEvent.class, ThreadMode.MAIN),
-            new SubscriberMethodInfo("onCalculateFareReceived",
-                    com.innomalist.taxi.rider.events.CalculateFareResultEvent.class, ThreadMode.MAIN),
-            new SubscriberMethodInfo("onDriversLocationResult",
-                    com.innomalist.taxi.rider.events.GetDriversLocationResultEvent.class, ThreadMode.MAIN),
-            new SubscriberMethodInfo("onRequestTaxiError",
-                    com.innomalist.taxi.rider.events.ServiceRequestErrorEvent.class, ThreadMode.MAIN),
-            new SubscriberMethodInfo("onProfileChanged",
-                    com.innomalist.taxi.common.events.ProfileInfoChangedEvent.class, ThreadMode.MAIN, 0, true),
         }));
 
     }

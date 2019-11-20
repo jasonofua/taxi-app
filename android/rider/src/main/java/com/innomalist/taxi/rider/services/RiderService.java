@@ -44,6 +44,7 @@ import com.innomalist.taxi.common.utils.CommonUtils;
 import com.innomalist.taxi.common.utils.MyPreferenceManager;
 import com.innomalist.taxi.common.utils.ServerResponse;
 import com.innomalist.taxi.rider.R;
+import com.innomalist.taxi.rider.activities.main.MainActivity;
 import com.innomalist.taxi.rider.events.AcceptDriverEvent;
 import com.innomalist.taxi.rider.events.AcceptDriverResultEvent;
 import com.innomalist.taxi.rider.events.CRUDAddressRequestEvent;
@@ -157,7 +158,7 @@ public class RiderService extends Service {
                 DataOutputStream wr = new DataOutputStream(client.getOutputStream());
 
                 HashMap<String, String> postDataParams = new HashMap<>();
-                postDataParams.put("user_name", uri[0]);
+                postDataParams.put("username", uri[0]);
                 postDataParams.put("version", uri[1]);
                 //postDataParams.put("password", uri[1]);
                 StringBuilder result = new StringBuilder();
@@ -190,9 +191,10 @@ public class RiderService extends Service {
             try {
                 JSONObject obj = new JSONObject(result);
                 int status = obj.getInt("status");
-                if (status == 200)
+                if (status == 200) {
                     eventBus.post(new LoginResultEvent(obj.getInt("status"), obj.getString("user"), obj.getString("token")));
-                else
+                    startActivity(new Intent(RiderService.this, MainActivity.class));
+                } else
                     eventBus.post(new LoginResultEvent(status, obj.getString("error")));
             } catch (Exception ex) {
                 Log.e("JSON Parse Failed", "Parse in Login Request Failed");

@@ -1,5 +1,5 @@
 <resources>
-    <string name="server_address" translatable="false">http://127.0.0.1:5500/</string>
+    <string name="server_address" translatable="false">http://ec2-18-216-145-188.us-east-2.compute.amazonaws.com:8080/</string>
     <string name="fabric_key" templateMergeStrategy="preserve" translatable="false">b6238ed212caa1e43049fdcf8c2c303107a794dc</string>
     <string name="stripe_publishable_key" translatable="false">pk_test_PwclBVq1et1aioDRHZlYo4Q1006mfYFJ1i</string>
     <string name="payment_currency" translatable="false">usd</string>
