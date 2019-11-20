@@ -10,7 +10,7 @@ module.exports = {
     authenticate: async function (mobileNumber) {
         let result = await mysql.getOneRow('rider',{mobile_number:mobileNumber});
         if(!result) {
-            await sql.GOOGLE_MAPS_API_KEYquery("INSERT INTO rider (mobile_number) VALUES (?)", [mobileNumber]);
+            await sql.query("INSERT INTO rider (mobile_number) VALUES (?)", [mobileNumber]);
             result = await mysql.getOneRow('rider',{mobile_number:mobileNumber});
         }
         return result;

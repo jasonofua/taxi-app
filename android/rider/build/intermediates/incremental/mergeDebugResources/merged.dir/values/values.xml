@@ -1992,7 +1992,7 @@
     <string name="select_contact_approach">Select Contact Approach</string>
     <string name="select_payment_method">Select payment method:</string>
     <string name="sending_complaint">Sending Complaint…</string>
-    <string name="server_address" translatable="false">http://127.0.0.1:5500/</string>
+    <string name="server_address" translatable="false">http://ec2-18-216-145-188.us-east-2.compute.amazonaws.com:8080/</string>
     <string name="service_canceled">Service Was canceled</string>
     <string name="service_card_cost">Cost: %.2f $</string>
     <string name="service_finished_cash">Service has been finished but there was not sufficient credit. Ask for cash</string>
