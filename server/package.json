@@ -21,7 +21,7 @@
     "mysql2": "^1.5.1",
     "redis": "^2.8.0",
     "shortid": "^2.2.8",
-    "socket.io": "^2.0.4",
+    "socket.io": "^2.5.0",
     "socketio-jwt": "^4.5.0",
     "stripe": "^4.25.0"
   },
