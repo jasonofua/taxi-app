@@ -11,7 +11,7 @@
     "cors": "^2.8.4",
     "db-migrate-mysql": "^1.1.10",
     "dotenv": "^4.0.0",
-    "express": "^4.16.2",
+    "express": "^4.17.3",
     "geolib": "^2.0.24",
     "imagemin": "^5.3.1",
     "imagemin-webp": "^4.1.0",
