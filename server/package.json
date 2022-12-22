@@ -15,7 +15,7 @@
     "geolib": "^2.0.24",
     "imagemin": "^5.3.1",
     "imagemin-webp": "^4.1.0",
-    "jsonwebtoken": "^7.4.3",
+    "jsonwebtoken": "^9.0.0",
     "moment": "^2.20.1",
     "mysql": "^2.15.0",
     "mysql2": "^1.5.1",
